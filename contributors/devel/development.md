@@ -267,7 +267,6 @@ version of Go. Please install the newest stable version available for
 your system. The table below lists the required Go versions for
 different versions of Kubernetes.
 
-
 | Kubernetes     | requires Go |
 |----------------|-------------|
 | 1.0 - 1.2      | 1.4.2       |
@@ -285,7 +284,35 @@ different versions of Kubernetes.
 | 1.19 - 1.20    | 1.15.5      |
 | 1.21 - 1.22    | 1.16.7      |
 | 1.23           | 1.17        |
-| 1.24+          | 1.18        |
+| 1.24           | 1.18        |
+| 1.25           | 1.20.10     |
+| 1.26 - 1.29    | 1.21.7      |
+| 1.30           | 1.22.1      |
+
+[Go version for latest Kubernetes](https://cs.k8s.io/?q=golang%3A%20upstream%20version&i=nope&files=&excludeFiles=&repos=)
+
+To find which Go is required for a specific Kubernetes version,
+run the following commands in your Kubernetes working directory.
+Below example looks for all 1.29.z Kubernetes releases.
+
+```sh
+K8S_VERSION=1.29
+for tag in $(git tag | grep $K8S_VERSION);do git checkout -q tags/$tag;goVersion=$(cat ./build/dependencies.yaml | grep "golang: upstream version" -A 1 | grep version: | awk '{$1=$1;print}' );echo "Kubernetes $tag requires Go $goVersion";done
+```
+
+An example output will be
+```sh
+Kubernetes v1.29.0 requires Go version: 1.21.5
+Kubernetes v1.29.0-alpha.0 requires Go version: 1.20.6
+Kubernetes v1.29.0-alpha.1 requires Go version: 1.21.1
+Kubernetes v1.29.0-alpha.2 requires Go version: 1.21.2
+Kubernetes v1.29.0-alpha.3 requires Go version: 1.21.3
+Kubernetes v1.29.0-rc.0 requires Go version: 1.21.4
+Kubernetes v1.29.0-rc.1 requires Go version: 1.21.4
+Kubernetes v1.29.0-rc.2 requires Go version: 1.21.5
+Kubernetes v1.29.1 requires Go version: 1.21.6
+Kubernetes v1.29.2 requires Go version: 1.21.7
+```
 
 ##### A Note on Changing Go Versions
 
@@ -361,10 +388,10 @@ The Kubernetes build system defaults to limiting the number of reported Go compi
 make WHAT="cmd/kubectl" GOGCFLAGS="-e"
 ```
 
-If you need to use debugging inspection tools on your compiled Kubernetes executables, add `-N -l` to `GOGCFLAGS`. For example:
+If you need to use debugging inspection tools on your compiled Kubernetes executables, set DBG=1. For example:
 
 ```sh
-make WHAT="cmd/kubectl" GOGCFLAGS="-N -l"
+make WHAT="cmd/kubectl" DBG=1
 ```
 
 To cross-compile Kubernetes for all platforms, run the following command:
@@ -385,7 +412,7 @@ Because kubernetes only merges pull requests when unit, integration, and e2e tes
 passing, your development environment needs to run all tests successfully. While this quick start will get you going,
 to really understand the testing infrastructure, read the
 [Testing Guide](sig-testing/testing.md) and check out the
-[SIG Architecture developer guide material](README.md#sig-testing).
+[SIG Architecture developer guide material](README.md#sig-architecture).
 
 Note that all of the commands in this section are run in your
 Kubernetes project directory at `$GOPATH/src/k8s.io/kubernetes/`
@@ -480,6 +507,46 @@ dependencies.
 Developers who need to manage dependencies in the `vendor/` tree should read
 the docs on [using go modules to manage dependencies](/contributors/devel/sig-architecture/vendor.md).
 
+### Building Kubernetes Using A Specific Version of Go
+
+There exists a [`.go-version`](https://github.com/kubernetes/kubernetes/blob/f563910656ad325a7e1f8ab5848746bc2eba4d7f/.go-version)
+file in the root of the Kubernetes repo. This file defines what version of `go` should be used
+to build Kubernetes. So, for example, if you'd like to build with `go1.20.4` specifically, you
+would change the contents of this file to just `1.20.4`.
+
+The way that the build targets choose what `go` version to use is as follows: 
+- If the `go` version that exists on your system (determined by output of `go version`) does 
+  not match the version defined in `.go-version`, then default to the version specified in `.go-version`.
+- If you do not want this behaviour, you can do one of the following:
+  - Set the `GO_VERSION` environment variable. `GO_VERSION` defines the _desired_ version of
+    `go` to be used. Even if the `go` version on your system does not match the one in `.go-version`,
+    the version specified by `GO_VERSION` will be used (even if it needs to be downloaded).
+    - The format of the version specified as part of `GO_VERSION` is the same as how a version
+      would be defined in the `.go-version` file. So if you wanted to build with `go1.20.4`, you'd
+      set `GO_VERSION=1.20.4`.
+  - Set the `FORCE_HOST_GO` environment variable to a non-empty value. This will skip all the above
+    logic and just use the `go` version that exists on your system's `$PATH`.
+
+Some examples:
+
+If you want to build using a `go` version (let's assume this is go1.20.4) that neither exists on your
+system nor is the one that is specified in the `.go-version` file:
+
+```
+GO_VERSION=1.20.4 make WHAT=cmd/<subsystem> 
+```
+
+If you want to build using the `go` version that exists on your system already and not really with what
+exists in the `.go-version` file:
+```
+FORCE_HOST_GO=y make WHAT=cmd/<subsystem> 
+```
+
+Or you can just change the contents of the `.go-version` file to your desired `go` version!  
+`.go-version`:
+```
+1.20.4
+```
 
 ## GitHub workflow
 

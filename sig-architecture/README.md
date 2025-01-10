@@ -14,19 +14,19 @@ The [charter](charter.md) defines the scope and governance of the Architecture S
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-architecture) for the group will typically add invites for the following meetings to your calendar.*
-* Enhancements Subproject Meeting: [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/95357819945) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+* Enhancements Subproject Meeting: [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/95357819945) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://bit.ly/k8s-enhancements-agenda).
   * [Meeting recordings](TBD).
-* Production Readiness Office Hours: [Wednesdays at 12:00 PT (Pacific Time)](https://zoom.us/j/482444151) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=PT%20%28Pacific%20Time%29).
+* Production Readiness Office Hours: [Wednesdays at 12:00 PT (Pacific Time)](https://zoom.us/j/482444151) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/10QkXwiZfBL7wBKHHFslooXvGDKHA75jkkgiIXuKFryM/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
-* Regular SIG Meeting: [Thursdays at 11:00 PT (Pacific Time)](https://zoom.us/j/845605479) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Thursdays at 11:00 PT (Pacific Time)](https://zoom.us/j/845605479) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
-* code organization Office Hours: [Thursdays at 14:00 PT (Pacific Time)](https://zoom.us/j/159990793) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
+* code organization Office Hours: [Thursdays at 14:00 PT (Pacific Time)](https://zoom.us/j/159990793) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1HtTI0rJEGP_MSf6eO87aCmx_tzpovPAAg7U2Zxwm8FE/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP03VEluzh0wpSRPzgve8kI5).
-* conformance office Hours: [Wednesdays at 18:00 UTC](https://zoom.us/j/427337923) (First Wednesday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
+* conformance office Hours: [Wednesdays at 18:00 UTC](https://zoom.us/j/427337923) (First Wednesday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18%3A00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1W31nXh9RYAb_VaYkwuPLd1hFxuRX3iU0DmaQ4lkCsX8/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
 
@@ -36,7 +36,7 @@ The [charter](charter.md) defines the scope and governance of the Architecture S
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
-* Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon Web Services
+* Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon
 * John Belamaric (**[@johnbelamaric](https://github.com/johnbelamaric)**), Google
 
 ## Contact
@@ -56,15 +56,20 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-architecture:
-* [WG API Expression](/wg-api-expression)
+* [WG Device Management](/wg-device-management)
+* [WG LTS](/wg-lts)
 * [WG Policy](/wg-policy)
-* [WG Reliability](/wg-reliability)
+* [WG Serving](/wg-serving)
 * [WG Structured Logging](/wg-structured-logging)
 
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-architecture:
+### apisnoop
+Snooping on the Kubernetes OpenAPI communications
+- **Owners:**
+  - [kubernetes-sigs/apisnoop](https://github.com/kubernetes-sigs/apisnoop/blob/main/OWNERS)
 ### architecture-and-api-governance
 [Described below](#architecture-and-api-governance-1)
 - **Owners:**
@@ -87,6 +92,7 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
 ### conformance-definition
 [Described below](#conformance-definition-1)
 - **Owners:**
+  - [kubernetes-sigs/verify-conformance](https://github.com/kubernetes-sigs/verify-conformance/blob/main/OWNERS)
   - [kubernetes/kubernetes/test/conformance](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/OWNERS)
   - [kubernetes/kubernetes/test/conformance/image](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/image/OWNERS)
   - [kubernetes/kubernetes/test/conformance/testdata](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS)
@@ -106,6 +112,15 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
   - [kubernetes/community/sig-architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/OWNERS)
 - **Contact:**
   - Slack: [#prod-readiness](https://kubernetes.slack.com/messages/prod-readiness)
+### wg-device-management
+Contains prototype code for future work driven by WG Device Management
+- **Owners:**
+  - [kubernetes-sigs/wg-device-management](https://github.com/kubernetes-sigs/wg-device-management/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#wg-device-management](https://kubernetes.slack.com/messages/wg-device-management)
+### wg-serving
+- **Owners:**
+  - [kubernetes-sigs/wg-serving](https://github.com/kubernetes-sigs/wg-serving/blob/main/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
@@ -125,7 +140,7 @@ Establishing and documenting conventions for system and user-facing APIs, define
 * [API Review process](https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md)
 * [Deprecation policy](https://kubernetes.io/docs/reference/deprecation-policy/)
 
-Please see the [API Reviews](https://github.com/orgs/kubernetes/projects/13) tracking board to follow the work of this sub-project. Please reach out to folks in the [OWNERS](https://git.k8s.io/design-proposals-archive/architecture/OWNERS) file if you are interested in joining this effort.
+Please see the [API Reviews](https://github.com/orgs/kubernetes/projects/169) tracking board to follow the work of this sub-project. Please reach out to folks in the [OWNERS](https://git.k8s.io/design-proposals-archive/architecture/OWNERS) file if you are interested in joining this effort.
 
 ## Enhancement Proposals
 

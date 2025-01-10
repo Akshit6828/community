@@ -5,7 +5,7 @@ about the prospect of you joining our [community][community page]!
 
 ## Before You Begin
 
-We strongly recommend you to understand the main [Kubernetes Contributor Guide](http://git.k8s.io/community/contributors/guide) and adhere to the contribution rules (specially signing the CLA).
+We strongly recommend you to understand the main [Kubernetes Contributor Guide](https://git.k8s.io/community/contributors/guide) and adhere to the contribution rules (specially signing the CLA).
 
 You can also check the [Contributor Cheat Sheet](/contributors/guide/contributor-cheatsheet/), with common resources for existing developers.
 
@@ -80,7 +80,7 @@ work.
   - This is hard.  Sorry.  We want to make this easier.
 - Familiarize yourself with the code:
   - [kubernetes/cmd/kubectl] is the entry point
-  - [kubernetes/pkg/kubectl] is the implementation
+  - [kubernetes/staging/src/k8s.io/kubectl/pkg] is the implementation
   - Look at how some of the other commands are implemented
   - [Codebase Tour]
 - Try adding a new command to do something simple:
@@ -178,9 +178,6 @@ Engage with the SIG cli community!  Let us know who you are and how things are g
 
 - Fill out the [about me form] so we know a bit about you and can direct your work accordingly.
   - **Note:** After filling out the form, reach out via slack or the googlegroup and let us know.
-
-- Message the [cli mentors] googlegroup and let them know you filled out the form
-  and are looking to get started.
 
 - In [slack][slack-messages] (signup [here][slack-signup]),
   @mention a [lead][leads] and ask if there are any issues you could pick up, or
@@ -385,7 +382,7 @@ See the sig-cli [community page] for points of contact and meeting times:
 
 - attend the sig-cli [meeting]
 - message one of the sig leads on [slack][slack-messages] (signup [here][slack-signup])
-- send an email to the _kubernetes-sig-cli@googlegroups.com_ [group].
+- send an email to the _sig-cli@kubernetes.io_ [group].
 
 ## Use of [@mentions]
 
@@ -411,11 +408,11 @@ See the sig-cli [community page] for points of contact and meeting times:
 [feature repo]: https://github.com/kubernetes/features
 [feature request]: #feature-requests
 [feature]: https://github.com/kubernetes/features
-[group]: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
+[group]: https://groups.google.com/a/kubernetes.io/g/sig-cli
 [issue]: https://github.com/kubernetes/kubectl/projects/3
 [kubectl docs]: https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/
 [kubernetes/cmd/kubectl]: https://git.k8s.io/kubernetes/cmd/kubectl
-[kubernetes/pkg/kubectl]: https://git.k8s.io/kubernetes/pkg/kubectl
+[kubernetes/staging/src/k8s.io/kubectl/pkg]: https://git.k8s.io/kubernetes/staging/src/k8s.io/kubectl/pkg
 [Codebase Tour]:  https://youtu.be/eZeCFRh2uGg?t=538
 [leads]: /sig-cli/README.md#leadership
 [management overview]: https://kubernetes.io/docs/concepts/tools/kubectl/object-management-overview
@@ -424,5 +421,4 @@ See the sig-cli [community page] for points of contact and meeting times:
 [slack-messages]: https://kubernetes.slack.com/messages/sig-cli
 [slack-signup]: http://slack.k8s.io/
 [tests]: /contributors/devel/sig-testing/testing.md
-[cli mentors]: https://groups.google.com/a/google.com/forum/#!forum/kubernetes-sig-cli-mentors
 [about me form]: https://docs.google.com/forms/d/1ID6DX1abiDr9Z9_sXXC0DsMwuyHb_NeFdB3xeRa4Vf0

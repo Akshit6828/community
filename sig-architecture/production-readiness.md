@@ -37,13 +37,17 @@ KEP authors, and reviewed by the SIG leads. Once the leads are satisfied with
 both the overall KEP (i.e., it is ready to move to `implementable` state) and
 the PRR answers, the authors may request PRR approval:
 
+* Make sure the Enhancement KEP is labeled `lead-opted-in` before PRR Freeze. This is required so that the Enhancements 
+  release team and PRR team are aware the KEP is targeting the release.
 * Assign a PRR approver from the `prod-readiness-approvers` list in the
   [OWNERS_ALIASES] file. This may be done earlier as well, to get early feedback
   or just to let the approver know. Reach out on the `#prod-readiness` Slack
   channel or just pick someone from the list. The team may rebalance the
   assignees if necessary.
 * Update the `kep.yaml`, setting the `stage`, `latest-milestone`, and the
-  `milestone` struct (which captures per-stage release versions).
+  `milestone` struct (which captures per-stage release versions). See the 
+  [KEP template](https://github.com/kubernetes/enhancements/tree/master/keps/NNNN-kep-template)
+  for required sections.
 * Create a `prod-readiness/<sig>/<KEP number>.yaml` file, with the PRR
   approver's GitHub handle for the specific stage
 * See this [example PRR approval request PR].
@@ -80,9 +84,39 @@ To become a reviewer:
  * Read/study previous PRR comments and production readiness responses in existing KEPs.
  * Choose some KEPs requiring PRR and perform a review. Put "shadow prod readiness review"
    in your review comments so that the assigned PRR approver knows your intent.
- * After at least one release cycle, if you have shown good judgement and quality reviews,
-   you can propose yourself as approver by submitting a PRR to add your GitHub
-   handle to the `prod-readiness-approvers` alias in [OWNERS_ALIASES].
+
+### Becoming an approver
+
+After serving as reviewer/shadow for at least one release and showing good judgement and quality reviews,
+you can propose yourself as an approver by submitting a PR to add your GitHub
+handle to the `prod-readiness-approvers` alias in [OWNERS_ALIASES].
+
+When submitting the PR, you should include links to your KEP review comments that demonstrate a good variety
+of different situations.
+Here is a good starting point (remember that one PR can cover multiple categories):
+
+* Transitions from new to alpha
+* Transitions from alpha to beta
+* Transitions from beta to GA
+* Must have successfully reviewed at least three enhancements that require coordination between multiple components.
+* Must have successfully reviewed at least three enhancements that require version skew consideration (both HA and component skew):
+  does behavior fail safely and eventually reconcile.
+* Must have successfully reviewed at least three enhancements that are outside your primary domain.
+* Examples where the feature requires considering the case of administering thousands of clusters.
+  This comes up frequently for host-based features in storage, node, or networking.
+* Examples where the feature requires considering the case of very large clusters.  This is commonly covered by metrics.
+
+The success in all of the above can be claimed if the final PRR approver perceived their review
+as non-essential after the primary PRR review done by the shadow reviewer.
+
+*Watchout*: The fact that final approver didn't have any substantial comments may mean one of two things:
+
+* the reviewer did a great job in finding all the issues
+* the KEP author did a great job in answering all the questions up front
+
+When promoting shadow reviewer to approver we want to ensure that not all KEPs belong to the second
+category to ensure that all PRR approvers can push for changes if required. We definitely don't
+require all reviews to be in that category, but we require at least three to belong there.
 
 ## Finding KEPs needing prod readiness review
 

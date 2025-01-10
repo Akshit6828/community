@@ -14,15 +14,15 @@ The [charter](charter.md) defines the scope and governance of the Scheduling Spe
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling) for the group will typically add invites for the following meetings to your calendar.*
-* biweekly meeting (NA & Europe): [Thursdays at 17:00 UTC](https://zoom.us/j/841218129) (biweekly starting Thursday June 7, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
+* biweekly meeting (NA & Europe): [Thursdays at 17:00 UTC](https://zoom.us/j/841218129) (biweekly starting Thursday June 7, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17%3A00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
-* descheduler biweekly meeting: [Tuesdays at 17:00 UTC](https://zoom.us/j/841218129) (biweekly starting Tuesday September 13, 2022). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
+* descheduler biweekly meeting Europe time: [Tuesdays at 14:30 CET](https://zoom.us/j/841218129) (biweekly starting Tuesday Feb 27, 2024). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14%3A30&tz=CET).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ang5shAFxuylO2RXMFGO7uxSe-IX3Y3PxoKIn1yPIEQ).
   * [Meeting recordings](https://youtube.com/playlist?list=PLEafaZMk8MYYqoSncOkL8uutIcTsUQE_g).
-* monthly meeting (APAC): [first Thursdays at 02:00 UTC](https://zoom.us/j/841218129) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=02:00&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
-  * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
+* descheduler biweekly meeting North America time: [Tuesdays at 19:30 CET](https://zoom.us/j/841218129) (biweekly starting Tuesday March 12, 2024). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19%3A30&tz=CET).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ang5shAFxuylO2RXMFGO7uxSe-IX3Y3PxoKIn1yPIEQ).
+  * [Meeting recordings](https://youtube.com/playlist?list=PLEafaZMk8MYYqoSncOkL8uutIcTsUQE_g).
 
 ## Leadership
 
@@ -63,8 +63,9 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 The following [working groups][working-group-definition] are sponsored by sig-scheduling:
 * [WG Batch](/wg-batch)
-* [WG Multitenancy](/wg-multitenancy)
+* [WG Device Management](/wg-device-management)
 * [WG Policy](/wg-policy)
+* [WG Serving](/wg-serving)
 * [WG Structured Logging](/wg-structured-logging)
 
 
@@ -77,13 +78,16 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
 ### descheduler
 - **Owners:**
   - [kubernetes-sigs/descheduler](https://github.com/kubernetes-sigs/descheduler/blob/master/OWNERS)
-### kube-batch
-- **Owners:**
-  - [kubernetes-sigs/kube-batch](https://github.com/kubernetes-sigs/kube-batch/blob/master/OWNERS)
 ### kube-scheduler-simulator
 - **Owners:**
   - [kubernetes-sigs/kube-scheduler-simulator](https://github.com/kubernetes-sigs/kube-scheduler-simulator/blob/master/OWNERS)
+### kube-scheduler-wasm-extension
+- **Owners:**
+  - [kubernetes-sigs/kube-scheduler-wasm-extension](https://github.com/kubernetes-sigs/kube-scheduler-wasm-extension/blob/main/OWNERS)
 ### kueue
+- **Leads:**
+  - Michał Woźniak (**[@mimowo](https://github.com/mimowo)**), Google
+  - Yuki Iwai (**[@tenzen-y](https://github.com/tenzen-y)**), CyberAgent, Inc.
 - **Owners:**
   - [kubernetes-sigs/kueue](https://github.com/kubernetes-sigs/kueue/blob/main/OWNERS)
 ### kwok

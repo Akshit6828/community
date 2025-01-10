@@ -57,7 +57,6 @@
 
 ### Робочий процес
 
-- [Gubernator Dashboard] - Перегляд вхідних та вихідних Pull Request, що потребують вашої уваги.
 - [Prow] - Kubernetes CI/CD система.
 - [Tide] - Prow плаґін для управління процесом злиття змін до основної гілки репозиторія (merge) і тестами. [Tide Dashboard]
 - [Команди бота] - Команди для взаємодії з ботами Kubernetes (наприклад:
@@ -278,9 +277,8 @@ git checkout -b myfeature
 
 [Керівництво для контриб'юторів]: /contributors/guide/README.md
 [Керівництво для розробників]: /contributors/devel/README.md
-[gubernator dashboard]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
-[tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [tide dashboard]: https://prow.k8s.io/tide
 [Команди бота]: https://go.k8s.io/bot-commands
 [GitHub мітки]: https://go.k8s.io/github-labels
@@ -300,7 +298,7 @@ git checkout -b myfeature
 [Kubernetes форум]: https://discuss.kubernetes.io/
 [Процес pull request]: /contributors/guide/pull-requests.md
 [Робочий процес у github]: /contributors/guide/github-workflow.md
-[prow]: https://git.k8s.io/test-infra/prow#prow
+[prow]: https://sigs.k8s.io/prow/pkg
 [cla]: /CLA.md#how-do-i-sign
 [інструкції з вирішення проблем CLA]: /CLA.md#troubleshooting
 [commands]: https://prow.k8s.io/command-help

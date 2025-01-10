@@ -2,7 +2,8 @@ aliases:
   sig-api-machinery-leads:
     - deads2k
     - fedebongio
-    - lavalamp
+    - jpbetz
+    - sttts
   sig-apps-leads:
     - janetkuo
     - kow3ns
@@ -19,55 +20,64 @@ aliases:
     - ritazh
   sig-autoscaling-leads:
     - gjtempleton
-    - mwielgus
+    - maciekpytel
   sig-cli-leads:
-    - KnVerey
+    - ardaguclu
     - eddiezane
-    - seans3
+    - mpuckett159
     - soltysh
   sig-cloud-provider-leads:
-    - andrewsykim
+    - bridgetkromhout
     - cheftako
-    - nckturner
+    - elmiko
   sig-cluster-lifecycle-leads:
     - fabriziopandini
     - justinsb
     - neolit123
     - vincepri
   sig-contributor-experience-leads:
-    - cblecker
-    - jberkus
-    - mrbobbytables
-    - nikhita
+    - MadhavJivrajani
+    - Priyankasaggu11929
+    - kaslin
+    - palnabarun
   sig-docs-leads:
     - divya-mohan0209
-    - jimangel
-    - kbhawkey
+    - katcosgrove
     - natalisucks
-    - onlydole
     - reylejano
-    - sftim
+    - salaxander
     - tengqm
+  sig-etcd-leads:
+    - ahrtr
+    - jmhbnz
+    - serathius
+    - wenjiaswe
   sig-instrumentation-leads:
     - dashpole
     - dgrisonnet
-    - ehashman
-    - logicalhan
+    - rexagod
+    - richabanker
   sig-k8s-infra-leads:
+    - BenTheElder
     - ameukam
     - dims
-    - spiffxp
-    - thockin
+    - upodroid
+    - xmudrii
   sig-multicluster-leads:
     - jeremyot
-    - pmorie
+    - skitt
   sig-network-leads:
-    - caseydavenport
-    - dcbw
+    - aojea
+    - danwinship
+    - mikezappa87
+    - shaneutt
     - thockin
   sig-node-leads:
+    - SergeyKanzhelev
     - dchen1107
     - derekwaynecarr
+    - haircommander
+    - mrunalp
   sig-release-leads:
     - Verolop
     - cpanato
@@ -85,6 +95,7 @@ aliases:
     - alculquicondor
   sig-security-leads:
     - IanColdwater
+    - cailyn-codes
     - tabbysable
   sig-storage-leads:
     - jsafrane
@@ -96,83 +107,77 @@ aliases:
     - alvaroaleman
     - aojea
     - cjwagner
+    - jbpratt
     - michelle192837
     - pohly
-    - spiffxp
-    - stevekuznetsov
+    - xmcqueen
   sig-ui-leads:
     - floreks
     - maciaszczykm
     - shu-mutou
-  sig-usability-leads:
-    - hpandeycodeit
-    - morengab
-    - tashimi
   sig-windows-leads:
+    - aravindhp
     - claudiubelu
-    - jayunit100
     - jsturtevant
+    - knabben
     - marosset
-  wg-api-expression-leads:
-    - apelisse
-    - kwiesmueller
   wg-batch-leads:
-    - Huang-Wei
-    - ahg-g
-    - endocrimes
+    - kannon92
+    - mwielgus
     - soltysh
     - swatisehgal
   wg-data-protection-leads:
     - xing-yang
     - yuxiangqian
-  wg-iot-edge-leads:
-    - cantbewong
-    - cindyxing
-    - dejanb
-  wg-multitenancy-leads:
-    - srampal
-    - tashimi
+  wg-device-management-leads:
+    - johnbelamaric
+    - klueska
+    - pohly
+  wg-etcd-operator-leads:
+    - ahrtr
+    - hakman
+    - jberkus
+    - jmhbnz
+    - justinsb
+  wg-lts-leads:
+    - jeremyrickard
+    - liggitt
+    - micahhausler
   wg-policy-leads:
     - JimBugwadia
-    - rficcaglia
-  wg-reliability-leads:
-    - deads2k
-    - stevekuznetsov
-    - wojtek-t
+    - poonam-lamba
+    - sudermanjr
+  wg-serving-leads:
+    - ArangoGutierrez
+    - Jeffwan
+    - SergeyKanzhelev
+    - terrytangyuan
   wg-structured-logging-leads:
+    - mengjiao-liu
     - pohly
-    - serathius
-  ug-big-data-leads:
-    - erikerlandson
-    - foxish
-    - liyinan926
-  ug-vmware-users-leads:
-    - brysonshepherd
-    - cantbewong
-    - mylesagray
-    - phenixblue
   committee-code-of-conduct:
-    - detiber
+    - AnaMMedina21
     - endocrimes
     - hlipsig
     - jeremyrickard
     - salaxander
   committee-security-response:
+    - SaranBalaji90
     - cjcullen
+    - cji
     - enj
     - joelsmith
-    - lukehinds
     - micahhausler
+    - ritazh
     - tabbysable
-    - tallclair
   committee-steering:
     - BenTheElder
-    - cblecker
-    - cpanato
+    - aojea
     - justaugustus
-    - mrbobbytables
-    - palnabarun
-    - tpepper
+    - pacoxu
+    - pohly
+    - saschagrunert
+    - soltysh
 ## BEGIN CUSTOM CONTENT
   provider-aws:
     - justinsb
@@ -187,10 +192,15 @@ aliases:
   provider-ibmcloud:
     - spzala
   provider-openstack:
-    - chrigl
-    - lingxiankong
-    - ramineni
+    - dulek
+    - jichenjc
+    - kayrus
+    - zetaab
   provider-vmware:
     - cantbewong
     - frapposelli
+  sig-release-subproject-leads:
+    - gracenng
+    - katcosgrove
+    - xmudrii
 ## END CUSTOM CONTENT

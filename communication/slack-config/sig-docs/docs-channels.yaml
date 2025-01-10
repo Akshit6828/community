@@ -1,5 +1,6 @@
 channels:
   - name: kubernetes-docs-ar
+  - name: kubernetes-docs-bg
   - name: kubernetes-docs-bn
     id: CQ0TD298C
   - name: kubernetes-docs-de
@@ -14,6 +15,7 @@ channels:
   - name: kubernetes-docs-ko
   - name: kubernetes-docs-pt
   - name: kubernetes-docs-ru
+  - name: kubernetes-docs-ta
   - name: kubernetes-docs-vi
   - name: kubernetes-docs-zh
   - name: kubernetes-docs-pl

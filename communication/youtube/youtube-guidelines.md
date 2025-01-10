@@ -21,12 +21,11 @@ and includes all communications such as YouTube.
 
 ## Meeting Playlists
 
-The [Kubernetes YouTube Channel] has separate playlists for each SIG, WG, UG
+The [Kubernetes YouTube Channel] has separate playlists for each SIG or WG 
 meeting recordings, as well as recordings of other recurring events such as the
-Kubernetes [community meeting], [Office Hours], [Meet our Contributors]
-and others.
+Kubernetes [community meeting], and others.
 
-[Subprojects], in addition to SIGs, WGs, UGs may request their own playlists
+[Subprojects], in addition to SIGs and WGs may request their own playlists
 to better target their contributors and increase general discoverability.
 
 To better serve the community, [collaboration] has been enabled to share the
@@ -35,8 +34,8 @@ playlist can upload videos *to that particular playlist* (links & playlists are
 one-to-one).
 
 Each group's playlist link will be shared with the group's leadership via Slack
-and the group leadership Google Group. Other playlists links, for example Office
-Hours, will be shared with the appropriate point(s) of contact.
+and the group leadership Google Group. Other playlists links, will be shared
+with the appropriate point(s) of contact.
 
 ### Uploading Guidelines for Collaborators
 
@@ -66,9 +65,9 @@ community must use it responsibly and are subject to the following guidelines:
     -   Posting of any inappropriate content (i.e. NSFW content)
         will result in ***immediate*** suspension of privileges.
 
--   All posted videos should use the naming convention: \<Name of Playlist's
-    Group\> YYYYMMDD
-    -   **Example:** SIG Service Catalog 20161129
+-   All posted videos should use the naming convention: [Name of Playlist's
+    Group] Meeting Name for YYYYMMDD
+    -   **Example:** [SIG Contributor Experience] Biweekly Meeting for 20240816
 
 -   Playlists should be organized chronologically for ease of use. This can be
     done by updating the default ordering of the Playlist:
@@ -173,9 +172,8 @@ The following SIGs and groups are currently running splain.io:
 -   [SIG Release]
 -   [Steering Committee]
 -   [WG Data Protection]
--   The main Zoom admin account which holds Meet Our Contributors and others (if
-    you log in to splain using this account, all of the other accounts will be
-    logged here)
+-   The main Zoom admin account (if you log in to splain using this account,
+    all of the other accounts will be logged here)
 
 ### Descriptions and Playlists
 
@@ -214,9 +212,9 @@ to hear from you.
 ### Streaming Events
 
 YouTube admins with a system capable of streaming may be asked to stream public
-Kubernetes Community events such as the weekly [Community Meeting], 
-[Office Hours], [Meet our Contributors], or other publicly streamed
-events. For detailed information about streaming, see our [Streaming Config].
+Kubernetes Community events such as the weekly [Community Meeting], or other
+publicly streamed events. For detailed information about streaming, see our
+[Streaming Config].
 
 ### Migrating Content
 
@@ -236,26 +234,24 @@ downloaded and then reuploaded to the Kubernetes channel.
     generate thumbnails and process the videos.
 7.  Once videos are finalized, set the playlist to Public to publish them.
 
-  [coc]: /code-of-conduct.md
-  [admins]: /communication/moderators.md
-  [Kubernetes YouTube Channel]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
-  [community meeting]: /events/community-meeting.md
-  [Office Hours]: /events/office-hours.md
-  [Meet our Contributors]: /events/meet-our-contributors.md
-  [Subprojects]: /governance.md#subprojects
-  [collaboration]: https://support.google.com/youtube/answer/6109639
-  [update the permissions in your YouTube settings]: https://support.google.com/a/answer/6212415
-  [YouTube admins]: /communication/moderators.md#YouTube-Channel
-  [SIG Contributor Experience]: /sig-contributor-experience/README.md
-  [moderation guidelines]: /communication/moderation.md
-  [trim]: https://support.google.com/youtube/answer/9057455?hl=en
-  [edit]: https://support.google.com/youtube/topic/9257530?hl=en&ref_topic=9257610
-  [Zoom guidelines]: /communication/zoom-guidelines.md
-  [SIG Auth]: /sig-auth/README.md
-  [SIG Docs]: /sig-docs/README.md
-  [SIG Network]: /sig-network/README.md
-  [SIG Release]: /sig-release/README.md
-  [Steering Committee]: /committee-steering/governance/README.md
-  [WG Data Protection]: /wg-data-protection/README.md
-  [Streaming Config]: /communication/youtube/streaming-config.md
-  [youtube-dl]: https://ytdl-org.github.io/youtube-dl/index.html
+[coc]: /code-of-conduct.md
+[admins]: /communication/moderators.md
+[Kubernetes YouTube Channel]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
+[community meeting]: /events/community-meeting.md
+[Subprojects]: /governance.md#subprojects
+[collaboration]: https://support.google.com/youtube/answer/6109639
+[update the permissions in your YouTube settings]: https://support.google.com/a/answer/6212415
+[YouTube admins]: /communication/moderators.md#YouTube-Channel
+[SIG Contributor Experience]: /sig-contributor-experience/README.md
+[moderation guidelines]: /communication/moderation.md
+[trim]: https://support.google.com/youtube/answer/9057455?hl=en
+[edit]: https://support.google.com/youtube/topic/9257530?hl=en&ref_topic=9257610
+[Zoom guidelines]: /communication/zoom-guidelines.md
+[SIG Auth]: /sig-auth/README.md
+[SIG Docs]: /sig-docs/README.md
+[SIG Network]: /sig-network/README.md
+[SIG Release]: /sig-release/README.md
+[Steering Committee]: /committee-steering/governance/README.md
+[WG Data Protection]: /wg-data-protection/README.md
+[Streaming Config]: /communication/youtube/streaming-config.md
+[youtube-dl]: https://ytdl-org.github.io/youtube-dl/index.html

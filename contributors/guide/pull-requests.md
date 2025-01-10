@@ -26,6 +26,7 @@ It should serve as a reference for all contributors, and be useful especially to
   - [Is the feature wanted? File a Kubernetes Enhancement Proposal](#is-the-feature-wanted-file-a-kubernetes-enhancement-proposal)
   - [Smaller Is Better: Small Commits, Small Pull Requests](#smaller-is-better-small-commits-small-pull-requests)
   - [Open a Different Pull Request for Fixes and Generic Features](#open-a-different-pull-request-for-fixes-and-generic-features)
+  - [Don't Open Pull Requests That Span the Whole Repository](#dont-open-pull-requests-that-span-the-whole-repository)
   - [Comments Matter](#comments-matter)
   - [Test](#test)
   - [Squashing](#squashing)
@@ -60,9 +61,9 @@ You can run these local verifications before you submit your pull request to pre
 
 Merging a pull request requires the following steps to be completed before the pull request will be merged automatically.
 
-- [Sign the CLA](https://git.k8s.io/community/CLA.md) (prerequisite)
 - [Open a pull request](https://help.github.com/articles/about-pull-requests/)
   - *For kubernetes/kubernetes repository only:* Add [release notes](/contributors/guide/release-notes.md) if needed.
+- Follow the EasyCLA steps to [sign the CLA](https://git.k8s.io/community/CLA.md) (prerequisite)
 - Pass all e2e tests
 - Get all necessary approvals from reviewers and code owners
 
@@ -249,6 +250,31 @@ Likewise, if Feature-X is similar in form to Feature-W which was checked in last
 Feature-X.
 (Do that in its own commit or pull request, please.)
 
+## Don't Open Pull Requests That Span the Whole Repository
+
+Often a new contributor will find some problem that exists in many places across the main
+`kubernetes/kubernetes` repository, and file a PR to fix it everywhere at once. Maybe
+there's a cool new function in the latest golang release that everyone ought to be using,
+or a recently-deprecated function that ought to be replaced with calls to its replacement.
+Sometimes a contributor will run a linter or security scanner across the code to find
+problems, or fix a particular spelling mistake in comments or variable names. (It's
+"deprecated", not "depreciated"!)
+
+The problem with this approach is that different parts of `kubernetes/kubernetes` are
+maintained by different SIGs, and so changes to those different parts require approvals
+from different people. A PR containing 20 one-line changes scattered across the repository
+could end up needing 5 or 10 approvals or more before it can be merged. (While there are a
+handful of people who can approve changes across large portions of the repository, those
+are generally the people who are the most busy and hardest to get reviews from, especially
+when you're a new contributor with no connections within the community yet.)
+
+If you really want to try to get such a PR merged, your best bet is to break up the PR
+into separate PRs for each SIG whose code it touches. You can look at the `OWNERS` files
+in a directory (or its parent directory) to see who owns that code, and then group the
+changes together accordingly (e.g., with one PR touching files in `cmd/kube-proxy` and
+`pkg/util/iptables`, which are owned by SIG Network, and another PR touching files in
+`pkg/kubelet` and `pkg/controller/nodelifecycle`, which are owned by SIG Node.)
+
 ## Comments Matter
 
 In your code, if someone might not understand why you did something (or you won't remember why later), comment it. Many code-review comments are about this exact issue.
@@ -292,7 +318,47 @@ For more information, see [squash commits](./github-workflow.md#squash-commits).
  For instance, writing a code munger could be one commit, applying it could be another, and adding a precommit check could be a third.
  One could argue they should be separate pull requests, but there's really no way to test/review the munger without seeing it applied, and there needs to be a precommit check to ensure the munged output doesn't immediately get out of date.
  
-**Note**: you can also ask your reviewer to add the `tide/merge-method-squash` label to your PR (this can be done by a reviewer by issuing the command: `/label tide/merge-method-squash`), this will let the bot take care of squashing _all_ commits that are part of this PR and will not result in removal of the `LGTM` label (if already applied) or re-run of the CI tests.
+**Note**: you can also use the `tide/merge-method-squash` label on your PR to let the bot handle squashing 
+_all_ commits, which can be done by commenting `/label tide/merge-method-squash`. As opposed to squashing by hand, this will prevent removal of the `lgtm` label (if already applied) and re-run of the CI tests. Although,
+if this label is used, please know the following:
+
+- All commit messages will be squashed and combined and the final commit message will be a combination of all
+  commit messages according to how GitHub generates the [message for a squash merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#merge-message-for-a-squash-merge), for example, if this is the lifecycle of your PR:
+  ```
+  # commit 1
+  Original commit msg
+
+  Some useful information
+  Some more useful information
+  ```
+  ```
+  # commit 2
+  Address review comments
+  ```
+  ```
+  # commit 3
+  Fix test
+  ```
+  After applying the label, if the PR is merged, the final commit message will end up being:
+  ```
+  Title of your PR (#PR-number)
+
+  * Original commit msg
+
+  Some useful information
+  Some more useful information
+
+  * Address review comments
+
+  * Fix test
+  ```
+  Since commit messages are meant to be a record of the "why" and "what" of your changes, having 
+  messages like "Address review comments" in the final commit message adds no real value in terms
+  of communicating the "what"s and "why"s of your change. Please see [Commit Message Guidelines](#commit-message-guidelines) for more details on writing better commit messages.
+
+  Using this label can help when squashing by hand is considered too challenging or not worth the
+  extra effort. It can also speed up merging because squashing by hand implies getting another LGTM
+  from a reviewer and re-run of the CI tests.
 
 ## Commit Message Guidelines
 
@@ -524,6 +590,58 @@ at once to that file.
 * Can the file be improved further?
 * Does the trivial edit greatly improve the quality of the content?
 
+## Fixing linter issues
+
+Kubernetes has a set of linter checks. Some of those must pass in the entire
+code base, some must pass in new or modified code, and some are merely hints
+to developers how to improve their code.
+
+Please do not create Pull Requests for issues found by linters without first
+reaching out to maintainers on the `#code-organization`
+[Slack](http://slack.kubernetes.io) channel to determine whether there is
+sufficient interest in fixing such issues.
+
+When it was discussed, make sure to include people who gave the preliminary
+approval of this work as well as the link to the discussion on Slack or GitHub
+issue into the PR description. This is a good example to follow:
+
+> /area code-organization
+>
+> This PR fixes linter rules discussed in the Slack https://kubernetes.slack.com/archives/Foo/Bar.
+> Preliminary agreement to address those issues were given by @GHHandle1 and @GHHandle2.
+>
+> /assign @GHHandle1
+> /assign @GHHandle2
+>
+> This PR fixes issues in the package:
+> pkg/kubelet
+>
+> Related PRs for other packages:
+> - github.com/link-to-other-PR1
+> - github.com/link-to-other-PR2
+
+It does not matter whether the linter is enabled in Kubernetes or not:
+- If a linter *is* enabled in
+  [golangci.yaml](https://github.com/kubernetes/kubernetes/blob/master/hack/golangci.yaml),
+  then it has already been determined that sweeping changes in the existing
+  code aren't necessary or just are not worth the cost (e.g. causing rebases of other
+  Pull Requests or obscuring authorship).
+- If a linter *is not* enabled, then it might not be important enough.
+- If the check is performed by third party tools which are not integrated in
+  the Kubernetes CI or proprietary, file a bug or start a discussion about it first.
+
+Such Pull Requests are often large and thus hard to review. When the linter
+enforces some opinion or policy, then this is not necessarily something that
+applies to Kubernetes. Kubernetes uses the formatting rules enforced by Go.
+Stricter rules like specific usage of
+[whitespace](https://golangci-lint.run/usage/linters/#whitespace) or using
+[standard library constants](https://golangci-lint.run/usage/linters/#usestdlibvars)
+are opinionated and not worth the cost of introducing them now.
+
+Linters worth considering are those which actually improve code correctness,
+for example by warning about suspicious code like calling a function and then
+not checking the error result.
+
 # The Testing and Merge Workflow
 
 The Kubernetes merge workflow uses labels, applied by [commands](https://prow.k8s.io/command-help) via comments. 
@@ -569,7 +687,7 @@ Once the tests pass, and the reviewer adds the `lgtm` and `approved` labels, the
 The merge pool is needed to make sure no incompatible changes have been introduced by other pull requests since the tests were last run on your pull request.
 <!-- TODO: create parallel instructions for reviewers -->
 
-[Tide](https://git.k8s.io/test-infra/prow/cmd/tide) will manage the merge pool
+[Tide](https://sigs.k8s.io/prow/cmd/tide) will manage the merge pool
 automatically. It uses GitHub queries to select PRs into “tide pools”,
 runs as many in a batch as it can (“tide comes in”), and merges them (“tide goes out”).
 

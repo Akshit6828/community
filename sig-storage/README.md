@@ -13,10 +13,12 @@ SIG Storage is responsible for ensuring that different types of file and block s
 The [charter](charter.md) defines the scope and governance of the Storage Special Interest Group.
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-storage) for the group will typically add invites for the following meetings to your calendar.*
-* Regular CSI Implementation meeting: [Monday and Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/614261834) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-storage) for the group will typically add invites for the following meetings to your calendar.*
+* Regular CSI Implementation Meeting: [Mondays at 10:00 PT (Pacific Time)](https://zoom.us/j/614261834) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1_hvq3nleqQEYatH9V_Gfep39jMzaFJRSN2ioA0PFq-Q/edit#).
-* Regular SIG Meeting: [Thursdays at 9:00 PT (Pacific Time)](https://zoom.us/j/614261834) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Issue Triage Meeting: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/614261834) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1n-dXXvCbHsPfO1yrKwT1qoC80KhsxHYKbRdChdzqeXY/edit)).
+* Regular SIG Meeting: [Thursdays at 9:00 PT (Pacific Time)](https://zoom.us/j/614261834) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq).
 
@@ -41,7 +43,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Contact
 - Slack: [#sig-storage](https://kubernetes.slack.com/messages/sig-storage)
-- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-storage)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/sig-storage)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fstorage)
 - GitHub Teams:
     - [@kubernetes/sig-storage-api-reviews](https://github.com/orgs/kubernetes/teams/sig-storage-api-reviews) - API Changes and Reviews
@@ -51,20 +53,23 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-storage-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-storage-pr-reviews) - PR Reviews
     - [@kubernetes/sig-storage-proposals](https://github.com/orgs/kubernetes/teams/sig-storage-proposals) - Design Proposals
     - [@kubernetes/sig-storage-test-failures](https://github.com/orgs/kubernetes/teams/sig-storage-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
+- Steering Committee Liaison: Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**)
 
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-storage:
 * [WG Data Protection](/wg-data-protection)
-* [WG Multitenancy](/wg-multitenancy)
 * [WG Policy](/wg-policy)
+* [WG Serving](/wg-serving)
 * [WG Structured Logging](/wg-structured-logging)
 
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-storage:
+### external-snapshot-metadata
+- **Owners:**
+  - [kubernetes-csi/external-snapshot-metadata](https://github.com/kubernetes-csi/external-snapshot-metadata/blob/main/OWNERS)
 ### external-storage
 - **Owners:**
   - [kubernetes-sigs/sig-storage-lib-external-provisioner](https://github.com/kubernetes-sigs/sig-storage-lib-external-provisioner/blob/master/OWNERS)
@@ -78,11 +83,7 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
   - [kubernetes-sigs/gluster-file-external-provisioner](https://github.com/kubernetes-sigs/gluster-file-external-provisioner/blob/master/OWNERS)
 ### kubernetes-cosi
 - **Owners:**
-  - [kubernetes-sigs/container-object-storage-interface-api](https://github.com/kubernetes-sigs/container-object-storage-interface-api/blob/master/OWNERS)
-  - [kubernetes-sigs/container-object-storage-interface-controller](https://github.com/kubernetes-sigs/container-object-storage-interface-controller/blob/master/OWNERS)
-  - [kubernetes-sigs/container-object-storage-interface-csi-adapter](https://github.com/kubernetes-sigs/container-object-storage-interface-csi-adapter/blob/master/OWNERS)
-  - [kubernetes-sigs/container-object-storage-interface-provisioner-sidecar](https://github.com/kubernetes-sigs/container-object-storage-interface-provisioner-sidecar/blob/master/OWNERS)
-  - [kubernetes-sigs/container-object-storage-interface-spec](https://github.com/kubernetes-sigs/container-object-storage-interface-spec/blob/master/OWNERS)
+  - [kubernetes-sigs/container-object-storage-interface](https://github.com/kubernetes-sigs/container-object-storage-interface/blob/main/OWNERS)
   - [kubernetes-sigs/cosi-driver-sample](https://github.com/kubernetes-sigs/cosi-driver-sample/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#sig-storage-cosi](https://kubernetes.slack.com/messages/sig-storage-cosi)

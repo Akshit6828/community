@@ -57,7 +57,6 @@ C'est un "TL;DR" ou une référence rapide d'informations utiles pour améliorer
 
 ### Workflow
 
-- [Gubernator Dashboard] - Voir les Pull Requests entrantes et sortantes qui nécessitent votre attention.
 - [Prow] - Kubernetes CI/CD System.
 - [Tide] - Prow plugin that manages merges and tests. [Tide Dashboard]
 - [Bot commands] - Commands used to interact with Kubernetes Bots (examples:
@@ -285,9 +284,8 @@ Si vous ne savez pas si vous devez faire un squash de vos commits, il est préf�
 
 [guide du contributeur]: /contributors/guide/README.md
 [guide du développeur]: /contributors/devel/README.md
-[gubernator dashboard]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
-[tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [tide dashboard]: https://prow.k8s.io/tide
 [bot commands]: https://go.k8s.io/bot-commands
 [gitHub labels]: https://go.k8s.io/github-labels
@@ -308,7 +306,7 @@ Si vous ne savez pas si vous devez faire un squash de vos commits, il est préf�
 [kubernetes forum]: https://discuss.kubernetes.io/
 [pull request process]: /contributors/guide/pull-requests.md
 [github workflow]: /contributors/guide/github-workflow.md
-[prow]: https://git.k8s.io/test-infra/prow#prow
+[prow]: https://sigs.k8s.io/prow/pkg
 [cla]: /CLA.md#how-do-i-sign
 [cla troubleshooting guidelines]: /CLA.md#troubleshooting
 [commands]: https://prow.k8s.io/command-help

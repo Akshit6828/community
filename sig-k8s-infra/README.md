@@ -15,7 +15,7 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Spec
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+* Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20%3A00&tz=UTC).
   * [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
   * [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 
@@ -24,19 +24,23 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Spec
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), VMware
-* Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon Web Services
+* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), Independent
+* Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
-* Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
+* Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
+* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), Independent
+* Mahamed Ali (**[@upodroid](https://github.com/upodroid)**), Cisco
+* Marko Mudrinić (**[@xmudrii](https://github.com/xmudrii)**), Kubermatic
 
 ## Emeritus Leads
 
 * Bart Smykla (**[@bartsmykla](https://github.com/bartsmykla)**)
+* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**)
+* Tim Hockin (**[@thockin](https://github.com/thockin)**)
 
 ## Contact
 - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
@@ -47,9 +51,22 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-k8s-infra-leads](https://github.com/orgs/kubernetes/teams/sig-k8s-infra-leads) - sig-k8s-infra chairs and tech leads
 - Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-k8s-infra:
+* [WG LTS](/wg-lts)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-k8s-infra:
+### community-images
+kubectl plugin used to highlight images pulled from community-owned registries
+- **Owners:**
+  - [kubernetes-sigs/community-images](https://github.com/kubernetes-sigs/community-images/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
+  - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
 ### k8s-infra-dns
 Code and configuration to manage DNS records for domains owned by the Kubernetes project such as k8s.io and kubernetes.io
 - **Owners:**
@@ -58,7 +75,7 @@ Code and configuration to manage DNS records for domains owned by the Kubernetes
   - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
 - **Meetings:**
-  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20%3A00&tz=UTC).
     - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
     - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 ### k8s-infra-groups
@@ -69,7 +86,7 @@ Code and configuration to manage Google Groups for domains owned by the Kubernet
   - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
 - **Meetings:**
-  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20%3A00&tz=UTC).
     - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
     - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 ### k8s.io
@@ -80,7 +97,7 @@ Code and configuration to manage Kubernetes project infrastructure, including va
   - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
 - **Meetings:**
-  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20%3A00&tz=UTC).
     - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
     - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 ### porche
@@ -91,7 +108,7 @@ A custom HTTP redirector serving Kubernetes binaries from existing vendor suppor
   - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
 - **Meetings:**
-  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20%3A00&tz=UTC).
     - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
     - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 ### registry.k8s.io
@@ -102,7 +119,7 @@ A custom HTTP redirector serving Kubernetes container image blobs from existing 
   - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
 - **Meetings:**
-  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20%3A00&tz=UTC).
     - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
     - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 
