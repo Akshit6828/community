@@ -12,7 +12,7 @@ found at [API Conventions](api-conventions.md).
   - [Adding a field](#adding-a-field)
   - [Making a singular field plural](#making-a-singular-field-plural)
     - [Single-Dual ambiguity](#single-dual-ambiguity)
-  - [Multiple API versions](multiple-api-versions)
+  - [Multiple API versions](#multiple-api-versions)
 - [Backward compatibility gotchas](#backward-compatibility-gotchas)
 - [Incompatible API changes](#incompatible-api-changes)
 - [Changing versioned APIs](#changing-versioned-apis)
@@ -413,7 +413,7 @@ works fine when the user creates a sends a hand-written configuration --
 clients can write either field and read either field.
 
 But what about creation or update from the output of a GET, or update via PATCH
-(see [In-place updates](https://kubernetes.io/docs/user-guide/managing-deployments/#in-place-updates-of-resources))?
+(see [In-place updates](https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/#in-place-updates-of-resources))?
 In these cases, the two fields will conflict, because only one field would be
 updated in the case of an old client that was only aware of the old field
 (e.g. `height`).
@@ -473,7 +473,7 @@ worked before the change.
   removed value as deprecated but allowed). For enumeration-like fields that expect to add
   new values in the future, such as `reason` fields, document that expectation clearly
   in the API field description in the first release the field is made available,
-  and describe how clients should treat an unknown value. Clients should treat such 
+  and describe how clients should treat an unknown value. Clients should treat such
   sets of values as potentially open-ended.
 
 * For [Unions](api-conventions.md#unions), sets of fields where at most one should
@@ -558,9 +558,9 @@ For types that need the generated
 [DeepCopyObject](https://github.com/kubernetes/kubernetes/commit/8dd0989b395b29b872e1f5e06934721863e4a210#diff-6318847735efb6fae447e7dbf198c8b2R3767)
 methods, usually only required by the top-level types like `Pod`, add this line
 to the comment
-([example](https://github.com/kubernetes/kubernetes/commit/39d95b9b065fffebe5b6f233d978fe1723722085#diff-ab819c2e7a94a3521aecf6b477f9b2a7R30)): 
+([example](https://github.com/kubernetes/kubernetes/commit/39d95b9b065fffebe5b6f233d978fe1723722085#diff-ab819c2e7a94a3521aecf6b477f9b2a7R30)):
 
-```golang 
+```golang
   // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 ```
 
@@ -693,7 +693,7 @@ The `make generated_files` will also regenerate the `zz_generated.deepcopy.go`,
 If regeneration is somehow not possible due to compile errors, the easiest
 workaround is to remove the files causing errors and rerun the command.
 
-## Generate Code 
+## Generate Code
 
 Apart from the `defaulter-gen`, `deepcopy-gen`, `conversion-gen` and
 `openapi-gen`, there are a few other generators:
@@ -828,6 +828,7 @@ Due to the fast changing nature of the project, the following content is probabl
   [cmd/kube-apiserver/app#apiVersionPriorities](https://github.com/kubernetes/kubernetes/blob/v1.21.2/cmd/kube-apiserver/app/aggregator.go#L247).
 * You must setup storage for the new version in
   `pkg/registry/group_name/rest` (for example, [pkg/registry/authentication/rest](https://github.com/kubernetes/kubernetes/blob/v1.21.2/pkg/registry/authentication/rest/storage_authentication.go)).
+* For `kubectl get` you must add a table definition to [pkg/printers/internalversion/printers.go](https://github.com/kubernetes/kubernetes/blob/v1.23.0/pkg/printers/internalversion/printers.go). Integration tests for this are in [test/integration/apiserver/print_test.go](https://github.com/kubernetes/kubernetes/blob/v1.23.0/test/integration/apiserver/print_test.go).
 
 You need to regenerate the generated code as instructed in the sections above.
 
@@ -877,16 +878,29 @@ You need to regenerate the generated code as instructed in the sections above.
 Part of our testing regimen for APIs is to "fuzz" (fill with random values) API
 objects and then convert them to and from the different API versions. This is
 a great way of exposing places where you lost information or made bad
-assumptions. If you have added any fields which need very careful formatting
-(the test does not run validation) or if you have made assumptions such as
-"this slice will always have at least 1 element", you may get an error or even
-a panic from the `serialization_test`. If so, look at the diff it produces (or
-the backtrace in case of a panic) and figure out what you forgot. Encode that
-into the fuzzer's custom fuzz functions. Hint: if you added defaults for a
-field, that field will need to have a custom fuzz function that ensures that the
-field is fuzzed to a non-empty value.
+assumptions. 
 
-The fuzzer can be found in `pkg/api/testing/fuzzer.go`.
+The fuzzer works by creating a random API object and calling the custom fuzzer
+function in `pkg/apis/$GROUP/fuzzer/fuzzer.go`. The resulting object is then
+round-tripped from one api version to another, and verified to be the same as
+what was started with. Validation is not run during this process, but defaulting
+is.  
+
+If you have added any fields which need very careful formatting (the test does
+not run validation) or if you have made assumptions during defaulting such as
+"this slice will always have at least 1 element", you may get an error or even a
+panic from the `k8s.io/kubernetes/pkg/api/testing.TestRoundTripTypes` in
+`./pkg/api/testing/serialization_test.go`.
+
+If you default any fields, you must check that in the custom fuzzer function,
+because the fuzzer may leave some fields empty. If your object has a structure
+reference, the fuzzer may leave that nil, or it may create a random object. Your
+custom fuzzer function must ensure that defaulting does not further change the
+object, as that will show up as a diff in the round trip test.
+
+Finally, the fuzz test runs without any feature gate configuration. If
+defaulting or other behavior is behind a feature gate, beware that the fuzz
+behavior will change when the feature gate becomes default on.
 
 ## Update the semantic comparisons
 
@@ -999,7 +1013,7 @@ cases, objects will be automatically converted to the new version; in other
 cases, a manual upgrade may be necessary; a manual upgrade may require downtime
 for anything relying on the new feature, and may require manual conversion of
 objects to the new version; when manual conversion is necessary, the project
-will provide documentation on the process 
+will provide documentation on the process
   - Cluster Reliability: since the feature has e2e tests, enabling the feature
 via a flag should not create new bugs in unrelated features; because the feature
 is new, it may have minor bugs
@@ -1082,7 +1096,7 @@ Previously, annotations were used for experimental alpha features, but are no lo
 
 The preferred approach adds an alpha field to the existing object, and ensures it is disabled by default:
 
-1. Add a feature gate to the API server to control enablement of the new field (and associated function):
+1. Add a [feature gate](feature-gates.md) to the API server to control enablement of the new field:
 
     In [staging/src/k8s.io/apiserver/pkg/features/kube_features.go](https://git.k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/features/kube_features.go):
 
@@ -1092,7 +1106,7 @@ The preferred approach adds an alpha field to the existing object, and ensures i
     //
     // Add multiple dimensions to frobbers.
     Frobber2D utilfeature.Feature = "Frobber2D"
-    
+
     var defaultKubernetesFeatureGates = map[utilfeature.Feature]utilfeature.FeatureSpec{
       ...
       Frobber2D: {Default: false, PreRelease: utilfeature.Alpha},
@@ -1104,9 +1118,10 @@ The preferred approach adds an alpha field to the existing object, and ensures i
     * ensure the field is [optional](api-conventions.md#optional-vs-required)
         * add the `omitempty` struct tag
         * add the `// +optional` comment tag
-        * ensure the field is entirely absent from API responses when empty (optional fields should be pointers, anyway)
+        * add the `// +featureGate=<gate-name>` comment tag
+        * ensure the field is entirely absent from API responses when empty (optional fields must be pointers)
     * include details about the alpha-level in the field description
-    
+
     ```go
     // API v6.
     type Frobber struct {
@@ -1117,6 +1132,7 @@ The preferred approach adds an alpha field to the existing object, and ensures i
       // width indicates how wide the object is.
       // This field is alpha-level and is only honored by servers that enable the Frobber2D feature.
       // +optional
+      // +featureGate=Frobber2D
       Width  *int32 `json:"width,omitempty"`
     }
     ```
@@ -1132,16 +1148,16 @@ The recommended place to do this is in the REST storage strategy's PrepareForCre
     ```go
     func (frobberStrategy) PrepareForCreate(ctx genericapirequest.Context, obj runtime.Object) {
       frobber := obj.(*api.Frobber)
-    
+
       if !utilfeature.DefaultFeatureGate.Enabled(features.Frobber2D) {
         frobber.Width = nil
       }
     }
-    
+
     func (frobberStrategy) PrepareForUpdate(ctx genericapirequest.Context, obj, old runtime.Object) {
       newFrobber := obj.(*api.Frobber)
       oldFrobber := old.(*api.Frobber)
-    
+
       if !utilfeature.DefaultFeatureGate.Enabled(features.Frobber2D) && oldFrobber.Width == nil {
         newFrobber.Width = nil
       }
@@ -1150,8 +1166,8 @@ The recommended place to do this is in the REST storage strategy's PrepareForCre
 
 4. To future-proof your API testing, when testing with feature gate on and off, ensure that the gate is deliberately set as desired. Don't assume that gate is off or on. As your feature
 progresses from `alpha` to `beta` and then `stable` the feature might be turned on or off by default across the entire code base. The below example
-provides some details 
- 
+provides some details
+
    ```go
    func TestAPI(t *testing.T){
     testCases:= []struct{
@@ -1164,7 +1180,7 @@ provides some details
        // ... test case ..
        },
    }
-   
+
    for _, testCase := range testCases{
      t.Run("..name...", func(t *testing.T){
       // run with gate on
@@ -1177,7 +1193,7 @@ provides some details
       // ... test gate-off testing logic logic ...
      })
    }
-   ``` 
+   ```
 
 5. In validation, validate the field if present:
 
@@ -1204,7 +1220,7 @@ In future Kubernetes versions:
       Height int32  `json:"height" protobuf:"varint,1,opt,name=height"`
       // param ...
       Param  string `json:"param" protobuf:"bytes,2,opt,name=param"`
-      
+
       // +k8s:deprecated=width,protobuf=3
     }
     ```
@@ -1229,7 +1245,7 @@ Older versions of expected API clients must be able handle the new value in a sa
 * If the enum field drives behavior of a single component, ensure all versions of that component
   that will encounter API objects containing the new value handle it properly or fail safe.
   For example, a new allowed value in a `Pod` enum field consumed by the kubelet must be handled
-  safely by kubelets up to two versions older than the first API server release that allowed the new value.
+  safely by kubelets up to three versions older than the first API server release that allowed the new value.
 * If an API drives behavior that is implemented by external clients (like `Ingress` or `NetworkPolicy`),
   the enum field must explicitly indicate that additional values may be allowed in the future,
   and define how unrecognized values must be handled by clients. If this was not done in the first release
@@ -1254,7 +1270,7 @@ Release 2:
 This ensures a cluster with multiple servers at skewed releases (which happens during a rolling upgrade),
 will not allow data to be persisted which the previous release of the API server would choke on.
 
-Typically, a feature gate is used to do this rollout, starting in alpha and disabled by default in release 1,
+Typically, a [feature gate](feature-gates.md) is used to do this rollout, starting in alpha and disabled by default in release 1,
 and graduating to beta and enabled by default in release 2.
 
 1. Add a feature gate to the API server to control enablement of the new enum value (and associated function):
@@ -1267,7 +1283,7 @@ and graduating to beta and enabled by default in release 2.
     //
     // Allow OnTuesday restart policy in frobbers.
     FrobberRestartPolicyOnTuesday utilfeature.Feature = "FrobberRestartPolicyOnTuesday"
-    
+
     var defaultKubernetesFeatureGates = map[utilfeature.Feature]utilfeature.FeatureSpec{
       ...
       FrobberRestartPolicyOnTuesday: {Default: false, PreRelease: utilfeature.Alpha},
@@ -1277,7 +1293,7 @@ and graduating to beta and enabled by default in release 2.
 2. Update the documentation on the API type:
 
     * include details about the alpha-level in the field description
-    
+
     ```go
     type Frobber struct {
       // restartPolicy may be set to "Always" or "Never" (or "OnTuesday" if the alpha "FrobberRestartPolicyOnTuesday" feature is enabled).
@@ -1299,7 +1315,7 @@ The recommended place to do this is in the REST storage strategy's Validate/Vali
       frobber := obj.(*api.Frobber)
       return validation.ValidateFrobber(frobber, validationOptionsForFrobber(frobber, nil))
     }
-    
+
     func (frobberStrategy) ValidateUpdate(ctx genericapirequest.Context, obj, old runtime.Object) field.ErrorList {
       newFrobber := obj.(*api.Frobber)
       oldFrobber := old.(*api.Frobber)
@@ -1355,7 +1371,7 @@ The recommended place to do this is in the REST storage strategy's Validate/Vali
     //
     // Allow OnTuesday restart policy in frobbers.
     FrobberRestartPolicyOnTuesday utilfeature.Feature = "FrobberRestartPolicyOnTuesday"
-    
+
     var defaultKubernetesFeatureGates = map[utilfeature.Feature]utilfeature.FeatureSpec{
       ...
       FrobberRestartPolicyOnTuesday: {Default: true, PreRelease: utilfeature.Beta},

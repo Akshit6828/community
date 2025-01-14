@@ -14,7 +14,8 @@ The [charter](charter.md) defines the scope and governance of the Testing Specia
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-testing) for the group will typically add invites for the following meetings to your calendar.*
-* SIG Testing Bi-Weekly Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/135450138?pwd=WGJyaVZzekJCWFBTMGJGTXVjUFJaUT09) (bi-weekly starting Tuesday August 13, 2019). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+* Hydrophone Office Hours: [Tuesdays at 13:00 PT (Pacific Time)](https://zoom.us/j/92022289212?pwd=VU5UWEtuU3ZYTmlYS3hSU3hLbTA0Zz09) (bi-weekly starting Tuesday April 16, 2024). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13%3A00&tz=PT%20%28Pacific%20Time%29).
+* SIG Testing Bi-Weekly Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/135450138?pwd=WGJyaVZzekJCWFBTMGJGTXVjUFJaUT09) (bi-weekly starting Tuesday August 13, 2019). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-testing-notes).
   * [Meeting recordings](https://bit.ly/k8s-sig-testing-videos).
 
@@ -23,10 +24,9 @@ The [charter](charter.md) defines the scope and governance of the Testing Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
+* Brady Pratt (**[@jbpratt](https://github.com/jbpratt)**), Red Hat
 * Michelle Shepardson (**[@michelle192837](https://github.com/michelle192837)**), Google
-* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
-* Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
+* Brian McQueen (**[@xmcqueen](https://github.com/xmcqueen)**), LinkedIn
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -41,6 +41,8 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Emeritus Leads
 
 * Erick Fejta (**[@fejta](https://github.com/fejta)**)
+* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**)
+* Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**)
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**)
 
 ## Contact
@@ -50,17 +52,21 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - GitHub Teams:
     - [@kubernetes/sig-testing](https://github.com/orgs/kubernetes/teams/sig-testing) - General Discussion
     - [@kubernetes/sig-testing-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-testing-pr-reviews) - PR Reviews
-- Steering Committee Liaison: Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
+- Steering Committee Liaison: Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**)
 
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-testing:
-* [WG Reliability](/wg-reliability)
+* [WG LTS](/wg-lts)
 
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-testing:
+### Cloud Provider for KIND
+Cloud provider for KIND clusters
+- **Owners:**
+  - [kubernetes-sigs/cloud-provider-kind](https://github.com/kubernetes-sigs/cloud-provider-kind/blob/main/OWNERS)
 ### boskos
 Boskos is a resource manager service that handles different kinds of resources and transitions between different states. We use it on the Kubernetes project to manage pools of GCP projects for CI/CD.
 - **Owners:**
@@ -70,6 +76,10 @@ Boskos is a resource manager service that handles different kinds of resources a
 An experimental e2e testing framework for Kubernetes clusters.
 - **Owners:**
   - [kubernetes-sigs/e2e-framework](https://github.com/kubernetes-sigs/e2e-framework/blob/main/OWNERS)
+### hydrophone
+Hydrophone is a lightweight Kubernetes conformance tests runner
+- **Owners:**
+  - [kubernetes-sigs/hydrophone](https://github.com/kubernetes-sigs/hydrophone/blob/main/OWNERS)
 ### kind
 Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
 - **Owners:**
@@ -86,7 +96,6 @@ It is the next significant iteration of kubetest. We will be deprecating kubetes
 Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it in action for the Kubernetes project
 - **Owners:**
   - [kubernetes-sigs/prow](https://github.com/kubernetes-sigs/prow/blob/main/OWNERS)
-  - [kubernetes/test-infra/prow](https://github.com/kubernetes/test-infra/blob/master/prow/OWNERS)
 - **Contact:**
   - Slack: [#prow](https://kubernetes.slack.com/messages/prow)
 ### sig-testing
@@ -97,6 +106,11 @@ Home for SIG Testing discussion and documents.
 Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project
 - **Owners:**
   - [kubernetes/test-infra](https://github.com/kubernetes/test-infra/blob/master/OWNERS)
+### testgrid
+Welcome to TestGrid, a highly-configurable, interactive dashboard for viewing your test results in a grid!
+This hosts Kubernetes-related projects for TestGrid (currently, the new frontend). See https://github.com/GoogleCloudPlatform/testgrid for the main repository (currently, backend components).
+- **Owners:**
+  - [kubernetes-sigs/testgrid](https://github.com/kubernetes-sigs/testgrid/blob/main/OWNERS)
 ### testing-commons
 **[best-effort]** The testing-commons subproject focuses on matters of code structure, layout, and execution of kubernetes/kubernetes test code. It is currently staffed on a best-effort basis; please bring discussions to the sig-testing slack channel or meeting. For historical context, please see the [former testing-commons meeting agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit) and [archived testing-commons slack channel](https://kubernetes.slack.com/archives/C9NK9KFFW)
 - **Owners:**
@@ -113,9 +127,13 @@ Miscellaneous tools and configuration to run the testing infrastructure for the 
 | KubeCon NA 2018 - SIG Testing Intro | [Slides](https://docs.google.com/presentation/d/1HOQ2df_AT-vIuz-JNaJol2oiGq84m50h9T49_5WgEaI/edit?usp=sharing) | [Video](https://www.youtube.com/watch?v=7-_O41W3FRU) | @spiffxp, @stevekuznetsov |
 | KubeCon NA 2018 - SIG Testing Deep Dive | [Slides](https://static.sched.com/hosted_files/kccna18/9b/Kubecon%20Seattle%20SIG-Testing%20Deep%20Dive%20%281%29.pdf) | [Video](https://www.youtube.com/watch?v=1rwiKDTJILY) | @cjwagner, @Katharine |
 | KubeCon NA 2018 - Behind Your PR: How Kubernetes Uses Kubernetes to Run Kubernetes CI | [Slides](https://static.sched.com/hosted_files/kccna18/3e/KubeCon%20Seattle%20Talk.pdf) | [Video](https://www.youtube.com/watch?v=pz0lpl6h-Gc) | @BenTheElder, @krzyzacy |
+| KubeCon China 2018 - Intro: SIG Testing | [Slides](https://static.sched.com/hosted_files/kccncchina2018english/97/KubeCon%20China%20SIG%20Testing%20Intro%20%281%29.pdf) | [Video](https://www.youtube.com/watch?v=WFvC_VdkDFk) | @krzyzacy, @jessiezcc |
 | KubeCon EU 2019 - SIG Testing Intro | [Slides](https://static.sched.com/hosted_files/kccnceu19/c8/SIG-Testing%20Intro%20Kubecon%20EU%202019.pdf) | [Video](https://www.youtube.com/watch?v=_uO5gHVTzF8) | @cjwagner, @AishSundar |
 | KubeCon EU 2019 - SIG Testing Deep Dive | TBD | [Video](https://www.youtube.com/watch?v=6m9frvTxK0o) | @BenTheElder, @munnerz |
 | KubeCon EU 2019 - Testing Your K8s Apps with Kind | TBD | [Video](https://www.youtube.com/watch?v=8KtmevMFfxA) | @BenTheElder, @munnerz | 
+| KubeCon NA 2019 - SIG Testing Intro | [Slides](https://static.sched.com/hosted_files/kccncna19/50/Sig-Testing%20Intro%20Presentation.pdf) | [Video](https://www.youtube.com/watch?v=ER1H9OPPYew) | @chases2, @fejta
+| KubeCon NA 2022 - SIG Testing: Intro And Updates | TBD | [Video](https://www.youtube.com/watch?v=K1m0RHE5uZo) | @BenTheElder, @michelle192837, @chaodaiG, @aojea
+
 
 
 <!-- END CUSTOM CONTENT -->

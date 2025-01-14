@@ -13,17 +13,20 @@ It is important to read and understand this legal agreement.
 
 ## How do I sign?
 
-After creating your first Pull Request the linux-foundation-easycla bot will respond with information regarding your CLA status along with a link to sign the CLA.
+After creating your first Pull Request, the linux-foundation-easycla bot will respond with information regarding your CLA status along with a link to sign the CLA.
 
 <img width="1065" alt="EasyCLA bot" src="https://user-images.githubusercontent.com/69111235/152226443-f6fe61ee-0e92-46c5-b6ea-c0deb718a585.png">
 
-#### 1. If you are signing up as a corporate contributor, ensure that you have linked your corporate email address to your GitHub profile (it doesn't have to be your primary email address for GitHub) or else it can lead to issues with the CLA system. For more information, see [Adding an email address to your GitHub account](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/adding-an-email-address-to-your-github-account).
+#### 1. If you are signing up as a corporate contributor, ensure that you have linked your corporate email address to your GitHub profile (it doesn't have to be your primary email address for GitHub) or else it can lead to issues with the CLA system.
+
+For more information, please see [Adding an email address to your GitHub account](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/adding-an-email-address-to-your-github-account).
 
 #### 2. Authorize EasyCLA to read some of your GitHub information
 
 <img width="554" alt="GitHub EasyCLA Authorization" src="https://user-images.githubusercontent.com/69111235/152228712-7d22f9d0-9f3c-4226-9ee0-bacba4b47725.png">
 
-Click on the "Please click here to be authorized" link to navigate to the GitHub Authorize Linux Foundation: EasyCLA page. Then click Authorize LF-Engineering to give the Linux Foundation read-only access to list the email addresses associated with your GitHub account.
+- Click on the **Please click here to be authorized** link to navigate to the GitHub Authorize Linux Foundation: EasyCLA page.
+- Then click **Authorize LF-Engineering** to give the Linux Foundation read-only access to list the email addresses associated with your GitHub account.
 
 #### 3. Select from the two types of contributor
 
@@ -80,12 +83,11 @@ Canonical until 2017-03-31
 If you encounter any problems signing the CLA and need further assistance, log a ticket by clicking on the link [please submit a support request ticket](https://jira.linuxfoundation.org/plugins/servlet/theme/portal/4) from the EasyCLA bot's response. Someone from the CNCF will respond to your ticket to help.
 
 Should you have any issues using the LF Support Site, send a message to the
-backup e-mail support address <login-issues@jira.linuxfoundation.org>
+backup email support address <login-issues@jira.linuxfoundation.org>
 
 ## Setting up the CNCF CLA check
 
-If you are a Kubernetes GitHub organization or repo owner and would like to setup
-the Linux Foundation CNCF CLA check for your repositories, [read the docs on setting up the CNCF CLA check](/github-management/setting-up-cla-check.md)
+If you are a Kubernetes GitHub organization or repo owner and would like to setup the Linux Foundation CNCF CLA check for your repositories, [read the docs on setting up the CNCF CLA check](/github-management/setting-up-cla-check.md)
 
 
 [Linux Foundation Support Site]: https://support.linuxfoundation.org/

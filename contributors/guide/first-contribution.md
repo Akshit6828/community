@@ -20,7 +20,7 @@ description: |
 ## Find something to work on
 
 The first step to getting starting contributing to Kubernetes is to find something
-to work on. Help is always welcome, and no contribution is too small! 
+to work on. Help is always welcome, and no contribution is too small (but see below)!
 
 Here are some things you can do today to get started contributing:
 
@@ -33,6 +33,12 @@ If the above suggestions don't appeal to you, you can browse the
 [issues labeled as a good first issue] to see who is looking for help. Those interested 
 in contributing without writing code can also find ideas in the 
 [Non-Code Contributions Guide].
+
+*Note*: although contributions are welcome, beware that every pull
+request creates work for maintainers and costs for testing it.
+Fixing *linter warnings* is often *not* worth it because the
+existing code is fine. Always discuss with maintainers first
+before creating such PRs.
 
 ### Find a good first topic
 
@@ -115,6 +121,7 @@ community directories:
 - [`/sig-apps/CONTRIBUTING.md`](/sig-apps/CONTRIBUTING.md)
 - [`/sig-cli/CONTRIBUTING.md`](/sig-cli/CONTRIBUTING.md)
 - [`/sig-multicluster/CONTRIBUTING.md`](/sig-multicluster/CONTRIBUTING.md)
+- [`/sig-node/CONTRIBUTING.md`](/sig-node/CONTRIBUTING.md)
 - [`/sig-storage/CONTRIBUTING.md`](/sig-storage/CONTRIBUTING.md)
 - [`/sig-windows/CONTRIBUTING.md`](/sig-windows/CONTRIBUTING.md)
 
@@ -140,7 +147,7 @@ while opening an issue. Check the [issue triage guide] for more information.
 [sig-contributor-experience]: /sig-contributor-experience/README.md
 [weekly meetings]: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit
 [container networking interface]: https://github.com/containernetworking/cni
-[network SIG]: http://git.k8s.io/community/sig-network
+[network SIG]: https://git.k8s.io/community/sig-network
 [ask in Slack]: http://slack.k8s.io/
 [issue triage guide]: ./issue-triage.md
 [kubernetes/website]: https://github.com/kubernetes/website/issues

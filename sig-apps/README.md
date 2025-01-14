@@ -13,8 +13,8 @@ Covers deploying and operating applications in Kubernetes. We focus on the devel
 The [charter](charter.md) defines the scope and governance of the Apps Special Interest Group.
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-apps) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Mondays at 9:00 PT (Pacific Time)](https://zoom.us/j/739385290?pwd=ekVmNGRjT214MGJkY1JUUUpPMVlJUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-apps) for the group will typically add invites for the following meetings to your calendar.*
+* Regular SIG Meeting: [Mondays at 9:00 PT (Pacific Time)](https://zoom.us/j/739385290?pwd=ekVmNGRjT214MGJkY1JUUUpPMVlJUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3).
 
@@ -24,8 +24,16 @@ The [charter](charter.md) defines the scope and governance of the Apps Special I
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
-* Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Brex
-* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+* Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Snowflake
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
+* Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Snowflake
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns
 
 ## Emeritus Leads
 
@@ -34,7 +42,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 ## Contact
 - Slack: [#sig-apps](https://kubernetes.slack.com/messages/sig-apps)
-- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-apps)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/sig-apps)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fapps)
 - GitHub Teams:
     - [@kubernetes/sig-apps-api-reviews](https://github.com/orgs/kubernetes/teams/sig-apps-api-reviews) - API Changes and Reviews
@@ -44,13 +52,14 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-apps-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-apps-pr-reviews) - PR Reviews
     - [@kubernetes/sig-apps-proposals](https://github.com/orgs/kubernetes/teams/sig-apps-proposals) - Design Proposals
     - [@kubernetes/sig-apps-test-failures](https://github.com/orgs/kubernetes/teams/sig-apps-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
+- Steering Committee Liaison: Antonio Ojea (**[@aojea](https://github.com/aojea)**)
 
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-apps:
 * [WG Batch](/wg-batch)
 * [WG Data Protection](/wg-data-protection)
+* [WG Serving](/wg-serving)
 
 
 ## Subprojects
@@ -66,6 +75,9 @@ Application metadata descriptor CRD
 ### execution-hook
 - **Owners:**
   - [kubernetes-sigs/execution-hook](https://github.com/kubernetes-sigs/execution-hook/blob/master/OWNERS)
+### kjob
+- **Owners:**
+  - [kubernetes-sigs/kjob](https://github.com/kubernetes-sigs/kjob/blob/main/OWNERS)
 ### kompose
 - **Owners:**
   - [kubernetes/kompose](https://github.com/kubernetes/kompose/blob/master/OWNERS)
@@ -74,6 +86,8 @@ Application metadata descriptor CRD
 ### workloads-api
 The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, PodDisruptionBudget and StatefulSet kinds
 - **Owners:**
+  - [kubernetes-sigs/jobset](https://github.com/kubernetes-sigs/jobset/blob/main/OWNERS)
+  - [kubernetes-sigs/lws](https://github.com/kubernetes-sigs/lws/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/apps](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/apps/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/batch](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/batch/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/core/v1](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/core/v1/OWNERS)

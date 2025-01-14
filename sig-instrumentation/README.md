@@ -14,9 +14,9 @@ The [charter](charter.md) defines the scope and governance of the Instrumentatio
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing).
-* Regular Triage Meeting: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09) (biweekly - alternating with regular meeting). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+* Regular Triage Meeting: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09) (biweekly - alternating with regular meeting). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing).
 
 ## Leadership
@@ -24,8 +24,8 @@ The [charter](charter.md) defines the scope and governance of the Instrumentatio
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Elana Hashman (**[@ehashman](https://github.com/ehashman)**), Apple
-* Han Kang (**[@logicalhan](https://github.com/logicalhan)**), Google
+* Pranshu Srivastava (**[@rexagod](https://github.com/rexagod)**), Red Hat
+* Richa Banker (**[@richabanker](https://github.com/richabanker)**), Google
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -37,6 +37,8 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Emeritus Leads
 
 * Frederic Branczyk (**[@brancz](https://github.com/brancz)**)
+* Elana Hashman (**[@ehashman](https://github.com/ehashman)**)
+* Han Kang (**[@logicalhan](https://github.com/logicalhan)**)
 * Piotr Szczesniak (**[@piosz](https://github.com/piosz)**)
 
 ## Contact
@@ -47,11 +49,12 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-instrumentation-approvers](https://github.com/orgs/kubernetes/teams/sig-instrumentation-approvers) - SIG Top-level Approvers
     - [@kubernetes/sig-instrumentation-leads](https://github.com/orgs/kubernetes/teams/sig-instrumentation-leads) - SIG Chairs and Tech Leads
     - [@kubernetes/sig-instrumentation-members](https://github.com/orgs/kubernetes/teams/sig-instrumentation-members) - SIG Membership Roster
-- Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
+- Steering Committee Liaison: Patrick Ohly (**[@pohly](https://github.com/pohly)**)
 
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-instrumentation:
+* [WG Serving](/wg-serving)
 * [WG Structured Logging](/wg-structured-logging)
 
 

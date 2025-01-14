@@ -16,13 +16,13 @@ The [charter](charter.md) defines the scope and governance of the Auth Special I
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-auth) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/264572674) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/264572674?pwd=NHVXTm14VktMRi8zRmU0aUt1NE9uQT09) (biweekly, you must be signed into a free zoom account to join). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw).
-* Secrets Store CSI Meeting: [Thursdays at 8:00 PT (Pacific Time)](https://zoom.us/j/91272289538) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
+* Secrets Store CSI Meeting: [Thursdays at 9:00 PT (Pacific Time)](https://zoom.us/j/91272289538?pwd=ZXZFV251Zi82Vnp3cEJrcmVDeGZaZz09) (biweekly, you must be signed into a free zoom account to join). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1q74nboAg0GSPcom3kLWCIoWg43Qg3mr306KNL58f2hg/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0PCFJrlpV6_nR_j_3RtnwI).
-* Weekly Issues/PR Triage Meeting: [Mondays at 9:00 PT (Pacific Time)](https://zoom.us/j/264572674) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+* Weekly Issues/PR Triage Meeting: [Mondays at 9:00 PT (Pacific Time)](https://zoom.us/j/264572674?pwd=NHVXTm14VktMRi8zRmU0aUt1NE9uQT09) (weekly, you must be signed into a free zoom account to join). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
 
 ## Leadership
 
@@ -38,8 +38,8 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
+* Mo Khan (**[@enj](https://github.com/enj)**), Microsoft
 * Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Google
-* Mike Danese (**[@mikedanese](https://github.com/mikedanese)**), Google
 
 ## Emeritus Leads
 
@@ -59,12 +59,11 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-auth-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-auth-pr-reviews) - PR Reviews
     - [@kubernetes/sig-auth-proposals](https://github.com/orgs/kubernetes/teams/sig-auth-proposals) - Design Proposals
     - [@kubernetes/sig-auth-test-failures](https://github.com/orgs/kubernetes/teams/sig-auth-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
+- Steering Committee Liaison: Patrick Ohly (**[@pohly](https://github.com/pohly)**)
 
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-auth:
-* [WG Multitenancy](/wg-multitenancy)
 * [WG Policy](/wg-policy)
 
 
@@ -123,15 +122,11 @@ Certificates APIs and client infrastructure to support PKI.
 API storage support for storing data encrypted at rest in etcd.
 - **Owners:**
   - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS)
-  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/storage/value](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/storage/value/OWNERS)
 ### hierarchical-namespace-controller
 Controller to manage hierarchical namespaces
 - **Owners:**
   - [kubernetes-sigs/hierarchical-namespaces](https://github.com/kubernetes-sigs/hierarchical-namespaces/blob/master/OWNERS)
-### multi-tenancy
-Proposals and prototypes for introducing tenant model to enable multi-tenant cluster
-- **Owners:**
-  - [kubernetes-sigs/multi-tenancy](https://github.com/kubernetes-sigs/multi-tenancy/blob/master/OWNERS)
 ### node-identity-and-isolation
 Node identity management (co-owned with sig-lifecycle), and authorization restrictions for isolating workloads on separate nodes (co-owned with sig-node).
 - **Owners:**
@@ -161,6 +156,10 @@ Integrates secrets stores with Kubernetes via a CSI volume.
 - **Contact:**
   - Slack: [#csi-secrets-store](https://kubernetes.slack.com/messages/csi-secrets-store)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-secrets-store-csi-driver)
+### secrets-store-sync-controller
+This is a Kubernetes controller that watches for changes to a custom resource and syncs the secrets from external secrets-store as Kubernetes secret.
+- **Owners:**
+  - [kubernetes-sigs/secrets-store-sync-controller](https://github.com/kubernetes-sigs/secrets-store-sync-controller/blob/main/OWNERS)
 ### service-accounts
 Infrastructure implementing Kubernetes service account based workload identity.
 - **Owners:**
@@ -168,6 +167,7 @@ Infrastructure implementing Kubernetes service account based workload identity.
   - [kubernetes/kubernetes/pkg/kubelet/token](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/token/OWNERS)
   - [kubernetes/kubernetes/pkg/serviceaccount](https://github.com/kubernetes/kubernetes/blob/master/pkg/serviceaccount/OWNERS)
   - [kubernetes/kubernetes/plugin/pkg/admission/serviceaccount](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/admission/serviceaccount/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/externaljwt](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/externaljwt/OWNERS)
 ### sig-auth-tools
 Tooling to automate the SIG Auth project boards
 - **Owners:**

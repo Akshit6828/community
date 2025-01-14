@@ -14,10 +14,10 @@ The [charter](charter.md) defines the scope and governance of the Node Special I
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-node) for the group will typically add invites for the following meetings to your calendar.*
-* Main SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/4799874685) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+* Main SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/4799874685) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
-* Weekly CI/Triage Meeting: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/4799874685) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+* Weekly CI/Triage Meeting: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/4799874685) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1fb-ugvgdSVIkkuJ388_nhp2pBTy_4HEVg5848Xy7n5U/edit).
 
 ## Leadership
@@ -25,8 +25,17 @@ The [charter](charter.md) defines the scope and governance of the Node Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Sergey Kanzhelev (**[@SergeyKanzhelev](https://github.com/SergeyKanzhelev)**), Google
+* Peter Hunt (**[@haircommander](https://github.com/haircommander)**), Red Hat
+* Mrunal Patel (**[@mrunalp](https://github.com/mrunalp)**), Red Hat
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
 * Dawn Chen (**[@dchen1107](https://github.com/dchen1107)**), Google
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
+* Mrunal Patel (**[@mrunalp](https://github.com/mrunalp)**), Red Hat
 
 ## Contact
 - Slack: [#sig-node](https://kubernetes.slack.com/messages/sig-node)
@@ -39,14 +48,15 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-node-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-node-pr-reviews) - PR Reviews
     - [@kubernetes/sig-node-proposals](https://github.com/orgs/kubernetes/teams/sig-node-proposals) - Design Proposals
     - [@kubernetes/sig-node-test-failures](https://github.com/orgs/kubernetes/teams/sig-node-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
+- Steering Committee Liaison: Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**)
 
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-node:
 * [WG Batch](/wg-batch)
-* [WG Multitenancy](/wg-multitenancy)
+* [WG Device Management](/wg-device-management)
 * [WG Policy](/wg-policy)
+* [WG Serving](/wg-serving)
 * [WG Structured Logging](/wg-structured-logging)
 
 
@@ -56,6 +66,7 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 ### ci-testing
 - **Owners:**
   - [kubernetes/kubernetes/test/e2e/common](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/common/OWNERS)
+  - [kubernetes/kubernetes/test/e2e/common/node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/common/node/OWNERS)
   - [kubernetes/kubernetes/test/e2e/node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/node/OWNERS)
   - [kubernetes/kubernetes/test/e2e_node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e_node/OWNERS)
   - [kubernetes/test-infra/config/jobs/kubernetes/sig-node](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-node/OWNERS)
@@ -66,6 +77,12 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 ### cri-api
 - **Owners:**
   - [kubernetes/cri-api](https://github.com/kubernetes/cri-api/blob/master/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/cri-api](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-api/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/cri-api/pkg](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-api/pkg/OWNERS)
+### cri-client
+- **Owners:**
+  - [kubernetes/cri-client](https://github.com/kubernetes/cri-client/blob/master/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/cri-client](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-client/OWNERS)
 ### cri-tools
 - **Owners:**
   - [kubernetes-sigs/cri-tools](https://github.com/kubernetes-sigs/cri-tools/blob/master/OWNERS)
@@ -76,9 +93,13 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 - **Owners:**
   - [kubernetes/kubernetes/cmd/kubelet](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubelet/OWNERS)
   - [kubernetes/kubernetes/pkg/kubelet](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/OWNERS)
+  - [kubernetes/kubernetes/pkg/probe](https://github.com/kubernetes/kubernetes/blob/master/pkg/probe/OWNERS)
+  - [kubernetes/kubernetes/pkg/security/apparmor](https://github.com/kubernetes/kubernetes/blob/master/pkg/security/apparmor/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/component-helpers/node](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-helpers/node/OWNERS)
 ### node-api
 - **Owners:**
   - [kubernetes/api/node](https://github.com/kubernetes/api/blob/master/node/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/api/node](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/node/OWNERS)
 ### node-feature-discovery
 - **Owners:**
   - [kubernetes-sigs/node-feature-discovery-operator](https://github.com/kubernetes-sigs/node-feature-discovery-operator/blob/master/OWNERS)
@@ -91,9 +112,14 @@ The following [subprojects][subproject-definition] are owned by sig-node:
   - Slack: [#node-problem-detector](https://kubernetes.slack.com/messages/node-problem-detector)
 ### resource-management
 - **Owners:**
-  - [kubernetes/kubernetes/staging/src/k8s.io/dynamic-resource-allocation](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS)
   - [kubernetes-sigs/dra-example-driver](https://github.com/kubernetes-sigs/dra-example-driver/blob/main/OWNERS)
-  - [kubernetes/noderesourcetopology-api](https://github.com/kubernetes/noderesourcetopology-api/blob/master/OWNERS)
+  - [kubernetes-sigs/noderesourcetopology-api](https://github.com/kubernetes-sigs/noderesourcetopology-api/blob/main/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/resourceclaim](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/resourceclaim/OWNERS)
+  - [kubernetes/kubernetes/pkg/scheduler/framework/plugins/dynamicresources](https://github.com/kubernetes/kubernetes/blob/master/pkg/scheduler/framework/plugins/dynamicresources/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/dynamic-resource-allocation](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/kubelet/pkg/apis/dra](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/kubelet/pkg/apis/dra/OWNERS)
+  - [kubernetes/kubernetes/test/e2e/dra](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/dra/OWNERS)
+  - [kubernetes/kubernetes/test/e2e/testing-manifests/dra](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/testing-manifests/dra/OWNERS)
 ### security-profiles-operator
 - **Owners:**
   - [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator/blob/main/OWNERS)
@@ -107,21 +133,21 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 
 The following topics fall under scope of this SIG.
 
-- Kubelet and its features
-- Pod API and Pod behaviors (with [sig-architecture](../sig-architecture))
-- Node API (with [sig-architecture](../sig-architecture))
-- Node controller
-- Node level performance and scalability (with [sig-scalability](../sig-scalability))
-- Node reliability (problem detection and remediation)
-- Node lifecycle management (with [sig-cluster-lifecycle](../sig-cluster-lifecycle))
-- Container runtimes
-- Device management
-- Image management
-- Node-level resource management (with [sig-scheduling](../sig-scheduling))
-- Hardware discovery
-- Issues related to node, pod, container monitoring (with [sig-instrumentation](../sig-instrumentation))
-- Node level security and Pod isolation (with [sig-auth](../sig-auth))
-- Host OS and/or kernel interactions (to a limited extent)
+* Kubelet and its features
+* Pod API and Pod behaviors (with [sig-architecture](../sig-architecture))
+* Node API (with [sig-architecture](../sig-architecture))
+* Node controller
+* Node level performance and scalability (with [sig-scalability](../sig-scalability))
+* Node reliability (problem detection and remediation)
+* Node lifecycle management (with [sig-cluster-lifecycle](../sig-cluster-lifecycle))
+* Container runtimes
+* Device management
+* Image management
+* Node-level resource management (with [sig-scheduling](../sig-scheduling))
+* Hardware discovery
+* Issues related to node, pod, container monitoring (with [sig-instrumentation](../sig-instrumentation))
+* Node level security and Pod isolation (with [sig-auth](../sig-auth))
+* Host OS and/or kernel interactions (to a limited extent)
 
 We also work closely with [sig-storage](../sig-storage) and [sig-network](../sig-network). As you can see, this is a very cross-functional team!
 <!-- END CUSTOM CONTENT -->

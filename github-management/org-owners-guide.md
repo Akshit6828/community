@@ -176,16 +176,17 @@ a new repository are described below.
     [SIG Repository], add a labels entry for the SIG that the repo belongs to.
     * Update the `SECURITY_CONTACTS` file as per the request. Note that aliases
     cannot be used in this case so expand the team, if specified.
-    * Create a new commit with the message *Update OWNERS, OWNERS_ALIASES and
+    * Update the `README.md` file with the name and description of the repo.
+    * Create a new commit with the message *Update README, OWNERS, OWNERS_ALIASES and
     SECURITY_CONTACTS*.
   * Push the new commit directly to the master branch.
   * If the repo is a [SIG Repository], add a new topic of the form
-  `k8s-sig-<sig-name-repo-belongs-to>` using the *Manage Topics* option.
+  `k8s-sig-<sig-name-repo-belongs-to>` using *Topics* under the
+  Repository section of the org-level settings page.
   * Create a PR against [kubernetes/org] to add teams as per the [team guidance](#team-guidance)
   for alloting repo admin and write access.
   * Once the above PR is merged and the postsubmit has run, the new GitHub teams
-  will be created. In the *Collaborators and Teams* section in Settings,
-  assign the new teams appropriate access to the repo.
+  will be created and should have access automatically assiged by peribolos.
   * Ask the author of the repo creation request to add the repo
   as a part of a subproject in [`sigs.yaml`](/sigs.yaml).
 
@@ -199,7 +200,7 @@ from the above procedure:
   * Grant the [@kubernetes/stage-bots] team admin access to the repo.
   * Setup branch protection and enable access to the
   `stage-bots` team by adding the repo in
-  [`prow/config.yaml`](https://git.k8s.io/test-infra/prow/config.yaml). See
+  [`prow/config.yaml`](https://git.k8s.io/test-infra/config/prow/config.yaml). See
   [kubernetes/test-infra#9292](https://github.com/kubernetes/test-infra/pull/9292)
   for an example.
   * Once the repo has been created, add the repo to

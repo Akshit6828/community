@@ -125,13 +125,13 @@ Documentation is published at https://kubernetes.io - [website guidelines]
 
 Owned and operated by sig-contribex [community management] subproject.
 [Kubernetes Community channel] - recordings of community group meetings, Thursday
-community call, meet our contributors, office hours, and more [YouTube Guidelines].
+community call, and more [YouTube Guidelines].
 
 #### Kubernetes Blog
 
-The [Kubernetes Blog] is owned by sig-docs and operated by the [blog team].
+The [Kubernetes Blog] is owned by SIG Docs and operated by the [blog team].
 
-[submit a blog post] | [2018 blog metrics]
+[submit a blog post]
 
 ## Misc Community Resources
 ### Issues & Troubleshooting
@@ -140,10 +140,6 @@ For questions about installing, running, or troubleshooting Kubernetes,
 please start with the [troubleshooting guide]. If that doesn't answer your question(s),
 try to post on discuss.kubernetes.io or if you think you found a bug, please [file an issue].
 
-### Office Hours
-
-Office hours are held once a month. Please refer to [the docs][office-hours]
-to learn more. Join the conversation on slack under [#office-hours].
 
 ### Other
 - [r/kubernetes] - reddit channel owned and operated by community members and
@@ -184,7 +180,7 @@ place!
 [events]: https://www.cncf.io/events/
 [file an issue]: https://github.com/kubernetes/kubernetes/issues/new
 [kubernetes-announce]: https://groups.google.com/forum/#!forum/kubernetes-announce
-[kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[kubernetes-dev]: https://groups.google.com/a/kubernetes.io/g/dev
 [Discuss Kubernetes]: https://discuss.kubernetes.io
 [Join]: http://slack.k8s.io
 [Slack Guidelines]: /communication/slack-guidelines.md
@@ -201,7 +197,6 @@ place!
 [these instructions]: /communication/slack-guidelines.md#requesting-a-channel
 [community management]: /sig-contributor-experience#community-management
 [kubeweekly]: https://kubeweekly.io/
-[the docs]: /events/office-hours.md
 [r/kubernetes]: https://www.reddit.com/r/kubernetes/
 [awesome kubernetes list]: https://github.com/ramitsurana/awesome-kubernetes
 [Last Week in Kubernetes Development]: http://lwkd.info/
@@ -218,11 +213,8 @@ place!
 [blog team]: /sig-docs/blog-subproject
 [submit a blog post]: https://kubernetes.io/docs/contribute/start/#write-a-blog-post
 [zoom guidelines]: ./zoom-guidelines.md
-[the doc]: /events/office-hours.md
 [moderators]: ./moderators.md
 [slack moderators]: ./moderators.md#slack
 [#kubernetes-contributors]: https://app.slack.com/client/T09NY5SBT/C09R23FHP
 [#sig-contribex]: https://app.slack.com/client/T09NY5SBT/C1TU9EB9S
-[#office-hours]: https://app.slack.com/client/T09NY5SBT/C6RFQ3T5H
-[office-hours]: /events/office-hours.md
 [LWKD]: https://lwkd.info

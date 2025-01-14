@@ -14,22 +14,22 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs) for the group will typically add invites for the following meetings to your calendar.*
-* APAC SIG Meeting: [Wednesdays at 05:30 UTC](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit) (monthly - Wednesday, after the fourth Tuesday, every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=05:30&tz=UTC).
+* APAC SIG Meeting: [Wednesdays at 05:30 UTC](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit) (monthly - Wednesday, after the fourth Tuesday, every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=05%3A30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
-* Korean Team Meeting: [Thursdays at 13:00 UTC](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=UTC).
+* Korean Team Meeting: [Thursdays at 13:00 UTC](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13%3A00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLAOP7m08QDCWZ7RwGca6cU4vzrOMw3ht7).
-* Localization Subproject Meeting: [Mondays at 15:00 UTC](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/) (first Monday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+* Localization Subproject Meeting: [Mondays at 15:00 UTC](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/) (first Monday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15%3A00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
-* New Contributor Meet and Greet: [Tuesdays at 10:30 UTC](https://zoom.us/j/92822621820?pwd=S1p4RnB1RmNSZ3JjYlRRUVd4UjFPZz09) (first Tuesday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=UTC).
+* New Contributor Meet and Greet: [Tuesdays at 10:30 UTC](https://zoom.us/j/92822621820?pwd=S1p4RnB1RmNSZ3JjYlRRUVd4UjFPZz09) (first Tuesday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
-* Regular SIG Meeting: [Tuesdays at 17:30 UTC](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit) (weekly - except fourth Tuesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
+* Regular SIG Meeting: [Tuesdays at 17:30 UTC](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17%3A30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
-* Spanish Team Meeting: [Tuesdays at 15:30 UTC](https://zoom.us/j/95918289494?pwd=Wk9Oa0xZUkFXSDV5OTFoZEZsTURCZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
+* Spanish Team Meeting: [Tuesdays at 15:30 UTC](https://zoom.us/j/95918289494?pwd=Wk9Oa0xZUkFXSDV5OTFoZEZsTURCZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15%3A30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1jOTK1tqBRwlNQJUB88wfDnGxpdInxMJ7lIFDZy9cMGY).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 
@@ -39,17 +39,15 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Divya Mohan (**[@divya-mohan0209](https://github.com/divya-mohan0209)**), SUSE
-* Jim Angel (**[@jimangel](https://github.com/jimangel)**), Google
-* Natali Vlatko (**[@natalisucks](https://github.com/natalisucks)**), Wayfair
-* Rey Lejano (**[@reylejano](https://github.com/reylejano)**), SUSE
+* Natali Vlatko (**[@natalisucks](https://github.com/natalisucks)**), Cisco
+* Rey Lejano (**[@reylejano](https://github.com/reylejano)**), Red Hat
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Karen Bradshaw (**[@kbhawkey](https://github.com/kbhawkey)**), Independent
-* Taylor Dolezal (**[@onlydole](https://github.com/onlydole)**), Independent
-* Tim Bannister (**[@sftim](https://github.com/sftim)**), The Scale Factory
+* Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), Dell
+* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Defense Unicorns
 * Qiming Teng (**[@tengqm](https://github.com/tengqm)**), Sangfor Technologies
 
 ## Emeritus Leads
@@ -58,15 +56,19 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Andrew Chen (**[@chenopis](https://github.com/chenopis)**)
 * Irvi Aini (**[@irvifa](https://github.com/irvifa)**)
 * Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**)
+* Jim Angel (**[@jimangel](https://github.com/jimangel)**)
 * Kaitlyn Barnard (**[@kbarnard10](https://github.com/kbarnard10)**)
-* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**)
+* Karen Bradshaw (**[@kbhawkey](https://github.com/kbhawkey)**)
+* Taylor Dolezal (**[@onlydole](https://github.com/onlydole)**)
+* Tim Bannister (**[@sftim](https://github.com/sftim)**)
+* Sarah Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**)
 
 ## Contact
 - Slack: [#sig-docs](https://kubernetes.slack.com/messages/sig-docs)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fdocs)
 - GitHub Teams:
-    - [@kubernetes/kubernetes-blog](https://github.com/orgs/kubernetes/teams/kubernetes-blog) - Kubernetes blog maintainers
+    - [@kubernetes/sig-docs-blog-owners](https://github.com/orgs/kubernetes/teams/sig-docs-blog-owners) - Kubernetes blog maintainers
     - [@kubernetes/sig-docs-de-owners](https://github.com/orgs/kubernetes/teams/sig-docs-de-owners) - German language content
     - [@kubernetes/sig-docs-en-owners](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners) - English content (default)
     - [@kubernetes/sig-docs-es-owners](https://github.com/orgs/kubernetes/teams/sig-docs-es-owners) - Spanish language content
@@ -80,9 +82,10 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-docs-pl-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pl-owners) - Polish language content
     - [@kubernetes/sig-docs-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) - Documentation PR reviews
     - [@kubernetes/sig-docs-pt-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pt-owners) - Portuguese language content
+    - [@kubernetes/sig-docs-ru-owners](https://github.com/orgs/kubernetes/teams/sig-docs-ru-owners) - Russian language content
     - [@kubernetes/sig-docs-uk-owners](https://github.com/orgs/kubernetes/teams/sig-docs-uk-owners) - Ukrainian language content
     - [@kubernetes/sig-docs-zh-owners](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) - Chinese language content
-- Steering Committee Liaison: Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
+- Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
 
 ## Subprojects
 

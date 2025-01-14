@@ -1,15 +1,14 @@
 # Kubernetes Community Group Annual Reports
 
 This document outlines the process for an annual reporting and
-communication structure for Special Interest Groups (SIGs), Working Groups (WGs),
-User Groups (UGs), and Committees.
-All policy updates will be in their respective [SIG], [WG], and [UG]
+communication structure for Special Interest Groups (SIGs), Working Groups (WGs), and Committees.
+All policy updates will be in their respective [SIG] or [WG]
  governance docs as well as the general [governance] guidance.
 
 ## Goals
 - Paint a complete project health picture for all of our community groups
-- Create a feedback loop between Chairs, Tech Leads, Subproject Owners, WG and
-UG Organizers, the community groups at large, and the Steering
+- Create a feedback loop between Chairs, Tech Leads, Subproject Owners, WG
+ Organizers, the community groups at large, and the Steering
 Committee to move the project forward  
 - Encourage dialogue about the wellbeing of the projects contributors and offer
 suggested guidance and coaching
@@ -201,7 +200,7 @@ Operational tasks in [sig-governance.md]:
 [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
 [ ] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
 [ ] Meeting notes and recordings for $YYYY are linked from [README.md] and updated/uploaded if needed
-[ ] Did you have community-wide updates in $YYYY (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
+[ ] Did you have community-wide updates in $YYYY (e.g. kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
     - 
     - 
 
@@ -289,6 +288,5 @@ https://www.apache.org/foundation/board/reporting
 
 [SIG]: https://git.k8s.io/community/committee-steering/governance/sig-governance.md
 [WG]: https://git.k8s.io/community/committee-steering/governance/wg-governance.md
-[UG]: https://git.k8s.io/community/committee-steering/governance/ug-governance.md
 [governance]: https://git.k8s.io/community/governance.md
 [questions]: #questions-for-report
