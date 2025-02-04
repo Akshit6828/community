@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Multicluster S
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://zoom.us/my/k8s.mc) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://zoom.us/my/k8s.mc) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://tinyurl.com/sig-multicluster-notes).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
 
@@ -24,10 +24,11 @@ The [charter](charter.md) defines the scope and governance of the Multicluster S
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Jeremy Olmsted-Thompson (**[@jeremyot](https://github.com/jeremyot)**), Google
-* Paul Morie (**[@pmorie](https://github.com/pmorie)**), Apple
+* Stephen Kitt (**[@skitt](https://github.com/skitt)**), Red Hat
 
 ## Emeritus Leads
 
+* Paul Morie (**[@pmorie](https://github.com/pmorie)**)
 * Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**)
 
 ## Contact
@@ -40,29 +41,31 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-multicluster-feature-requests](https://github.com/orgs/kubernetes/teams/sig-multicluster-feature-requests) - Feature Requests
     - [@kubernetes/sig-multicluster-misc](https://github.com/orgs/kubernetes/teams/sig-multicluster-misc) - General Discussion
     - [@kubernetes/sig-multicluster-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-multicluster-pr-reviews) - PR Reviews
+    - [@kubernetes/sig-multicluster-proposals](https://github.com/orgs/kubernetes/teams/sig-multicluster-proposals) - Design Proposals
     - [@kubernetes/sig-multicluster-test-failures](https://github.com/orgs/kubernetes/teams/sig-multicluster-test-failures) - Test Failures and Triage
-    - [@kubernetes/sig-mutlicluster-proposals](https://github.com/orgs/kubernetes/teams/sig-mutlicluster-proposals) - Design Proposals
-- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
+- Steering Committee Liaison: Antonio Ojea (**[@aojea](https://github.com/aojea)**)
 
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-multicluster:
-* [WG IoT Edge](/wg-iot-edge)
 * [WG Policy](/wg-policy)
 
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-multicluster:
-### Kubefed
-- **Owners:**
-  - [kubernetes-sigs/kubefed](https://github.com/kubernetes-sigs/kubefed/blob/master/OWNERS)
 ### about-api
 - **Owners:**
   - [kubernetes-sigs/about-api](https://github.com/kubernetes-sigs/about-api/blob/master/OWNERS)
+### cluster-inventory-api
+- **Owners:**
+  - [kubernetes-sigs/cluster-inventory-api](https://github.com/kubernetes-sigs/cluster-inventory-api/blob/main/OWNERS)
 ### mcs-api
 - **Owners:**
   - [kubernetes-sigs/mcs-api](https://github.com/kubernetes-sigs/mcs-api/blob/master/OWNERS)
+### sig-multicluster-site
+- **Owners:**
+  - [kubernetes-sigs/sig-multicluster-site](https://github.com/kubernetes-sigs/sig-multicluster-site/blob/main/OWNERS)
 ### work-api
 - **Owners:**
   - [kubernetes-sigs/work-api](https://github.com/kubernetes-sigs/work-api/blob/master/OWNERS)

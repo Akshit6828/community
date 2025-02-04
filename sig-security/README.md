@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Security Speci
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-security) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Thursdays at 9:00 PT (Pacific Time)](https://zoom.us/j/9934z1184192?pwd=L25Tc0ZOL3FqU09KNERlTU12dFhTQT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Fridays at 8:00 PT (Pacific Time)](https://zoom.us/j/9934z1184192?pwd=L25Tc0ZOL3FqU09KNERlTU12dFhTQT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1GgmmNYN88IZ2v2NBiO3gdU8Riomm0upge_XNVxEYXp0/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1mXOLAc9ti0oX8s_ookQCi).
 
@@ -23,7 +23,8 @@ The [charter](charter.md) defines the scope and governance of the Security Speci
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Ian Coldwater (**[@IanColdwater](https://github.com/IanColdwater)**), Twilio
+* Ian Coldwater (**[@IanColdwater](https://github.com/IanColdwater)**), Docker
+* Cailyn Edwards (**[@cailyn-codes](https://github.com/cailyn-codes)**), Okta
 * Tabitha Sable (**[@tabbysable](https://github.com/tabbysable)**), Datadog
 
 ## Contact
@@ -33,11 +34,23 @@ The Chairs of the SIG run operations and processes governing the SIG.
 - GitHub Teams:
     - [@kubernetes/sig-security-leads](https://github.com/orgs/kubernetes/teams/sig-security-leads) - SIG Security Leads
     - [@kubernetes/sig-security-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-security-pr-reviews) - SIG Security PR review notifications
-- Steering Committee Liaison: Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
+- Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
+
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-security:
+* [WG LTS](/wg-lts)
+
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-security:
+### security-assessments
+Security self assessments for upstream projects
+- **Owners:**
+  - [kubernetes/sig-security/sig-security-assessments](https://github.com/kubernetes/sig-security/blob/main/sig-security-assessments/OWNERS)
+- **Contact:**
+  - Slack: [#sig-security-assessments](https://kubernetes.slack.com/messages/sig-security-assessments)
 ### security-audit
 Third Party Security Audit
 - **Owners:**
@@ -51,6 +64,7 @@ Security Documents and Documentation
 ### security-tooling
 Development and Enhancements of Security Tooling
 - **Owners:**
+  - [kubernetes-sigs/cve-feed-osv](https://github.com/kubernetes-sigs/cve-feed-osv/blob/main/OWNERS)
   - [kubernetes/sig-security/sig-security-tooling](https://github.com/kubernetes/sig-security/blob/main/sig-security-tooling/OWNERS)
 - **Contact:**
   - Slack: [#sig-security-tooling](https://kubernetes.slack.com/messages/sig-security-tooling)

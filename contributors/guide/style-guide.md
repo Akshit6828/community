@@ -104,7 +104,7 @@ These are **guidelines**, not rules. Use your best judgement.
 - If using acronyms, ensure they are clearly defined in the same document.
 - If using an abbreviation, spell it out the first time it is used in the
   document unless it is commonly known. (example: TCP/IP)
-- When referring to a Kubernetes Group (SIG, WG, or UG) do not use the hyphenated
+- When referring to a Kubernetes Group (SIG or WG) do not use the hyphenated
   form unless it is for a specific purpose such as a file-name or URI.
 
 **[Moving a Document:](#moving-a-document)**
@@ -393,7 +393,7 @@ external appearance.
   - **Good example:** A _CustomResourceDefinition_ (CRD) extends the Kubernetes
     API.
   - **Bad example:** A CRD extends the Kubernetes API.
-- When referring to a Kubernetes Group (SIG, WG, or UG) do not use the hyphenated
+- When referring to a Kubernetes Group (SIG or WG) do not use the hyphenated
   form unless it is for a specific purpose such as a file-name or URI.
   - **Good example:** SIG Docs oversees the Kubernetes website.
   - **Bad example:** SIG-Docs oversees the Kubernetes website.
@@ -522,8 +522,8 @@ standard across documentation improves supportability.
   - **Good example:** `This is **bold** text.`
   - **Bad example:** `This should not be used for __bold__.`
 - Use an underscore (`_`) for _Italics_.
-  - **Good example:** This is _italics_.`
-  - **Bad example:**  This should not be used for *italics*.`
+  - **Good example:** `This is _italics_.`
+  - **Bad example:**  `This should not be used for *italics*.`
 - Use two tildes (`~~`) for ~~Strikethrough~~.
   - **Good example:** `This is ~~strikethrough~~`
   - **Bad example:** `This should not be used for ~strikethrough~.`
@@ -635,7 +635,7 @@ relative links. However, how and what they're being linked to can vary widely.
     ```
     The super cool [prow tool] resides in the test-infra repo under the kubernetes organization
 
-    [prow tool]: https://git.k8s.io/test-infra/prow/README.md
+    [prow tool]: https://sigs.k8s.io/prow/README.md
     ```
 
 

@@ -40,24 +40,46 @@ administrators have time. There is no explicit interval.
 
 [Slack Archive Download]
 
-### DM (Direct Message) Conversations
+### Slack Usage Rules
 
-Please do not engage in proprietary company specific conversations in the
-Kubernetes Slack instance. This workspace is meant for conversations related to
-Kubernetes open source topics and community. Proprietary conversations should
-occur in your company Slack and/or communication platforms. As with all
-communication, please be mindful of appropriateness, professionalism, and
-applicability to the Kubernetes community.
+In addition to the [Code of Conduct][coc], users of Kubernetes Slack must adhere to
+the following behavior rules.  Failure to follow them may result in warnings,
+removal of posts, escalating to temporary or permanent deactivation of the user
+account.
+
+* **Adhere to Channel Topics**: for the most part, try to stick to the declared
+  topic of the channel you're in.
+* **No Spam**: you may not post commercial, promotional messages anywhere in
+  Kubernetes, whether in public channels or direct messages, except for very
+  specific types of messages in specific channels were it is allowed.
+* **No Unsolicited DMs**: do not send any user uninvited direct messages (DMs).
+* **Don't Discuss Company Business**: Proprietary conversations should
+  occur in your company Slack and/or communication platforms.
+* **No Surveys**: surveys, focus groups, free trials, and similar calls for
+  participation are considered spam and are prohibited.  Exceptions: an official
+  Kubernetes community survey can be posted anywhere, and any survey may be
+  posted to the Surveys channel.
+* **Jobs and Resumes** belong on the `#kubernetes-careers` channel and should not
+  be posted elsewhere.
+* **Events** may only be posted to channels where that specific event is
+  applicable, except for the `#events` channel.  Generally, this only includes
+  nonprofit community events.
 
 ### Specific Channel Rules
 
 Some channels have specific rules or guidelines. If they do, they will be listed
-in the purpose or pinned docs of that channel.
+in the purpose or pinned docs of that channel.  A few channels worth mentioning
+include:
 
--   `#kubernetes-contributors` - Questions and discourse around upstream
-    contributions and development to kubernetes.
+-   `#events` - announcements around any Kubernetes ecosystem related events.
+-   `#kubernetes-new-contributors` - Questions and discourse around getting
+    started contributing to Kubernetes.
+-   `kubernetes-org-members` - Discussion by and for organization members and
+    established contributors.
 -   `#kubernetes-careers` - Job openings for positions working with/on/around
-    Kubernetes. Postings must include:
+    Kubernetes. These must be postings for specific jobs, not "cattle calls"
+    for general tech hiring. You may also post resumes if you are looking
+    to be hired. Job postings must include:
     -   A link to the posting or job description.
     -   The business name that will employ the Kubernetes hire.
     -   The location of the role or if remote is OK.
@@ -89,7 +111,7 @@ issue can be documented, please take a screenshot to include in your message.
 
 Send a DM to another [listed admin][admins] and describe the situation. If it's
 a [code of conduct][coc] issue, please send an email to <conduct@kubernetes.io>
-and describe the situation. 
+and describe the situation.
 
 ## Should you have a channel on the Kubernetes Slack?
 
@@ -99,9 +121,9 @@ strong ecosystem of channels for related things. Here are some guidelines for
 determining if you should request a channel:
 
 -   The channel MUST be Kubernetes related in some way.
-    -   Related cloud native projects might be more appropriate on the 
+    -   Related cloud native projects might be more appropriate on the
         [CNCF Slack].
--   The project MUST be open source.
+-   If requesting a project channel, the project MUST be open source.
     -   Open Source a project BEFORE requesting a channel. We cannot accommodate
         every organization's open sourcing launch plans.
     -   The purpose of Slack is to organize an existing community, not seed new
@@ -114,6 +136,11 @@ determining if you should request a channel:
     -   Requesting a channel means maintaining it on behalf of the project
         filing the issue. You will be expected to participate and foster a
         healthy discourse.
+    -   External projects (ones not owned by a Kubernetes SIG) may have a
+        maximum of two channels, usually `#project` or `#project-users`,
+        and `#project-dev`.
+    -   A second channel for a specific project will not be approved until the
+        first channel demonstrates significant traffic.
 -   Channels around commercial services built on OSS projects are allowed.
     -   Users love the value of being able to collaborate around various
         services.
@@ -121,15 +148,23 @@ determining if you should request a channel:
 -   The channel MUST be public.
     -   In order to ensure all channels adhere to our Code of Conduct, we
         heavily restrict private channels.
-    -   We do allow `#...-dev` channels for established projects where a single
-        project channel is too noisy, but please don't create both at the
-        start.
     -   If you need private discussion areas for security-sensitive topics, a
         project-specific Slack or the [CNCF Slack] may be a better fit.
--   Ask in `#slack-admins` or file an issue if you're unsure It never hurts to
-    ask.
+-   Ask in `#slack-admins` or file an issue if you're unsure. We're happy to
+    discuss it with you.
 
-## Requesting a Channel
+### Private Channels
+
+We offer private channels on the Kubernetes Slack extremely sparingly.  The only
+private channels we currently support involve community-owned software security
+or community moderation in some way.  Unless supported by a Kubernetes SIG
+or the Steering Committee, requests for a private channel will be treated with
+skepticism.
+
+Most private channels will be required to include a member of the Slack Admins
+team.
+
+### Requesting a Channel
 
 Channels and User Groups are managed by [Tempelis], a tool that enables
 external management of Slack.
@@ -148,7 +183,7 @@ To add a channel, open a Pull Request (PR) updating the [slack-config].
         -   `#projectname`
 -   In the PR comments, include some details regarding the purpose of the
     Channel.
-    -   Channels should be dedicated to [SIGs, WGs, UGs][sig-list], sub-projects,
+    -   Channels should be dedicated to [SIGs or WGs][sig-list], sub-projects,
         community topics, or related Kubernetes programs/projects.
     -   Linking to resources such as the PR adding the subproject will speed in
         the validation and processing of the channel creation request.
@@ -162,8 +197,8 @@ To add a channel, open a Pull Request (PR) updating the [slack-config].
     -   Special accommodations will be made where necessary.
 
 After you submit your request the Slack Admins will review and follow-up with
-any questions in the PR itself. 
-There are two approvals needed. `/lgtm` and `/approve`. Once one moderator give the `/lgtm`, a hold will be placed on the PR using `/hold`. This hold will remain in place until one or more moderators reviews 
+any questions in the PR itself.
+There are two approvals needed. `/lgtm` and `/approve`. Once one moderator give the `/lgtm`, a hold will be placed on the PR using `/hold`. This hold will remain in place until one or more moderators reviews
 and add the `/approve` command as well as `/hold cancel`, which will remove the hold on the PR.
 Once it is signed off and merged, the channel will be created.
 
@@ -206,7 +241,7 @@ To delegate channel ownership - Open a Pull Request (PR) updating the
 After you submit your PR and the Slack Admins sign off on the update, it will be
 merged and the group will be able to fully self-manage their own channels.
 
-For further information, see the 
+For further information, see the
 [Slack Config Documentation][Channel Documentation].
 
 ## Requesting a User Group
@@ -217,7 +252,7 @@ external management of Slack.
 To add a User Group, open a Pull Request (PR) updating the [slack-config].
 
 -   Add the users to users.yaml. **NOTE:** This must be a mapping of their
-    GitHub ID to their Slack Member ID. 
+    GitHub ID to their Slack Member ID.
 -   To get a person's Slack Member ID, view their profile. Then click on the
     "**...**" and select **Copy member ID**. It will be a 9 character string of
     uppercase letters and numbers (example: `U1H63D8SZ`).
@@ -231,7 +266,7 @@ After you submit your request, the Slack Admins will review and follow-up with
 any questions in the PR itself. Once it is signed off by the members being added
 and the Slack Admins, it will be merged, and the User Group will be created.
 
-For further information, see the 
+For further information, see the
 [Slack Config Documentation][Channel Documentation].
 
 ## Requesting a Bot, Token, or Webhook
@@ -262,7 +297,7 @@ discussed in Slack itself.
 
 ### Admin Expectations and Guidelines
 
-Admins should adhere to the general Kubernetes project 
+Admins should adhere to the general Kubernetes project
 [moderation guidelines].
 
 Additionally, admins should ensure they have 2-factor auth enabled for their
@@ -297,7 +332,7 @@ bots, tokens or webhooks. Please see the processes outlined below.
 #### Processing Channel Requests
 
 Channel requests should be reviewed for their relation and relevance to the
-Kubernetes community. Typically channels should be dedicated to SIGs, WGs, UGs,
+Kubernetes community. Typically channels should be dedicated to SIGs, WGs,
 sub-projects, community topics, and other things related to Kubernetes programs
 and projects.
 
@@ -305,7 +340,7 @@ For Kubernetes project centric requests, validate them against the
 [sig-list], or request a link to a related issue/PR, or mailing
 list discussion for the requested Channel.
 
-Small external projects are encouraged to use the channel of the SIG, WG, or UG
+Small external projects are encouraged to use the channel of the SIG or WG
 most relevant to them. Other things such as programming language-specific
 channels are discouraged and should in turn be steered to `#kubernetes-client`
 or communication avenues commonly used by their specific language.
@@ -321,7 +356,7 @@ below message and pin it.
 
 ```
 This channel abides to the Kubernetes Code of Conduct -
-http://git.k8s.io/community/code-of-conduct.md
+https://git.k8s.io/community/code-of-conduct.md
 Contact conduct@kubernetes.io or an admin in the #slack-admins channel if there
 is a problem.
 ```
@@ -358,7 +393,7 @@ steps.
 
 For the reasons listed below, admins may inactivate individual Slack accounts.
 Due to Slack's framework, it does not allow for an account to be banned or
-suspended in the traditional sense, merely inactivated. 
+suspended in the traditional sense, merely inactivated.
 See [Slack's policy on inactivated accounts] for more information.
 
 #### Reasons to inactivate an account
@@ -383,22 +418,22 @@ This will open a contextually-aware prompt only available to Slack Admins with
 the options to deactivate the user and remove all content from them over the
 past "X" minutes/hours.
 
-Report any actions taken to the other slack admins, and if needed the 
+Report any actions taken to the other slack admins, and if needed the
 [Code of Conduct Committee][cocc].
 
-  [coc]: /code-of-conduct.md
-  [admins]: ./moderators.md#Slack
-  [Slack Archive Download]: https://drive.google.com/drive/folders/1Xnkwsxis3tu0pT7rwp-crRq4IciZ5b1o?usp=sharing
-  [cocc]: /committee-code-of-conduct/README.md
-  [CNCF Slack]: https://slack.cncf.io/
-  [Tempelis]: http://sigs.k8s.io/slack-infra/tempelis
-  [slack-config]: ./slack-config/
-  [Channel Documentation]: ./slack-config/README.md
-  [sig-list]: https://www.kubernetes.dev/community/community-groups
-  [Slack Config Documentation]: ./slack-config/README.md
-  [OWNERS]: /contributors/guide/owners
-  [usergroups.yaml]: ./slack-config/usergroups.yaml
-  [User Group Documentation]: ./slack-config/README.md#usergroups
-  [GitHub Issue]: https://github.com/kubernetes/community/issues/new/choose
-  [moderation guidelines]: ./moderation.md
-  [Slack's policy on inactivated accounts]: https://get.slack.help/hc/en-us/articles/204475027-Deactivate-a-member-s-account
+[coc]: /code-of-conduct.md
+[admins]: ./moderators.md#Slack
+[Slack Archive Download]: https://drive.google.com/drive/folders/1Xnkwsxis3tu0pT7rwp-crRq4IciZ5b1o?usp=sharing
+[cocc]: /committee-code-of-conduct/README.md
+[CNCF Slack]: https://slack.cncf.io/
+[Tempelis]: https://sigs.k8s.io/slack-infra/tempelis
+[slack-config]: ./slack-config/
+[Channel Documentation]: ./slack-config/README.md
+[sig-list]: https://www.kubernetes.dev/community/community-groups
+[Slack Config Documentation]: ./slack-config/README.md
+[OWNERS]: /contributors/guide/OWNERS
+[usergroups.yaml]: ./slack-config/usergroups.yaml
+[User Group Documentation]: ./slack-config/README.md#usergroups
+[GitHub Issue]: https://github.com/kubernetes/community/issues/new/choose
+[moderation guidelines]: ./moderation.md
+[Slack's policy on inactivated accounts]: https://get.slack.help/hc/en-us/articles/204475027-Deactivate-a-member-s-account

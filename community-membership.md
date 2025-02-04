@@ -29,7 +29,7 @@ below.
 
 ## Member
 
-Members are continuously active contributors in the community.  They can have
+Members are *[continuously active]* contributors in the community. They can have
 issues and PRs assigned to them, participate in SIGs through GitHub teams, and
 pre-submit tests are automatically run for their PRs. Members are expected to
 remain active contributors to the community.
@@ -39,11 +39,27 @@ remain active contributors to the community.
 ### Requirements
 
 - Enabled [two-factor authentication] on their GitHub account
-- Have made multiple contributions to the project or community.  Contribution may include, but is not limited to:
-    - Authoring or reviewing PRs on GitHub. At least one PR must be **merged**.
+- Ensure GitHub username, company affiliation and email in [CNCF gitdm] are
+  up to date. If you are not affiliated with a company please mark yourself as
+  "Independent". 
+    - gitdm is primarily used by [devstats] to track contributions from the
+      many companies involved in the ecosystem. Kubernetes also uses it to
+      ensure org membership sponsors are from different member companies.
+- Ensure affiliation is up to date in [openprofile.dev]. 
+  - openprofile.dev will replace gitdm in the future to track affiliation.
+- Have made **multiple contributions** to the project or community, enough to
+  demonstrate an **ongoing and long-term commitment** to the project.
+  Contributions should include, but is not limited to:
+    - Authoring or reviewing PRs on GitHub, with at least one **merged** PR.
+      **NOTE:** The PR(s) must demonstrate an ongoing and active commitment.
+      A few examples include:
+      - A single [KEP] that has taken several weeks of driving consensus
+      - A larger number of smaller PRs over several weeks to months
+      - A smaller number of complex or technical PRs that required working with
+        community members to resolve an issue (e.g. regressions, bugs fixes etc)
     - Filing or commenting on issues on GitHub
-    - Contributing to SIG, subproject, or community discussions (e.g. meetings, Slack, email discussion
-      forums, Stack Overflow)
+    - Contributing to SIG, subproject, or community discussions (e.g. meetings,
+      Slack, email discussion forums)
 - Subscribed to [dev@kubernetes.io]
 - Have read the [contributor guide]
 - Actively contributing to 1 or more subprojects.
@@ -86,11 +102,13 @@ against the kubernetes/org repo, as above.
 - Members can do `/lgtm` on open PRs.
 - They can be assigned to issues and PRs, and people can ask members for reviews with a `/cc @username`.
 - Tests can be run against their PRs automatically. No `/ok-to-test` needed.
-- Members can do `/ok-to-test` for PRs that have a `needs-ok-to-test` label, and use commands like `/close` to close PRs as well.
+- Members can do `/ok-to-test` for PRs that have a `needs-ok-to-test` label, and use commands like `/close` to close issues or PRs as well.
 
-**Note:** members who frequently contribute code are expected to proactively
+**Note:** Members who frequently contribute code are expected to proactively
 perform code reviews and work towards becoming a primary *reviewer* for the
-subproject that they are active in.
+subproject that they are active in. Members who contribute to the Kubernetes documentation
+can participate in the [pull request wrangler program](https://kubernetes.io/docs/contribute/participate/pr-wranglers/)
+to cultivate a habit of [reviewing for approvers and reviewers](https://kubernetes.io/docs/contribute/review/for-approvers/).
 
 ## Reviewer
 
@@ -111,7 +129,7 @@ addition to the assigned reviewers.
 The following apply to the part of codebase for which one would be a reviewer in
 an [OWNERS] file (for repos using the bot).
 
-- member for at least 3 months
+- Member for at least 3 months
 - Primary reviewer for at least 5 PRs to the codebase
 - Reviewed or merged at least 20 substantial PRs to the codebase
 - Knowledgeable about the codebase
@@ -175,50 +193,17 @@ in an [OWNERS] file (for repos using the bot).
 - Mentor contributors and reviewers
 - May approve code contributions for acceptance
 
-## Subproject Owner
-
-**Note:** This is a generalized high-level description of the role, and the
-specifics of the subproject owner role's responsibilities and related
-processes *MUST* be defined for individual SIGs or subprojects.
-
-Subproject Owners are the technical authority for a subproject in the Kubernetes
-project.  They *MUST* have demonstrated both good judgement and responsibility
-towards the health of that subproject.  Subproject Owners *MUST* set technical
-direction and make or approve design decisions for their subproject - either
-directly or through delegation of these responsibilities.
+## Subproject Lead
 
 **Defined by:** *owners* entry in subproject [OWNERS] files as defined by [sigs.yaml]  *subproject.owners*
 
-### Requirements
+The [SIG Governance][sig-governance-subproject-lead] mentions in details the responsibilities of a Subproject Lead.
 
-The process for becoming an subproject Owner should be defined in the SIG
-charter of the SIG owning the subproject.  Unlike the roles outlined above, the
-Owners of a subproject are typically limited to a relatively small group of
-decision makers and updated as fits the needs of the subproject.
+## Subproject Owner
 
-The following apply to the subproject for which one would be an owner.
+**Defined by:** *owners* entry in subproject [OWNERS] files as defined by [sigs.yaml]  *subproject.owners*
 
-- Deep understanding of the technical goals and direction of the subproject
-- Deep understanding of the technical domain of the subproject
-- Sustained contributions to design and direction by doing all of:
-  - Authoring and reviewing proposals
-  - Initiating, contributing and resolving discussions (emails, GitHub issues, meetings)
-  - Identifying subtle or complex issues in designs and implementation PRs
-- Directly contributed to the subproject through implementation and / or review
-
-### Responsibilities and privileges
-
-The following apply to the subproject for which one would be an owner.
-
-- Make and approve technical design decisions for the subproject.
-- Set technical direction and priorities for the subproject.
-- Define milestones and releases.
-- Mentor and guide approvers, reviewers, and contributors to the subproject.
-- Ensure continued health of subproject
-  - Adequate test coverage to confidently release
-  - Tests are passing reliably (i.e. not flaky) and are fixed when they fail
-- Ensure a healthy process for discussion and decision making is in place.
-- Work with other subproject owners to maintain the project's overall health and success holistically
+The [SIG Governance][sig-governance-subproject-owner] mentions in details the responsibilities of a Subproject Owner.
 
 ## Inactive members
 
@@ -241,7 +226,7 @@ with the current state.
 ### How inactivity is measured
 
 Inactive members are defined as members of one of the Kubernetes Organizations
-with **no** contributions across any organization within 18 months. This is
+with **no** contributions across any organization within 12 months. This is
 measured by the CNCF [DevStats project].
 
 **Note:** Devstats does not take into account non-code contributions. If a
@@ -272,3 +257,10 @@ before being able to contribute effectively.
 [two-factor authentication]: https://help.github.com/articles/about-two-factor-authentication
 [elevated set of permissions]: #Responsibilities-and-privileges
 [Devstats project]: https://k8s.devstats.cncf.io/
+[continuously active]: #inactive-members
+[sig-governance-subproject-lead]: /committee-steering/governance/sig-governance.md#subproject-lead
+[sig-governance-subproject-owner]: /committee-steering/governance/sig-governance.md#subproject-owner
+[CNCF gitdm]: https://github.com/cncf/gitdm
+[devstats]: https://k8s.devstats.cncf.io/
+[openprofile.dev]: https://openprofile.dev/edit/profile
+[KEP]: https://github.com/kubernetes/enhancements/blob/master/keps/README.md#kubernetes-enhancement-proposals-keps 

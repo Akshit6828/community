@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Autoscaling Sp
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Mondays at 16:00 Poland](https://zoom.us/j/944410904) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=Poland).
+* Regular SIG Meeting: [Mondays at 16:00 Poland](https://zoom.us/j/96548204174) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16%3A00&tz=Poland).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit).
 
 ## Leadership
@@ -23,7 +23,11 @@ The [charter](charter.md) defines the scope and governance of the Autoscaling Sp
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Guy Templeton (**[@gjtempleton](https://github.com/gjtempleton)**), Skyscanner
-* Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
+* Maciek Pytel (**[@maciekpytel](https://github.com/maciekpytel)**), Google
+
+## Emeritus Leads
+
+* Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**)
 
 ## Contact
 - Slack: [#sig-autoscaling](https://kubernetes.slack.com/messages/sig-autoscaling)
@@ -37,12 +41,14 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-autoscaling-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-autoscaling-pr-reviews) - PR Reviews
     - [@kubernetes/sig-autoscaling-proposals](https://github.com/orgs/kubernetes/teams/sig-autoscaling-proposals) - Design Proposals
     - [@kubernetes/sig-autoscaling-test-failures](https://github.com/orgs/kubernetes/teams/sig-autoscaling-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
+- Steering Committee Liaison: Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
 
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-autoscaling:
 * [WG Batch](/wg-batch)
+* [WG Device Management](/wg-device-management)
+* [WG Serving](/wg-serving)
 
 
 ## Subprojects
@@ -53,17 +59,21 @@ The following [subprojects][subproject-definition] are owned by sig-autoscaling:
   - [kubernetes/autoscaler/addon-resizer](https://github.com/kubernetes/autoscaler/blob/master/addon-resizer/OWNERS)
 ### cluster-autoscaler
 - **Owners:**
-  - [kubernetes/autoscaler](https://github.com/kubernetes/autoscaler/blob/master/OWNERS)
+  - [kubernetes/autoscaler/cluster-autoscaler](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/OWNERS)
 ### horizontal-pod-autoscaler
 - **Owners:**
   - [kubernetes/api/autoscaling](https://github.com/kubernetes/api/blob/master/autoscaling/OWNERS)
   - [kubernetes/kubernetes/pkg/controller/podautoscaler](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/podautoscaler/OWNERS)
-### scale-client
+### karpenter
 - **Owners:**
-  - [kubernetes/client-go/scale](https://github.com/kubernetes/client-go/blob/master/scale/OWNERS)
+  - [kubernetes-sigs/karpenter](https://github.com/kubernetes-sigs/karpenter/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#karpenter](https://kubernetes.slack.com/messages/karpenter)
 ### vertical-pod-autoscaler
 - **Owners:**
-  - [kubernetes/autoscaler](https://github.com/kubernetes/autoscaler/blob/master/OWNERS)
+  - [kubernetes/autoscaler/vertical-pod-autoscaler](https://github.com/kubernetes/autoscaler/blob/master/vertical-pod-autoscaler/OWNERS)
+- **Contact:**
+  - Slack: [#vertical-pod-autoscaler](https://kubernetes.slack.com/messages/vertical-pod-autoscaler)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups

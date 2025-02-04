@@ -14,9 +14,10 @@ The [charter](charter.md) defines the scope and governance of the API Machinery 
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery) for the group will typically add invites for the following meetings to your calendar.*
-* Kubebuilder and Controller Runtime Meeting: [Thursdays at 09:00 PT (Pacific Time)]() (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ih-2cgg1bUrLwLVTB9tADlPcVdgnuMNBGbUl4D-0TIk/edit?usp=sharing).
-* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/my/apimachinery) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+* Kubebuilder Meeting: [Thursdays at 11:00 PT (Pacific Time)]() (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1GbSkHAxIaFTm2fL92z3WeWrCtnIjXfr7gNZSySLHhmk/edit?usp=sharing).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0SOaFeA9f3dwdCNECEKkX3).
+* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/my/apimachinery) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://goo.gl/0lbiM9).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R).
 
@@ -33,7 +34,8 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
-* Daniel Smith (**[@lavalamp](https://github.com/lavalamp)**), Google
+* Joe Betz (**[@jpbetz](https://github.com/jpbetz)**), Google
+* Stefan Schimanski (**[@sttts](https://github.com/sttts)**), Upbound
 
 ## Contact
 - Slack: [#sig-api-machinery](https://kubernetes.slack.com/messages/sig-api-machinery)
@@ -47,19 +49,20 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-api-machinery-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-api-machinery-pr-reviews) - PR Reviews
     - [@kubernetes/sig-api-machinery-proposals](https://github.com/orgs/kubernetes/teams/sig-api-machinery-proposals) - Design Proposals
     - [@kubernetes/sig-api-machinery-test-failures](https://github.com/orgs/kubernetes/teams/sig-api-machinery-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
+- Steering Committee Liaison: Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**)
 
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-api-machinery:
-* [WG API Expression](/wg-api-expression)
-* [WG Multitenancy](/wg-multitenancy)
 * [WG Structured Logging](/wg-structured-logging)
 
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-api-machinery:
+### cel-admission-webhook
+- **Owners:**
+  - [kubernetes/cel-admission-webhook](https://github.com/kubernetes/cel-admission-webhook/blob/main/OWNERS)
 ### component-base
 - **Owners:**
   - [kubernetes-sigs/legacyflag](https://github.com/kubernetes-sigs/legacyflag/blob/master/OWNERS)
@@ -110,8 +113,8 @@ The following [subprojects][subproject-definition] are owned by sig-api-machiner
   - [kubernetes/kubernetes/cmd/cloud-controller-manager](https://github.com/kubernetes/kubernetes/blob/master/cmd/cloud-controller-manager/OWNERS)
   - [kubernetes/kubernetes/cmd/kube-apiserver](https://github.com/kubernetes/kubernetes/blob/master/cmd/kube-apiserver/OWNERS)
   - [kubernetes/kubernetes/cmd/kube-controller-manager](https://github.com/kubernetes/kubernetes/blob/master/cmd/kube-controller-manager/OWNERS)
+  - [kubernetes/kubernetes/pkg/controlplane](https://github.com/kubernetes/kubernetes/blob/master/pkg/controlplane/OWNERS)
   - [kubernetes/kubernetes/pkg/kubeapiserver](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubeapiserver/OWNERS)
-  - [kubernetes/kubernetes/pkg/master](https://github.com/kubernetes/kubernetes/blob/master/pkg/master/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/controller-manager](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/controller-manager/OWNERS)
 ### server-crd
 - **Owners:**

@@ -79,7 +79,6 @@ Triaging is an effective method for improving responsiveness to contributor requ
 - maintaining company agnosticism. “Devs from other SIGs don’t have to ask for any favors in getting PRs to move forward—it’s just part of the process,” API Machinery Chair Fede Bongiovanni says. “Features don't get biased development.”
 
 You can find [comprehensive triaging guidelines](/contributors/guide/issue-triage.md) here, along with information about triage tools used across the project:
-- **[Gubernator](https://gubernator.k8s.io)**: a personal dashboard that shows you PRs awaiting your review
 - **[Triage Party](https://github.com/google/triage-party)**: a stateless web app to optimize issue and PR triage for large open-source projects using the GitHub API. More details are below. (Cluster Lifecycle, SIG Release) 
 - **[GitHub project boards](https://docs.github.com/en/github/managing-your-work-on-github/managing-project-boards)**: these kanban boards allow you to track GitHub issues and PRs in an automated way. More details are below.
 
@@ -104,8 +103,7 @@ SIG Docs rotates the triage facilitator role with its “[wrangler of the week](
 <img src="triage_party_skaffold.png" width="60%" height="60%">
 
 **Other Uses of Triage Party**:
-- SIG CLI uses it to manage [kubectl](https://tp.kuberneddies.dev/s/daily) workflow, including quarterly bug scrubs and daily/weekly triage
-- SIG Release launched [their instance](https://release.triage.k8s.io/s/milestone), which includes tabs for the current milestone as well as subprojects, in April 2021.
+- SIG CLI uses it to manage [kubectl](https://cli.triage.k8s.io/s/kubectl) workflow, including quarterly bug scrubs and daily/weekly triage.
 
 ### GitHub Project Boards
 

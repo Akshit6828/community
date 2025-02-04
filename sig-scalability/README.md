@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Scalability Sp
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scale) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Thursdays at 10:30 PT (Pacific Time)](https://zoom.us/j/94252896018?pwd=cTlMMlBoTHZqUEdjRm9VY2NWNUg5dz09) (bi-weekly ([upcoming meeting dates](#upcoming-meeting-dates))). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Thursdays at 10:30 PT (Pacific Time)](https://zoom.us/j/94252896018?pwd=cTlMMlBoTHZqUEdjRm9VY2NWNUg5dz09) (bi-weekly ([upcoming meeting dates](#upcoming-meeting-dates))). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
   * [Meeting recordings](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
 
@@ -23,8 +23,8 @@ The [charter](charter.md) defines the scope and governance of the Scalability Sp
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Marcel Zieba (**[@marseel](https://github.com/marseel)**), Google
-* Shyam Jeedigunta (**[@shyamjvs](https://github.com/shyamjvs)**), AWS
+* Marcel Zieba (**[@marseel](https://github.com/marseel)**), Isovalent
+* Shyam Jeedigunta (**[@shyamjvs](https://github.com/shyamjvs)**), Amazon
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -41,20 +41,10 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scale)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fscalability)
 - GitHub Teams:
-    - [@kubernetes/sig-scalability-api-reviews](https://github.com/orgs/kubernetes/teams/sig-scalability-api-reviews) - API Changes and Reviews
-    - [@kubernetes/sig-scalability-bugs](https://github.com/orgs/kubernetes/teams/sig-scalability-bugs) - Bug Triage and Troubleshooting
-    - [@kubernetes/sig-scalability-feature-requests](https://github.com/orgs/kubernetes/teams/sig-scalability-feature-requests) - Feature Requests
-    - [@kubernetes/sig-scalability-misc](https://github.com/orgs/kubernetes/teams/sig-scalability-misc) - General Discussion
+    - [@kubernetes/sig-scalability](https://github.com/orgs/kubernetes/teams/sig-scalability) - General Discussion
+    - [@kubernetes/sig-scalability-leads](https://github.com/orgs/kubernetes/teams/sig-scalability-leads) - Leads
     - [@kubernetes/sig-scalability-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-scalability-pr-reviews) - PR Reviews
-    - [@kubernetes/sig-scalability-proprosals](https://github.com/orgs/kubernetes/teams/sig-scalability-proprosals) - Design Proposals
-    - [@kubernetes/sig-scalability-test-failures](https://github.com/orgs/kubernetes/teams/sig-scalability-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
-
-## Working Groups
-
-The following [working groups][working-group-definition] are sponsored by sig-scalability:
-* [WG Reliability](/wg-reliability)
-
+- Steering Committee Liaison: Antonio Ojea (**[@aojea](https://github.com/aojea)**)
 
 ## Subprojects
 
@@ -101,7 +91,6 @@ on https://go.k8s.io/oncall .
 Also do not hesitate to contact those SIG members for status update:
 
 * Antoni Zawody (**[@tosi3k](https://github.com/tosi3k)**), Google
-* Jacek Kaniuk (**[@jkaniuk](https://github.com/jkaniuk)**), Google
 * Jakub Przychodzeń (**[@jprzychodzen](https://github.com/jprzychodzen)**), Google
 * Maciej Borsz (**[@mborsz](https://github.com/mborsz)**), Google
 * Marcel Zięba (**[@marseel](https://github.com/marseel)**), Google
@@ -164,7 +153,8 @@ performance exists (ideally by providing easy-to-use frameworks and working
 with SIGs to provide them), having environment and resources to run them:
 
 * [Official tests](https://github.com/kubernetes/perf-tests/tree/master/clusterloader2/testing)
-* [Testgrid](https://k8s-testgrid.appspot.com/sig-scalability)
+* [Testgrid](https://testgrid.k8s.io/sig-scalability)
+* [Perfdash](https://perf-dash.k8s.io/)
 
 Ensuring that tests are being executed according to calendar and ensuring that
 each official Kubernetes release satisfies all scalability and performance

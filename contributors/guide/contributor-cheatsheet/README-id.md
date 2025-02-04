@@ -63,7 +63,6 @@ di GitHub menjadi lebih baik.
 
 ### _Workflow_
 
-- [Dasbor Gubernator] - Melihat Pull Request yang masuk dan keluar yang memerlukan perhatian.
 - [Prow] - Mekanisme CI/CD Kubernetes.
 - [Tide] - _Plugin_ Prow yang melakukan manajemen _merge_ dan _test_. [Dasbor Tide]
 - [Perintah Bot] - Perintah yang dapat kamu gunakan untuk berinteraksi dengan Bot Kubernetes (contoh:
@@ -346,9 +345,8 @@ _squashing_ perlu dilakukan atau tidak.
 
 [Panduan Kontributor]: /contributors/guide/README.md
 [Panduan Pengembang]: /contributors/devel/README.md
-[dasbor gubernator]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
-[tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [dasbor tide]: https://prow.k8s.io/tide
 [perintah bot]: https://go.k8s.io/bot-commands
 [Label GitHub]: https://go.k8s.io/github-labels
@@ -368,7 +366,7 @@ _squashing_ perlu dilakukan atau tidak.
 [forum kubernetes]: https://discuss.kubernetes.io/
 [pull request process]: /contributors/guide/pull-requests.md
 [github workflow]: /contributors/guide/github-workflow.md
-[prow]: https://git.k8s.io/test-infra/prow#prow
+[prow]: https://sigs.k8s.io/prow/pkg
 [cla]: /CLA.md#how-do-i-sign
 [petunjuk _troubleshooting_ cla]: /CLA.md#troubleshooting
 [perintah]: https://prow.k8s.io/command-help

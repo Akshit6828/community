@@ -13,18 +13,12 @@ Covers kubectl and related tools. We focus on the development and standardizatio
 The [charter](charter.md) defines the scope and governance of the CLI Special Interest Group.
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cli) for the group will typically add invites for the following meetings to your calendar.*
-* Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing).
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-cli) for the group will typically add invites for the following meetings to your calendar.*
+* Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
-* KRM Functions Subproject Meeting: [Wednesdays at 10:30 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1x80l4i88F27zSCxSjlhvwFdH6jQAHou1k1ibuXrDTaw/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
-* Kustomize Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
-* Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing).
+* Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
 
 ## Leadership
@@ -32,26 +26,28 @@ The [charter](charter.md) defines the scope and governance of the CLI Special In
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Katrina Verey (**[@KnVerey](https://github.com/KnVerey)**), Shopify
-* Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Chainguard, Inc
-* Sean Sullivan (**[@seans3](https://github.com/seans3)**), Google
+* Arda Guclu (**[@ardaguclu](https://github.com/ardaguclu)**), Red Hat
+* Marly Salazar (**[@mpuckett159](https://github.com/mpuckett159)**), Independent
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Katrina Verey (**[@KnVerey](https://github.com/KnVerey)**), Shopify
-* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+* Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Defense Unicorns
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns
 
 ## Emeritus Leads
 
 * Tony Ado (**[@AdoHe](https://github.com/AdoHe)**)
+* Katrina Verey (**[@KnVerey](https://github.com/KnVerey)**)
 * Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**)
+* Natasha Sarkar (**[@natasha41575](https://github.com/natasha41575)**)
 * Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**)
+* Sean Sullivan (**[@seans3](https://github.com/seans3)**)
 
 ## Contact
 - Slack: [#sig-cli](https://kubernetes.slack.com/messages/sig-cli)
-- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/sig-cli)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcli)
 - GitHub Teams:
     - [@kubernetes/sig-cli-api-reviews](https://github.com/orgs/kubernetes/teams/sig-cli-api-reviews) - API Changes and Reviews
@@ -62,7 +58,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-cli-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-cli-pr-reviews) - PR Reviews
     - [@kubernetes/sig-cli-proposals](https://github.com/orgs/kubernetes/teams/sig-cli-proposals) - Design Proposals
     - [@kubernetes/sig-cli-test-failures](https://github.com/orgs/kubernetes/teams/sig-cli-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
+- Steering Committee Liaison: Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**)
 
 ## Subprojects
 
@@ -96,11 +92,19 @@ Centralized plugin index for krew.
 - **Owners:**
   - [kubernetes/kubectl](https://github.com/kubernetes/kubectl/blob/master/OWNERS)
   - [kubernetes/kubernetes/pkg/kubectl](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubectl/OWNERS)
+### kubectl-validate
+CLI Tool for validating Kubernetes resources from their OpenAPIV3
+schemas on client-side aiming for best parity with errors returned
+by server. Supports core resources, CRDs, CEL validations, and more!
+- **Owners:**
+  - [kubernetes-sigs/kubectl-validate](https://github.com/kubernetes-sigs/kubectl-validate/blob/main/OWNERS)
 ### kui
 Hybrid command-line/UI development experience for cloud-native development
 - **Owners:**
   - [kubernetes-sigs/kui](https://github.com/kubernetes-sigs/kui/blob/master/OWNERS)
 ### kustomize
+- **Leads:**
+  - Yugo Kobayashi (**[@koba1t](https://github.com/koba1t)**), LY Corporation
 - **Owners:**
   - [kubernetes-sigs/kustomize](https://github.com/kubernetes-sigs/kustomize/blob/master/OWNERS)
 - **Contact:**

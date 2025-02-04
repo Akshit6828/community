@@ -14,21 +14,20 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-network) for the group will typically add invites for the following meetings to your calendar.*
-* Gateway API GAMMA Meeting (APAC Friendly): [Tuesdays at 15:00 PT (Pacific Time)](https://zoom.us/j/96951309977) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1s5hQU0CB9ehjFukRmRHQ41f1FA8GX5_1Rv6nHW6NWAA/edit).
-* Gateway API GAMMA Meeting (EMEA Friendly): [Tuesdays at 08:00 PT (Pacific Time)](https://zoom.us/j/96951309977) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1s5hQU0CB9ehjFukRmRHQ41f1FA8GX5_1Rv6nHW6NWAA/edit).
-* Gateway API Meeting: [Mondays at 15:00 PT (Pacific Time)](https://zoom.us/j/441530404) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=PT%20%28Pacific%20Time%29).
+* Gateway API Meeting (Americas): [Mondays at 15:00 PT (Pacific Time)](https://zoom.us/j/441530404) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
-* Network Policy API Meeting: [Mondays at 13:00 PT (Pacific Time)](https://zoom.us/j/96264742248) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+* Gateway API Meeting (Europe): [Tuesday (starting September 10th 2024)s at 08:00 PT (Pacific Time)](https://zoom.us/j/441530404) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08%3A00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
+* Network Policy API Meeting: [Tuesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/96264742248) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs).
-* SIG Network Ingress NGINX Meeting: [Thursdays at 8:00 PT (Pacific Time)](https://zoom.us/j/98377891310) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
+* SIG Network Ingress NGINX Meeting: [Thursdays at 8:00 PT (Pacific Time)](https://zoom.us/j/98377891310) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1DKlpcV6DAW0DsBrzh-OLkZvJQmABCVfRIRWBWjc4zOs/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=VkbEihIb7tA&list=PL69nYSiGNLP2Rqe8T4mDnyHqDZ4VYPY1X).
-* SIG Network KPNG APAC Meeting: [Wednesdays at 16:00 IST (Indian Standard Time)](https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=IST%20%28Indian%20Standard%20Time%29).
-* SIG Network KPNG Meeting: [Fridays at 7:30 PT (Pacific Time)](https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=7:30&tz=PT%20%28Pacific%20Time%29).
-* SIG Network Meeting: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/361123509) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+* SIG Network Meeting: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/361123509) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
+  * [Meeting recordings](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
+* SIG Network Multi-Network Meeting: [Wednesdays at 08:00 PT (Pacific Time)](https://zoom.us/j/95680858961?pwd=M1c2TTdMZHpMUUtIYXRpbjRobkNJZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08%3A00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1pe_0aOsI35BEsQJ-FhFH9Z_pWQcU2uqwAnOx2NIx6OY/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
 
 ## Leadership
@@ -36,9 +35,22 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Casey Davenport (**[@caseydavenport](https://github.com/caseydavenport)**), Tigera
-* Dan Williams (**[@dcbw](https://github.com/dcbw)**), Red Hat
+* Michael Zappa (**[@mikezappa87](https://github.com/mikezappa87)**), Microsoft
+* Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Red Hat
 * Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Antonio Ojea (**[@aojea](https://github.com/aojea)**), Google
+* Dan Winship (**[@danwinship](https://github.com/danwinship)**), Red Hat
+* Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
+
+## Emeritus Leads
+
+* Casey Davenport (**[@caseydavenport](https://github.com/caseydavenport)**)
+* Dan Williams (**[@dcbw](https://github.com/dcbw)**)
 
 ## Contact
 - Slack: [#sig-network](https://kubernetes.slack.com/messages/sig-network)
@@ -52,14 +64,14 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-network-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-network-pr-reviews) - PR Reviews
     - [@kubernetes/sig-network-proposals](https://github.com/orgs/kubernetes/teams/sig-network-proposals) - Design Proposals
     - [@kubernetes/sig-network-test-failures](https://github.com/orgs/kubernetes/teams/sig-network-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
+- Steering Committee Liaison: Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
 
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-network:
-* [WG IoT Edge](/wg-iot-edge)
-* [WG Multitenancy](/wg-multitenancy)
+* [WG Device Management](/wg-device-management)
 * [WG Policy](/wg-policy)
+* [WG Serving](/wg-serving)
 * [WG Structured Logging](/wg-structured-logging)
 
 
@@ -78,14 +90,28 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 - **Contact:**
   - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
 ### gateway-api
+- **Leads:**
+  - Mattia Lavacca (**[@mlavacca](https://github.com/mlavacca)**), Kong
+  - Rob Scott (**[@robscott](https://github.com/robscott)**), Google
+  - Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Red Hat
+  - Nick Young (**[@youngnick](https://github.com/youngnick)**), Isovalent
 - **Owners:**
+  - [kubernetes-sigs/blixt](https://github.com/kubernetes-sigs/blixt/blob/main/OWNERS)
   - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/master/OWNERS)
+  - [kubernetes-sigs/gwctl](https://github.com/kubernetes-sigs/gwctl/blob/main/OWNERS)
   - [kubernetes-sigs/ingress2gateway](https://github.com/kubernetes-sigs/ingress2gateway/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/controller/endpoint](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/endpoint/OWNERS)
   - [kubernetes/kubernetes/pkg/proxy](https://github.com/kubernetes/kubernetes/blob/master/pkg/proxy/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/cloud-provider/controllers/service](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cloud-provider/controllers/service/OWNERS)
 - **Contact:**
   - Slack: [#sig-network-gateway-api](https://kubernetes.slack.com/messages/sig-network-gateway-api)
+### gateway-api-inference-extension
+Gateway API Inference Extension
+- **Owners:**
+  - [kubernetes-sigs/gateway-api-inference-extension](https://github.com/kubernetes-sigs/gateway-api-inference-extension/blob/main/OWNERS)
+### ingate
+- **Owners:**
+  - [kubernetes-sigs/ingate/heads/main](https://github.com/kubernetes-sigs/ingate/blob/refs/heads/main/OWNERS)
 ### ingress
 - **Owners:**
   - [kubernetes-sigs/ingress-controller-conformance](https://github.com/kubernetes-sigs/ingress-controller-conformance/blob/master/OWNERS)
@@ -94,26 +120,69 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 ### iptables-wrappers
 - **Owners:**
   - [kubernetes-sigs/iptables-wrappers](https://github.com/kubernetes-sigs/iptables-wrappers/blob/master/OWNERS)
-### kpng
+### knftables
 - **Owners:**
-  - [kubernetes-sigs/kpng](https://github.com/kubernetes-sigs/kpng/blob/master/OWNERS)
+  - [kubernetes-sigs/knftables](https://github.com/kubernetes-sigs/knftables/blob/master/OWNERS)
 ### kube-dns
 - **Owners:**
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
-### network-policy
+### multi-network
+- **Leads:**
+  - Maciej Skrocki (**[@mskrocki](https://github.com/mskrocki)**), Google
 - **Owners:**
+  - [kubernetes-sigs/multi-network-api](https://github.com/kubernetes-sigs/multi-network-api/blob/main/OWNERS)
+  - [kubernetes-sigs/multi-network](https://github.com/kubernetes-sigs/multi-network/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#sig-network-multi-network](https://kubernetes.slack.com/messages/sig-network-multi-network)
+### network-policy
+- **Leads:**
+  - Andrew Stoycos (**[@astoycos](https://github.com/astoycos)**)
+  - Dan Winship (**[@danwinship](https://github.com/danwinship)**), Red Hat
+  - Yang Ding (**[@dyanngg](https://github.com/dyanngg)**), VMWare
+- **Owners:**
+  - [kubernetes-sigs/kube-network-policies](https://github.com/kubernetes-sigs/kube-network-policies/blob/master/OWNERS)
   - [kubernetes-sigs/network-policy-api](https://github.com/kubernetes-sigs/network-policy-api/blob/master/OWNERS)
   - [kubernetes/api/networking](https://github.com/kubernetes/api/blob/master/networking/OWNERS)
 - **Contact:**
   - Slack: [#sig-network-policy-api](https://kubernetes.slack.com/messages/sig-network-policy-api)
+### node-ipam-controller
+- **Owners:**
+  - [kubernetes-sigs/node-ipam-controller](https://github.com/kubernetes-sigs/node-ipam-controller/blob/main/OWNERS)
 ### pod-networking
 - **Owners:**
+  - [kubernetes-sigs/cni-dra-driver](https://github.com/kubernetes-sigs/cni-dra-driver/blob/main/OWNERS)
   - [kubernetes-sigs/ip-masq-agent](https://github.com/kubernetes-sigs/ip-masq-agent/blob/master/OWNERS)
+  - [kubernetes-sigs/nat64](https://github.com/kubernetes-sigs/nat64/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/kubelet/network](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/network/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
+
+### Subproject Leads
+
+SIG network provides some additional responsibilities for subproject leads beyond what is covered in the [standard subproject definition][subprojects].
+Most of these additional responsibilities relate to communication about their projects within SIG Network, and to the greater community:
+
+- **Transparent Project Planning, Maintenance and Communication:**
+  - Subproject Leads must provide transparent view into their historical and future project plans (eg; using GitHub project boards, KEPs, or custom enhancement proposals (see [GEPs]/[NPEPs])).
+  - Subproject leads must create, maintain and be present in a public [Kubernetes Slack] channel with the easy-to-find naming `#sig-network-<subproject>` for their sub-project.
+  - Subproject leads should create and maintain a regular public [Zoom] sync on the [SIG Network Calendar].
+  - Subproject leads must keep the project in good health through regular issue triaging, PR reviews, CI health monitoring and checking testgrids (delegating this to other members in the community is good!)
+  - Projects that own CRDs in the `k8s.io` group must go through the [API review process](https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md) and Subproject leads are expected to make sure this well defined processes across Kubernetes is followed.
+
+- **Regular Project Updates**
+  - Subproject leads must report on project's status, significant releases/events, interesting developments to the wider SIG-Network community via the [SIG Network Mailing List] on a quarterly basis (or as needed).
+  - Subproject leads should report on project status in the general SIG Network community meetings (in addition to mailing list updates).
+
+[subprojects]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[GEPs]: https://github.com/kubernetes-sigs/gateway-api/blob/main/geps/overview.md
+[NPEPs]: https://github.com/kubernetes-sigs/network-policy-api/blob/main/npeps
+[Kubernetes Slack]: https://kubernetes.slack.com
+[Zoom]: https://zoom.us
+[SIG Network Calendar]: https://github.com/kubernetes/community/tree/master/sig-network#meetings
+[SIG Network Mailing List]: https://groups.google.com/g/kubernetes-sig-network
+
 ## Areas of Responsibility
 
 SIG Network is responsible for the following Kubernetes subsystems:
@@ -132,4 +201,24 @@ SIG Network is responsible for a number of issues and PRs. A summary can be foun
 ## Documents
 
 * [2017 Planning](https://docs.google.com/document/d/1fBxC36UCBnqY_w3m3TjdnXFsIT--GS6HmKb5o0nhkTk/edit#)
+
+## Archive
+
+The following are larger efforts which are now archived and historical. They are
+no longer active, but are kept in an archived state for posterity and maybe be
+useful as reference materials.
+
+### KPNG
+
+["Kube Proxy Next Generation (KPNG)"][kpng] was an effort to evaluate the
+potential for a new [kube-proxy] with an emphasis on modularity and
+adaptability. Through the project we explored alternatives to our historical
+kube-proxy architecture and gained a lot of community members through interest
+in it. The project was very large in scope, and was archived in 2024 after
+agreement that the community was no longer able to continue focus on it, but it
+remains important prior art for any future attempts to revise kube-proxy.
+
+[kpng]: https://github.com/kubernetes-sigs/kpng
+[kube-proxy]: https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/
+
 <!-- END CUSTOM CONTENT -->

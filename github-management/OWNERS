@@ -4,11 +4,9 @@ approvers:
   - cblecker
   - mrbobbytables
   - nikhita
-
-reviewers:
-  - ameukam
-  - idvoretskyi
   - palnabarun
+  - MadhavJivrajani
+  - Priyankasaggu11929
 
 labels:
   - sig/contributor-experience

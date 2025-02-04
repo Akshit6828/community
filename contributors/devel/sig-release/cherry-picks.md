@@ -15,7 +15,7 @@ branches.
 
 ## Prerequisites
 
-- [Contributor License Agreement](http://git.k8s.io/community/CLA.md) is
+- [Contributor License Agreement](https://git.k8s.io/community/CLA.md) is
   considered implicit for all code within cherry pick pull requests,
   **unless there is a large conflict**.
 - A pull request merged against the `master` branch.
@@ -32,22 +32,23 @@ branches.
 
 ## What Kind of PRs are Good for Cherry Picks
 
-Compared to the normal master branch's merge volume across time,
-the release branches see one or two orders of magnitude less PRs.
-This is because there is an order or two of magnitude higher scrutiny.
-Again, the emphasis is on critical bug fixes, e.g.,
+Patch releases must be easy and safe to consume, so security fixes
+and critical bugfixes can be delivered with minimal risk of regression.
 
-- Loss of data
-- Memory corruption
-- Panic, crash, hang
-- Security
+Only the following types of changes are expected to be backported:
 
-A bugfix for a functional issue (not a data loss or security issue) that only
-affects an alpha feature does not qualify as a critical bug fix.
+- Security fixes
+  - Dependency updates that just aim to silence some scanners
+    and do not fix any vulnerable code are **not** eligible for cherry-picks.
+- Regression fixes
+  - A fix for a regression that only occurs when an off-by-default alpha feature is enabled is **not** eligible for backport.
+- Critical bug fixes (loss of data, memory corruption, panic, crash, hang)
+  - A fix for an issue that only occurs when an off-by-default alpha feature is enabled does not qualify as a critical bug fix and is **not** eligible for backport.
+- Prerequisite changes for critical dependency updates (e.g. [go updates](https://github.com/kubernetes/sig-release/blob/master/release-engineering/handbooks/go.md#minor-version-updates))
+- Test-only changes to stabilize failing / flaky tests on release branches
 
-If you are proposing a cherry pick and it is not a clear and obvious critical
-bug fix, please reconsider. If upon reflection you wish to continue, bolster
-your case by supplementing your PR with e.g.,
+If you are proposing a cherry pick outside these categories, please reconsider.
+If upon reflection you wish to continue, bolster your case by supplementing your PR with e.g.,
 
 - A GitHub issue detailing the problem
 
@@ -62,19 +63,15 @@ your case by supplementing your PR with e.g.,
 - Key stakeholder SIG reviewers/approvers attesting to their confidence in the
   change being a required backport
 
-If the change is in cloud provider-specific platform code (which is in the
-process of being moved out of core Kubernetes), describe the customer impact,
-how the issue escaped initial testing, remediation taken to prevent similar
-future escapes, and why the change cannot be carried in your downstream fork of
-the Kubernetes project branches.
-
-It is critical that our full community is actively engaged on enhancements in
-the project. If a released feature was not enabled on a particular provider's
-platform, this is a community miss that needs to be resolved in the `master`
-branch for subsequent releases. Such enabling will not be backported to the
-patch release branches.
-
 ## Initiate a Cherry Pick
+
+### Before you begin
+
+- Plan to initiate a cherry-pick against _every_ supported release branch. If you decide to skip some release branch, explain your decision in a comment to the PR being cherry-picked.
+
+- Initiate cherry-picks in order, from newest to oldest supported release branches. For example, if 1.27 is the newest supported release branch, then, before cherry-picking to 1.25, make sure the cherry-pick PR already exists for in 1.26 and 1.27. This helps to prevent regressions as a result of an upgrade to the next release.
+
+### Steps
 
 - Run the [cherry pick script][cherry-pick-script]
 
@@ -153,10 +150,11 @@ pull requests on the `master` branch in that they:
   The [Release Managers][release-managers] are the final approvers on release
   branches.
 
-  Approval is signified by a Release Manager manually applying the
-  `cherry-pick-approved` label. This action removes the
-  `do-not-merge/cherry-pick-not-approved` label and triggers a merge into the
-  target branch.
+  Approval is signified by a Release Manager by approving the PR using the
+  GitHub review feature. The [`cherrypickapproved`](https://github.com/kubernetes/test-infra/tree/ce9ca27/prow/plugins/cherrypickapproved) 
+  prow plugin will take care of applying the `cherry-pick-approved` label as
+  well as removing the `do-not-merge/cherry-pick-not-approved` one, which
+  triggers a merge into the target branch.
 
   The team scrubs through incoming cherry picks on at least a weekly basis,
   daily during burndown ahead of a .0 release. Ahead of point releases,

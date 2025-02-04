@@ -14,20 +14,20 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/forum/#!forum/steering) for the group will typically add invites for the following meetings to your calendar.*
-* Private Steering Committee Meeting: [third Mondays at 9:30 PT (Pacific Time)](https://bit.ly/k8s-steering-wd) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+* Private Steering Committee Meeting: [third Mondays at 9:30 PT (Pacific Time)](https://bit.ly/k8s-steering-wd) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting recordings](https://www.youtube.com/watch?v=YAzgJRQxsdc&list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM).
-* Public Steering Committee Meeting: [first Mondays at 9:30 PT (Pacific Time)](https://bit.ly/k8s-steering-wd) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+* Public Steering Committee Meeting: [first Wednesdays at 8:00 PT (Pacific Time)](https://bit.ly/k8s-steering-wd) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting recordings](https://www.youtube.com/watch?v=YAzgJRQxsdc&list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM).
 
 ## Members
 
 * Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
-* Christoph Blecker (**[@cblecker](https://github.com/cblecker)**), Red Hat
-* Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**), Chainguard, Inc
-* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), Cisco
-* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
-* Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), VMware
-* Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
+* Antonio Ojea (**[@aojea](https://github.com/aojea)**), Google
+* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), Bloomberg L.P.
+* Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**), DaoCloud
+* Patrick Ohly (**[@pohly](https://github.com/pohly)**), Intel
+* Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**), Red Hat
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns
 
 ## Contact
 - Slack: [#steering-committee](https://kubernetes.slack.com/messages/steering-committee)
@@ -40,12 +40,8 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by the Steering Committee:
-### funding
-Funding requests for project infrastructure, events, and consulting
-- **Owners:**
-  - [kubernetes/funding](https://github.com/kubernetes/funding/blob/master/OWNERS)
 ### steering
-Steering Committee policy and documentation
+Steering Committee policies, documentation, and funding requests
 - **Owners:**
   - [kubernetes/steering](https://github.com/kubernetes/steering/blob/master/OWNERS)
 

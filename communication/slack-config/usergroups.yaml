@@ -25,17 +25,19 @@ usergroups:
     description: Contributor Communications group.
     channels:
       - sig-contribex
+      - sig-contribex-comms
     members:
-      - Atharva-Shinde
-      - AvineshTripathi
       - chrisshort
-      - Debanitrkl
-      - Jason
+      - fsmunoz
+      - fykaa
+      - hii-arpit
       - kaslin
-      - paris
-      - PurneswarPrasad
-      - rajula96reddy
-      - imran
+      - mfahlandt
+      - nitishfy
+      - sandeepkanabar
+      - sandipanpanda
+      - sreeram-venkitesh
+
 
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc
@@ -45,19 +47,19 @@ usergroups:
   - name: product-security-committee
     long_name: Product Security Committee
     description: |-
-      The Product Security Committee (PSC) is responsible for triaging and
-      handling the security issues for Kubernetes.
+      The Product Security Committee (PSC) is responsible for triaging and handling the security issues for Kubernetes.
     channels:
       - release-management
       - sig-release
     members:
       - cjcullen
+      - cji
       - enj
       - joelsmith
-      - lukehinds
       - micahhausler
+      - ritazh
+      - SaranBalaji90
       - tabbysable
-      - tallclair
 
   - name: velero-maintainers
     long_name: Velero Maintainers
@@ -76,25 +78,18 @@ usergroups:
 
   - name: youtube-admins
     long_name: YouTube Admins
-    description: YouTube Admin group. Ping for a YouTube-specific issue
+    description: YouTube Admin group. Ping for a YouTube-specific issue.
     channels:
       - sig-contribex
     members:
-      - alisondy
-      - jeefy
-      - mrbobbytables
-      - onlydole
       - chrisshort
-      - paris
-      - markyjackson-taulia
       - pnbrown
       - CIPHERTron
-      - bhumijgupta
-      - sandipanpanda
+      - chadmcrowell
 
   - name: zoom-admins
     long_name: Zoom Admins
-    description: Zoom Admin group. Ping for a Zoom-specific issue
+    description: Zoom Admin group. Ping for a Zoom-specific issue.
     channels:
       - sig-contribex
     members:
@@ -158,10 +153,6 @@ usergroups:
     channels:
       - odo
     members:
-      - cdrage
-      - dharmit
-      - mohammedzee1000
-      - prietyc123
       - kadel
       - feloy
       - anandrkskd
@@ -197,13 +188,13 @@ usergroups:
     channels:
       - steering-committee
     members:
+      - aojea
       - bentheelder
-      - cblecker
-      - cpanato
       - justaugustus
-      - mrbobbytables
-      - palnabarun
-      - tpepper
+      - pacoxu
+      - pohly
+      - saschagrunert
+      - soltysh
 
   - name: grafana-operator-maintainers
     long_name: Grafana Operator Maintainers
@@ -220,6 +211,14 @@ usergroups:
       - vladimirmukhin
       - wurbanski
 
+  - name: druid-operator-maintainers
+    long_name: Druid Operator Maintainers
+    description: Dev and Support group for Druid Operator.
+    channels:
+      - druid-operator
+    members:
+      - adheipsingh
+
   - name: devfile-devs
     long_name: Devfile Development Team
     description: Active developers of Devfile on #devfile
@@ -227,30 +226,103 @@ usergroups:
       - devfile
     members:
       - elsony
+      - jasperchui
+      - Jdubrick
       - johnmcollier
       - kim-tsao
       - maysunfaisal
       - michael-valdron
-      - mike-hoang
       - rtaniwa
-      - schultzp2020
+      - thepetk
       - yangcao77
 
   - name: cluster-api-release-team
     long_name: Cluster API Release Team
     description: Members of the Cluster API Release Team
     members:
-      - alexander-demicev
-      - aniruddha2000
-      - CecileRobertMichon
-      - cpanato
-      - dntosas
-      - furkatgofurov7
+      - AttyXY
+      - blind3dd
+      - cahillsf
+      - chandankumar4
+      - cprivitere
       - hackeramitkumar
-      - joekr
-      - nawazkh
-      - oscr
-      - sayantani11
-      - sbueringer
-      - VibhorChinda
-      - ykakarap
+      - mboersma
+      - mbrow137
+      - pratik-mahalle
+      - ramessesii2
+      - RansherSingh
+      - serngawy
+      - shecodesmagic
+      - sreeram-venkitesh
+      - Sunnatillo
+      - wendy-ha18
+
+  - name: kcp-devs
+    long_name: kcp Development Team
+    description: Active developers of kcp on #kcp-dev
+    members:
+      - csams
+      - davidfestal
+      - hardys
+      - jmprusi
+      - kylape
+      - ncdc
+      - nrb
+      - p0lyn0mial
+      - pweil-
+      - s-urbaniak
+      - stevekuznetsov
+      - sttts
+      - vincepri
+
+  - name: github-admins
+    long_name: Kubernetes GitHub Admins
+    description: Administrators of the Kubernetes GitHub organisations
+    members:
+      - cblecker
+      - MadhavJivrajani
+      - mrbobbytables
+      - nikhita
+      - palnabarun
+      - Priyankasaggu11929
+
+  - name: kubestellar-devs
+    long_name: KubeStellar Development Team
+    description: "Active developers of KubeStellar on #kubestellar-dev"
+    members:
+      - clubanderson
+      - mspreitz
+      - ezra
+      - paolo
+
+  - name: cert-manager-maintainers
+    long_name: cert-manager Maintainers
+    description: The maintainers of the cert-manager project.
+    channels:
+      - cert-manager-dev
+      - cert-manager
+    # To get that list, run the following:
+    #  curl https://raw.githubusercontent.com/cert-manager/community/main/maintainers.csv
+    # Note that you will then need to find your Slack User ID (look up in Stackoverflow)
+    # and copy it to the users.yaml file in this repository.
+    members:
+      - munnerz
+      - joshvanl
+      - wallrj
+      - jakexks
+      - maelvls
+      - sgtcodfish
+      - inteon
+      - ThatsMrTalbot
+      - erikgb
+
+  - name: gophercloud-maintainers
+    long_name: Gophercloud Maintainers
+    description: Gophercloud Maintainers group.
+    channels:
+      - gophercloud
+    members:
+      - EmilienM
+      - kayrus
+      - mandre
+      - pierreprinetti

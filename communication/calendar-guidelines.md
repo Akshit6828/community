@@ -67,6 +67,7 @@ addition of [gsuite], this practice may change soon.
     will need to be set to "public".
   - In the calendar invite body - include your meeting notes, zoom information,
     and any other pertinent information that you want your group to know.
+  - Invite `calendar@kubernetes.io` so the event will appear in https://www.kubernetes.dev/resources/calendar/
 
 
 ### Testing Permissions
@@ -115,8 +116,6 @@ In case you are creating a calendar event and wondering what to include in it, h
 [SIG-<name>] <meeting title>
 or
 [WG-<name>] <meeting title>
-or
-[User Group-<name>]
 ```
 #### Description
 
@@ -140,9 +139,9 @@ Google group: <optional>
 
 #### Example
 
-> SIG-Contribex: Weekly Marketing Meeting
+> SIG-Contribex: Weekly Contributor Comms Meeting
 > 
-> https://github.com/kubernetes/community/tree/master/communication/marketing-team
+> https://github.com/kubernetes/community/tree/master/communication/contributor-comms
 > 
 > **Time**: Weekly on Friday from 8-9am PT
 > 

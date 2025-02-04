@@ -3,9 +3,9 @@
 The Kubernetes project uses Github extensively to store and organize code,
 manage issues and documentation, and provide a consistent contributor flow.
 
-With the size and growth of the Kubernetes project, management of our Github
+With the size and growth of the Kubernetes project, management of our GitHub
 footprint has historically been a challenge. We have created a number of
-policies to reduce friction and ease administration of our Github repositories
+policies to reduce friction and ease administration of our GitHub repositories
 and organizations. We have also created a number of tools to automate setup and
 enforcement of these policies.
 
@@ -27,12 +27,12 @@ we have a GitHub Administration team that is responsible for carrying out the
 various tasks.
 
 This team (**[@kubernetes/owners](https://github.com/orgs/kubernetes/teams/owners)**) is as follows:
-* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**, Central European Time)
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**, US Eastern)
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**, CA Pacific)
+* Madhav Jivrajani (**[@MadhavJivrajani](https://github.com/MadhavJivrajani)**, Indian Standard Time)
 * Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**, Indian Standard Time)
 * Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**, Indian Standard Time)
-* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**, UA Eastern European)
+* Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**, Indian Standard Time)
 
 This team is responsible for holding Org Owner privileges over all the active
 Kubernetes orgs, and will take action in accordance with our polices and
@@ -56,9 +56,7 @@ GitHub organization.
 They also have approval privileges for adding new members to the GitHub config.
 
 Our current coordinators are:
-* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**, Central European)
-* Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**, Indian Standard Time)
-* Savitha Raghunathan (**[@savitharaghunathan](https://github.com/savitharaghunathan)**, US Eastern)
+* Mario Jason Braganza (**[jasonbraganza](https://github.com/jasonbraganza)**, Indian Standard Time)
 
 ## Project Owned Organizations
 
@@ -103,13 +101,13 @@ intentions. [For more details please see community issue #1407](https://github.c
 
 We have created a number of tools to help with the management of or Github
 repositories and organizations:
-- [prow](https://git.k8s.io/test-infra/prow): Prow is our system for handling
+- [prow](https://sigs.k8s.io/prow/pkg): Prow is our system for handling
   GitHub events and commands for Kubernetes. It is comprised of a number of
   modules/plugins. A couple key ones for GitHub management are below, but a full
   list of commands is available [here](https://go.k8s.io/bot-commands)
-  - [branchprotector](https://git.k8s.io/test-infra/prow/cmd/branchprotector):
+  - [branchprotector](https://sigs.k8s.io/prow/cmd/branchprotector):
     enforce branch protection settings across an organization
-  - [peribolos](https://git.k8s.io/test-infra/prow/cmd/peribolos): Manage Github
+  - [peribolos](https://sigs.k8s.io/prow/cmd/peribolos): Manage Github
     organization and team membership based on a defined YAML configuration
 - [label_sync](https://git.k8s.io/test-infra/label_sync): Add, modify, delete,
   and migrate labels across an entire organization based on a defined YAML

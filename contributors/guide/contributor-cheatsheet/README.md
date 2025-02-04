@@ -53,6 +53,7 @@ better.
 
 ### Getting Started
 
+- [Contributor Course] - **NEW** - The E-Learning for Contributors course for Kubernetes!
 - [Contributor Guide] - Guide on how to begin contributing to Kubernetes
   Project.
 - [Developer Guide] - Guide to contributing code directly to the Kubernetes
@@ -77,8 +78,6 @@ better.
 
 ### Workflow
 
-- [Gubernator Dashboard] - View incoming and outgoing Pull Requests that require
-  your attention.
 - [Prow] - Kubernetes CI/CD System.
 - [Tide] - Prow plugin that manages merges and tests. [Tide Dashboard]
 - [Bot commands] - Commands used to interact with Kubernetes Bots (examples:
@@ -139,7 +138,7 @@ When closing a PR, convey an explanatory and cordial message explaining
 why it does not meet the requirements to be merged.
 
 🙂 “I’m closing this PR because this feature can’t support the use case X. In
-   it's proposed form, it would be a better to be implemented with Y tool. Thank
+   its proposed form, it would be better to implement with Y tool. Thank
     you for working on this.”
 
 😞 “Why isn’t this following the API conventions? This should be done elsewhere!”
@@ -152,7 +151,7 @@ why it does not meet the requirements to be merged.
 
 Before you can submit a contribution, you must [sign the Contributor License
 Agreement(CLA)][cla]. The Kubernetes project can _only_ accept a contribution
-if you or your company has signed the CLA.
+if you or your company have signed the CLA.
 
 Should you encounter any problems signing the CLA, follow the [CLA
 troubleshooting guidelines].
@@ -163,7 +162,7 @@ troubleshooting guidelines].
 GitHub Issues are the primary means of tracking things such as bug reports,
 enhancement requests, or reporting other issues such as failing tests. They are
 **not** intended for [user support requests]. For those, please check with the
-[troubleshooting guide], report the problem to [Stack Overflow] or follow up on
+[troubleshooting guide], report the problem to [Stack Overflow], or follow up on
 the [Kubernetes forum].
 
 **References:**
@@ -211,8 +210,8 @@ other forms of work that would be stored within a git repository.
 #### Creating a Pull Request
 
 - Follow the directions of the pull request template if one is available. It
-  will help those that respond to your PR.
-- If a [trivial fix] such as a broken link, typo or grammar mistake, review the
+  will help those who respond to your PR.
+- If a [trivial fix] such as a broken link, typo, or grammar mistake, review the
   entire document for other potential mistakes. Do not open multiple PRs for
   small fixes in the same document.
 - Reference any issues related to your PR, or issues that PR may solve.
@@ -249,11 +248,11 @@ What's in that PR:
 - **Line 1** - Reference to other issues or PRs (#3064 #3097).
 - **Line 2** - A brief description of what is being done in the PR.
 - **Line 4** - [SIG][sigs] assignment with the [command][commands]
-  `/sig contributor-experience`..
-- **Line 5** - Reviewers that may have interest on this specific issue or PR are
+  `/sig contributor-experience`.
+- **Line 5** - Reviewers that may have interest in this specific issue or PR are
   specified with the [`/cc`][cc] command.
-- **Line 6** - The [`/kind cleanup`][kind] command add a [label][labels] that
-  categorizes issue or PR as related to cleaning up code, process, or technical
+- **Line 6** - The [`/kind cleanup`][kind] command adds a [label][labels] that
+  categorizes issues or PR as related to cleaning up code, process, or technical
   debt.
 - **Line 7** - The [`/area developer-guide`][kind] command categorizes issue or
   PR as related to the developer guide.
@@ -271,7 +270,7 @@ will reply to the PR with links to the failed tests and available logs.
 
 Pushing new commits to your PR will automatically trigger the tests to re-run.
 
-Occasionally there can be issues with Kubernetes CI platform. These can occur
+Occasionally there can be issues with the Kubernetes CI platform. These can occur
 for a wide variety of reasons even if your contribution passes all local
 tests. You can trigger a re-run of the tests with the `/retest` command.
 
@@ -326,7 +325,7 @@ configured within your local working copy.
 Add `upstream` as a remote, and configure it so you cannot push to it.
 
 ```
-# replace <upstream git repo> with the upstream repo url
+# replace <upstream git repo> with the upstream repo URL
 # example:
 #  https://github.com/kubernetes/kubernetes.git
 #  git@github.com/kubernetes/kubernetes.git
@@ -361,9 +360,9 @@ git checkout -b myfeature
 #### Squashing Commits
 
 The main purpose of [squashing commits] is to create a clean readable git
-history or log of the changes that were made. Usually this is done in last
+history or log of the changes that were made. Usually, this is done in the last
 phase of a PR revision. If you are unsure if you should squash your commits, it
-is better to err on the side of having more and leave it up to the judgement of
+is better to err on the side of having more and leave it up to the judgment of
 the other contributors assigned to review and approve your PR.
 
 Perform an interactive rebase to choose which commits you want to keep and which you want to squash, then force push your branch:
@@ -374,20 +373,20 @@ git rebase -i HEAD~3
 git push --force
 ```
 
-**Note**: you can also ask your reviewer to add the `tide/merge-method-squash` label to your PR (this can be done by a reviewer by issuing the command: `/label tide/merge-method-squash`), this will let the bot take care of squashing _all_ commits that are part of this PR and will not result in removal of the `LGTM` label (if already applied) or re-run of the CI tests.
+**Note**: you can also use the bot to help squash commits, please see [squashing commits] for more details.
 
+[contributor course]: https://www.kubernetes.dev/docs/onboarding
 [contributor guide]: /contributors/guide/README.md
 [developer guide]: /contributors/devel/README.md
-[gubernator dashboard]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
-[tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [tide dashboard]: https://prow.k8s.io/tide
 [bot commands]: https://go.k8s.io/bot-commands
 [gitHub labels]: https://go.k8s.io/github-labels
 [Kubernetes Code Search]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
 [calendar]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
-[kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[kubernetes-dev]: https://groups.google.com/a/kubernetes.io/g/dev
 [slack channels]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [youtube channel]: https://www.youtube.com/c/KubernetesCommunity/
@@ -400,7 +399,7 @@ git push --force
 [kubernetes forum]: https://discuss.kubernetes.io/
 [pull request process]: /contributors/guide/pull-requests.md
 [github workflow]: /contributors/guide/github-workflow.md
-[prow]: https://git.k8s.io/test-infra/prow#prow
+[prow]: https://sigs.k8s.io/prow/pkg
 [cla]: /CLA.md#how-do-i-sign
 [cla troubleshooting guidelines]: /CLA.md#troubleshooting
 [commands]: https://prow.k8s.io/command-help

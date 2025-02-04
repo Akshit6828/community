@@ -16,8 +16,9 @@ Prerequisites:
 - [Install etcd](https://github.com/coreos/etcd/releases) and include the path to the installation in your PATH
   - Verify etcd is installed correctly by running `which etcd`
   - Or make etcd binary available and executable at `/tmp/etcd`
-- [Install ginkgo](https://github.com/onsi/ginkgo) and include the path to the installation in your PATH
-  - Verify ginkgo is installed correctly by running `which ginkgo`
+- [containerd](https://github.com/containerd/containerd) configured with the cgroupfs driver
+- Working CNI
+  - Ensure that you have a valid CNI configuration in /etc/cni/net.d/. For testing purposes, a [bridge](https://www.cni.dev/plugins/current/main/bridge/) configuration should work.
 
 From the Kubernetes base directory, run:
 
@@ -52,7 +53,7 @@ Prerequisites:
 - Setup a [Google Cloud Platform](https://cloud.google.com/) account and project with Google Compute Engine enabled
 - Install and setup the [gcloud sdk](https://cloud.google.com/sdk/downloads)
   - Set your project and a zone by running `gcloud config set project $PROJECT` and `gcloud config set compute/zone $zone`
-  - Verify the sdk is setup correctly by running `gcloud compute instances list` and `gcloud compute images list --project kubernetes-node-e2e-images`
+  - Verify the sdk is setup correctly by running `gcloud compute instances list` and `gcloud compute images list --project cos-cloud`
   - Configure credentials for the same project that you configured above for "application defaults". This can be done with `gcloud auth application-default login` or by setting the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to a path to a credentials file.
 
 Run:
@@ -95,7 +96,7 @@ provided by the default image.
 List the available test images using gcloud.
 
 ```sh
-make test-e2e-node LIST_IMAGES=true
+gcloud compute images list --project="cos-cloud" --no-standard-images --filter="name ~ 'cos-beta.*'"
 ```
 
 This will output a list of the available images for the default image project.
@@ -112,6 +113,14 @@ This is useful if you have an host instance running already and want to run the 
 
 ```sh
 make test-e2e-node REMOTE=true HOSTS="<comma-separated-list-of-hostnames>"
+```
+
+## Run tests against a different network and subnet (not the default)
+
+This is useful if you want to run tests on a non-default network and subnet.
+
+```sh
+make test-e2e-node REMOTE=true NETWORK="<network> SUBNET="<subnet>"
 ```
 
 ## Delete instance after tests run
@@ -179,10 +188,10 @@ Image configuration files can further influence how FOCUS and SKIP match test ca
 For example:
 
 ```sh
---focus="\[NodeFeature:.+\]" --skip="\[Flaky\]|\[Serial\]"
+--focus="\[Feature:.+\]" --skip="\[Flaky\]|\[Serial\]"
 ```
 
-runs all e2e tests labeled `"[NodeFeature:*]"` and will skip any tests labeled `"[Flaky]"` or `"[Serial]"`.
+runs all e2e tests labeled `"[Feature:*]"` and will skip any tests labeled `"[Flaky]"` or `"[Serial]"`.
 
 Two example e2e tests that match this expression are:
   * https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L155
@@ -192,7 +201,7 @@ However, image configuration files select test cases based on the `tests` field.
 
 See https://github.com/kubernetes/test-infra/blob/4572dc3bf92e70f572e55e7ac1be643bdf6b2566/jobs/e2e_node/benchmark-config.yaml#L22-23 for an example configuration. 
 
-If the [Prow e2e job configuration](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/image-config.yaml) does **not** specify the `tests` field, FOCUS and SKIP will run as expected.
+If the [Prow e2e job configuration](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/containerd/image-config.yaml) does **not** specify the `tests` field, FOCUS and SKIP will run as expected.
 
 # Additional test options for both remote and local execution
 
@@ -226,7 +235,7 @@ To run a particular e2e test, simply pass the Grinkgo `It` string to the `--focu
 For example, suppose we have the following test case: https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L175. We could select this test case by adding the argument:
 
 ```sh
---focus="should not show its pid in the non-hostpid containers \[NodeFeature:HostAccess\]"
+--focus="should not show its pid in the non-hostpid containers \[Feature:HostAccess\]"
 ```
 
 ## Run all tests related to a feature
@@ -234,7 +243,7 @@ For example, suppose we have the following test case: https://github.com/kuberne
 In contrast, to run all node e2e tests related to the "HostAccess" feature one could run:
 
 ```sh
---focus="\[NodeFeature:HostAccess\]"
+--focus="\[Feature:HostAccess\]"
 ```
 
 ## Run tests continually until they fail
@@ -307,7 +316,7 @@ For example,
     /test pull-kubernetes-node-e2e
     flake due to #12345
 
-The PR builder runs tests against the images listed in [image-config.yaml](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/image-config.yaml).
+The PR builder runs tests against the images listed in [image-config.yaml](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/containerd/image-config.yaml).
 
 Other [node e2e Prow jobs](https://github.com/kubernetes/test-infra/tree/master/config/jobs/kubernetes/sig-node)
 run against different images depending on the configuration chosen in the
@@ -353,3 +362,14 @@ metadata:
 Please note that if you add the annotations, then you must provide the full information:
 you must should specify the number of SRIOV devices attached to each NUMA node in the system,
 even if the number is zero.
+
+# Debugging E2E Tests Locally
+
+1. Install kubectl on the node
+2. Set your KUBCONFIG environment variable to reference the kubeconfig created by the e2e node tests
+   `export KUBECONFIG=./_output/local/go/bin/kubeconfig`
+3. Inspect the node and pods as needed while the tests are running
+   ```
+   $ kubectl get pod -A
+   $ kubectl describe node
+   ```

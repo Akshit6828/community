@@ -22,6 +22,9 @@ An introduction to using resources with kubectl can be found in [the object mana
 - [Differing Representations](#differing-representations)
 - [Verbs on Resources](#verbs-on-resources)
   - [PATCH operations](#patch-operations)
+- [Short-names and Categories](#short-names-and-categories)
+  - [Short-names](#short-names)
+  - [Categories](#categories)
 - [Idempotency](#idempotency)
 - [Optional vs. Required](#optional-vs-required)
 - [Defaulting](#defaulting)
@@ -69,7 +72,7 @@ An introduction to using resources with kubectl can be found in [the object mana
   - [When to use a different type](#when-to-use-a-different-type)
 
 
-The conventions of the [Kubernetes API](https://kubernetes.io/docs/api/) (and related APIs in the
+The conventions of the [Kubernetes API](https://kubernetes.io/docs/concepts/overview/kubernetes-api/) (and related APIs in the
 ecosystem) are intended to ease client development and ensure that configuration
 mechanisms can be implemented that work across a diverse set of use cases
 consistently.
@@ -148,8 +151,8 @@ the full list. Some objects may be singletons (the current user, the system
 defaults) and may not have lists.
 
    In addition, all lists that return objects with labels should support label
-filtering (see [the labels documentation](https://kubernetes.io/docs/user-guide/labels/)), and most
-lists should support filtering by fields (see
+filtering (see [the labels documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)),
+and most lists should support filtering by fields (see
 [the fields documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors/)).
 
    Examples: `PodList`, `ServiceList`, `NodeList`.
@@ -188,7 +191,7 @@ is independent of the specific resource schema.
 
    Two additional subresources, `proxy` and `portforward`, provide access to
 cluster resources as described in
-[accessing the cluster](https://kubernetes.io/docs/user-guide/accessing-the-cluster/).
+[accessing the cluster](https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster/).
 
 The standard REST verbs (defined below) MUST return singular JSON objects. Some
 API endpoints may deviate from the strict REST pattern and return resources that
@@ -229,12 +232,12 @@ called "metadata":
 
 * namespace: a namespace is a DNS compatible label that objects are subdivided
 into. The default namespace is 'default'. See
-[the namespace docs](https://kubernetes.io/docs/user-guide/namespaces/) for more.
+[the namespace docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) for more.
 * name: a string that uniquely identifies this object within the current
-namespace (see [the identifiers docs](https://kubernetes.io/docs/user-guide/identifiers/)).
+namespace (see [the identifiers docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)).
 This value is used in the path when retrieving an individual object.
 * uid: a unique in time and space value (typically an RFC 4122 generated
-identifier, see [the identifiers docs](https://kubernetes.io/docs/user-guide/identifiers/))
+identifier, see [the identifiers docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/))
 used to distinguish between objects with the same name that have been deleted
 and recreated
 
@@ -264,10 +267,10 @@ Once the deletionTimestamp is set, this value may not be unset or be set further
 into the future, although it may be shortened or the resource may be deleted
 prior to this time.
 * labels: a map of string keys and values that can be used to organize and
-categorize objects (see [the labels docs](https://kubernetes.io/docs/user-guide/labels/))
+categorize objects (see [the labels docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/))
 * annotations: a map of string keys and values that can be used by external
 tooling to store and retrieve arbitrary metadata about this object (see
-[the annotations docs](https://kubernetes.io/docs/user-guide/annotations/))
+[the annotations docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/))
 
 Labels are intended for organizational purposes by end users (select the pods
 that match this label query). Annotations enable third-party automation and
@@ -422,6 +425,11 @@ Conditions are most useful when they follow some consistent conventions:
 Conditions should follow the standard schema included in [k8s.io/apimachinery/pkg/apis/meta/v1/types.go](https://github.com/kubernetes/apimachinery/blob/release-1.23/pkg/apis/meta/v1/types.go#L1432-L1492).
 It should be included as a top level element in status, similar to
 ```go
+// +listType=map
+// +listMapKey=type
+// +patchStrategy=merge
+// +patchMergeKey=type
+// +optional
 Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,1,rep,name=conditions"`
 ```
 
@@ -488,7 +496,7 @@ Some resources in the v1 API contain fields called **`phase`**, and associated
 `message`, `reason`, and other status fields. The pattern of using `phase` is
 deprecated. Newer API types should use conditions instead. Phase was
 essentially a state-machine enumeration field, that contradicted [system-design
-principles](../../design-proposals/architecture/principles.md#control-logic) and
+principles](https://git.k8s.io/design-proposals-archive/architecture/principles.md#control-logic) and
 hampered evolution, since [adding new enum values breaks backward
 compatibility](api_changes.md). Rather than encouraging clients to infer
 implicit properties from phases, we prefer to explicitly expose the individual
@@ -513,7 +521,7 @@ only provided with reasonable effort, and is not guaranteed to not be lost.
 Status information that may be large (especially proportional in size to
 collections of other resources, such as lists of references to other objects --
 see below) and/or rapidly changing, such as
-[resource usage](../../design-proposals/scheduling/resources.md#usage-data), should be put into separate
+[resource usage](https://git.k8s.io/design-proposals-archive/scheduling/resources.md#usage-data), should be put into separate
 objects, with possibly a reference from the original object. This helps to
 ensure that GETs and watch remain reasonably efficient for the majority of
 clients, which may not need that data.
@@ -526,9 +534,10 @@ the reported status reflects the most recent desired status.
 #### References to related objects
 
 References to loosely coupled sets of objects, such as
-[pods](https://kubernetes.io/docs/user-guide/pods/) overseen by a
-[replication controller](https://kubernetes.io/docs/user-guide/replication-controller/), are usually
-best referred to using a [label selector](https://kubernetes.io/docs/user-guide/labels/). In order to
+[pods](https://kubernetes.io/docs/concepts/workloads/pods/) overseen by a
+[replication controller](https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/),
+are usually best referred to using a
+[label selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors). In order to
 ensure that GETs of individual objects remain bounded in time and space, these
 sets may be queried via separate API queries, but will not be expanded in the
 referring object's status.
@@ -570,22 +579,28 @@ selectors, annotations, data), as opposed to sets of subobjects.
 
 #### Primitive types
 
+* Look at similar fields in the API (e.g. ports, durations) and follow the
+  conventions of existing fields.
+* Do not use enums. Use aliases for string instead (e.g. `NodeConditionType`).
+* All numeric fields should be bounds-checked, both for too-small or negative
+  and for too-large.
+* All public integer fields MUST use the Go `int32` or Go `int64` types, not
+  `int` (which is ambiguously sized, depending on target platform).  Internal
+  types may use `int`.
+* For integer fields, prefer `int32` to `int64` unless you need to represent
+  values larger than `int32`.  See other guidelines about limitations of
+  `int64` and language compatibility.
+* Do not use unsigned integers, due to inconsistent support across languages and
+  libraries. Just validate that the integer is non-negative if that's the case.
+* All numbers (e.g. `int32`, `int64`) are converted to `float64` by Javascript
+  and some other languages, so any field which is expected to exceed that
+  either in magnitude or in precision (e.g. integer values > 53 bits)
+  should be serialized and accepted as strings. `int64` fields must be
+  bounds-checked to be within the range of `-(2^53) < x < (2^53)`.
 * Avoid floating-point values as much as possible, and never use them in spec.
   Floating-point values cannot be reliably round-tripped (encoded and
   re-decoded) without changing, and have varying precision and representations
   across languages and architectures.
-* All numbers (e.g., uint32, int64) are converted to float64 by Javascript and
-  some other languages, so any field which is expected to exceed that either in
-  magnitude or in precision (specifically integer values > 53 bits) should be
-  serialized and accepted as strings.
-* Do not use unsigned integers, due to inconsistent support across languages and
-  libraries. Just validate that the integer is non-negative if that's the case.
-* Do not use enums. Use aliases for string instead (e.g., `NodeConditionType`).
-* Look at similar fields in the API (e.g., ports, durations) and follow the
-  conventions of existing fields.
-* All public integer fields MUST use the Go `(u)int32` or Go `(u)int64` types,
-  not `(u)int` (which is ambiguous depending on target platform). Internal
-  types may use `(u)int`.
 * Think twice about `bool` fields. Many ideas start as boolean but eventually
   trend towards a small set of mutually exclusive options.  Plan for future
   expansions by describing the policy options explicitly as a string type
@@ -715,26 +730,93 @@ saved. For more details on how to use Merge Patch, see the RFC.
 detailed explanation of how it works and why it needed to be introduced, see
 [here](/contributors/devel/sig-api-machinery/strategic-merge-patch.md).
 
+## Short-names and Categories
+
+Resource implementers can optionally include "short names" and categories
+in the discovery information published for a resource type,
+which clients may use as hints when resolving ambiguous user invocations.
+
+For compiled-in resources, these are controlled by the REST handler `ShortNames() []string` and `Categories() []string` implementations.
+
+For custom resources, these are controlled by the `.spec.names.shortNames` and `.spec.names.categories` fields in the CustomResourceDefinition.
+
+### Short-names
+
+Note: Due to unpredictable behavior when short names collide (with each other or with resource types),
+do not add new short names to built-in resources unless specifically allowed by API reviewers. See issues
+[#117742](https://issue.k8s.io/117742#issuecomment-1545945336) and [#108573](http://issue.k8s.io/108573).
+
+"Short names" listed in discovery may be used by clients as hints to resolve ambiguous user invocations to a single resource.
+
+Examples of built-in short names include:
+
+* `ds` -> `apps/v* daemonsets`
+* `sts` -> `apps/v* statefulsets`
+* `hpa` -> `autoscaling/v* horizontalpodautoscalers`
+
+For example, with only built-in API types served, `kubectl get sts` is equivalent to `kubectl get statefulsets.v1.apps`.
+
+Short-name matches may be given lower priority than an exact match of a resource type,
+so use of short names increases potential for inconsistent behavior in clusters
+with custom resources installed, if those custom resource types overlap with short names.
+
+Continuing the above example, if a custom resource with `.spec.names.plural` set to `sts` was installed in a cluster,
+`kubectl get sts` would switch to retrieving instances of the custom resource instead.
+
+### Categories
+
+Note: Due to inconsistent behavior when categories collide with resource types,
+and difficulties knowing when it is safe to add new resources to an existing category,
+do not add new categories to built-in resources unless specifically allowed by API reviewers.
+See issues [#7547](https://github.com/kubernetes/kubernetes/issues/7547#issuecomment-355835279)
+[#42885](https://github.com/kubernetes/kubernetes/issues/42885#issuecomment-531265679),
+and [considerations for adding to the "all" category](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-cli/kubectl-conventions.md#rules-for-extending-special-resource-alias---all)
+for examples of the difficulties encountered.
+
+Categories listed in discovery may be used by clients as hints to resolve user invocations to multiple resources.
+
+Examples of built-in categories and the resources they map to include:
+* `api-extensions`
+  * `apiregistration.k8s.io/v* apiservices`
+  * `admissionregistration.k8s.io/v* mutatingwebhookconfigurations`
+  * `admissionregistration.k8s.io/v* validatingwebhookconfigurations`
+  * `admissionregistration.k8s.io/v* validatingadmissionpolicies`
+  * `admissionregistration.k8s.io/v* validatingadmissionpolicybindings`
+  * `apiextensions.k8s.io/v* customresourcedefinitions`
+* `all`
+  * `v1 pods`
+  * `v1 replicationcontrollers`
+  * `v1 services`
+  * `apps/v* daemonsets`
+  * `apps/v* deployments`
+  * `apps/v* replicasets`
+  * `apps/v* statefulsets`
+  * `autoscaling/v* horizontalpodautoscalers`
+  * `batch/v* cronjobs`
+  * `batch/v* jobs`
+
+With the above categories, and only built-in API types served, `kubectl get all` would be equivalent to 
+`kubectl get pods.v1.,replicationcontrollers.v1.,services.v1.,daemonsets.v1.apps,deployments.v1.apps,replicasets.v1.apps,statefulsets.v1.apps,horizontalpodautoscalers.v2.autoscaling,cronjobs.v1.batch,jobs.v1.batch,`.
+
 ## Idempotency
 
 All compatible Kubernetes APIs MUST support "name idempotency" and respond with
 an HTTP status code 409 when a request is made to POST an object that has the
 same name as an existing object in the system. See
-[the identifiers docs](https://kubernetes.io/docs/user-guide/identifiers/) for details.
+[the identifiers docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+for details.
 
 Names generated by the system may be requested using `metadata.generateName`.
 GenerateName indicates that the name should be made unique by the server prior
-to persisting it. A non-empty value for the field indicates the name will be
-made unique (and the name returned to the client will be different than the name
-passed). The value of this field will be combined with a unique suffix on the
-server if the Name field has not been provided. The provided value must be valid
-within the rules for Name, and may be truncated by the length of the suffix
-required to make the value unique on the server. If this field is specified, and
-Name is not present, the server will NOT return a 409 if the generated name
-exists - instead, it will either return 201 Created or 504 with Reason
-`ServerTimeout` indicating a unique name could not be found in the time
-allotted, and the client should retry (optionally after the time indicated in
-the Retry-After header).
+to persisting it. A non-empty value for the field indicates the server should
+attempt to make the name unique (and the name returned to the client will be
+different than the name passed). The value of this field will be combined with a
+random suffix on the server if the Name field has not been provided. The
+provided value must be valid within the rules for Name, and may be truncated by
+the length of the suffix. If this field is specified, and Name is not present,
+the server will return a 409 with Reason `AlreadyExists` if the generated name
+exists, and the client should retry (after waiting at least the amount of time
+indicated in the Retry-After header, if it is present).
 
 ## Optional vs. Required
 
@@ -902,7 +984,7 @@ All forms of defaulting should only make the following types of modifications:
  - Setting previously unset fields
  - Adding keys to maps
  - Adding values to arrays which have mergeable semantics
-   (`patchStrategy:"merge"` attribute in the type definition)
+   (`+listType=map` tag or `patchStrategy:"merge"` attribute in the type definition)
 
 In particular we never want to change or override a value that was provided by
 the user.  If they requested something invalid, they should get an error.
@@ -969,7 +1051,7 @@ Kubernetes leverages the concept of *resource versions* to achieve optimistic
 concurrency. All Kubernetes resources have a "resourceVersion" field as part of
 their metadata. This resourceVersion is a string that identifies the internal
 version of an object that can be used by clients to determine when objects have
-changed. When a record is about to be updated, it's version is checked against a
+changed. When a record is about to be updated, its version is checked against a
 pre-saved value, and if it doesn't match, the update fails with a StatusConflict
 (HTTP status code 409).
 
@@ -1394,8 +1476,8 @@ due to invalid data provided as part of the request.
 
 
 * `429 StatusTooManyRequests`
-  * Indicates that the either the client rate limit has been exceeded or the
-server has received more requests then it can process.
+  * Indicates that either the client rate limit has been exceeded or the
+server has received more requests than it can process.
   * Suggested client recovery behavior:
     * Read the `Retry-After` HTTP header from the response, and wait at least
 that long before retrying.
@@ -1673,7 +1755,8 @@ called `Fooable`, not `IsFooable`.
 [DNS_LABEL](https://git.k8s.io/design-proposals-archive/architecture/identifiers.md).
 * The `kube-` prefix is reserved for Kubernetes system namespaces, e.g. `kube-system` and `kube-public`.
 * See
-[the namespace docs](https://kubernetes.io/docs/user-guide/namespaces/) for more information.
+[the namespace docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
+for more information.
 
 ## Label, selector, and annotation conventions
 
@@ -1706,7 +1789,7 @@ that hard to consistently apply schemas that ensure uniqueness. One just needs
 to ensure that at least one value of some label key in common differs compared
 to all other comparable resources. We could/should provide a verification tool
 to check that. However, development of conventions similar to the examples in
-[Labels](https://kubernetes.io/docs/user-guide/labels/) make uniqueness straightforward. Furthermore,
+[Labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) make uniqueness straightforward. Furthermore,
 relatively narrowly used namespaces (e.g., per environment, per application) can
 be used to reduce the set of resources that could potentially cause overlap.
 

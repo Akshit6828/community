@@ -17,22 +17,13 @@ description: |
 
 ## 2. Clone fork to local storage
 
-Per Go's [workspace instructions][go-workspace], place Kubernetes' code on your
-`GOPATH` using the following cloning procedure.
+In your shell, define a local working directory as `working_dir`.
 
-[go-workspace]: https://golang.org/doc/code.html#Workspaces
-
-In your shell, define a local working directory as `working_dir`. If your `GOPATH` has multiple paths, pick
-just one and use it instead of `$GOPATH`. You must follow exactly this pattern,
-neither `$GOPATH/src/github.com/${your github profile name}/`
-nor any other pattern will work.
+[GO Modules]: https://go.dev/blog/using-go-modules
 
 ```sh
-export working_dir="$(go env GOPATH)/src/k8s.io"
+export working_dir="${HOME}/src/k8s.io" # Change to your preferred location for source code
 ```
-
-If you already do Go development on github, the `k8s.io` directory
-will be a sibling to your existing `github.com` directory.
 
 Set `user` to match your github profile name:
 
@@ -230,12 +221,17 @@ To squash your commits, perform an [interactive rebase](https://git-scm.com/book
 4. Force push your changes to your remote branch:
 
   ```
-  git push --force
+  git push --force-with-lease
   ```
 
 For mass automated fixups such as automated doc formatting, use one or more
 commits for the changes to tooling and a final commit to apply the fixup en
 masse. This makes reviews easier.
+
+An alternative to this manual squashing process is to use the Prow and Tide based automation that is configured in GitHub: adding a comment to your PR with `/label tide/merge-method-squash` will trigger the automation so that GitHub squash your commits onto the target branch once the PR is approved. Using this approach simplifies things for those less familiar with Git, but there are situations in where it's better to squash locally; reviewers will have this in mind and can ask for manual squashing to be done.
+
+By squashing locally, you control the commit message(s) for your work, and can separate a large PR into logically separate changes.
+For example: you have a pull request that is code complete and has 24 commits. You rebase this against the same merge base, simplifying the change to two commits. Each of those two commits represents a single logical change and each commit message summarizes what changes. Reviewers see that the set of changes are now understandable, and approve your PR.
 
 ## Merging a commit
 
