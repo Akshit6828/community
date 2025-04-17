@@ -98,6 +98,9 @@ sigs:
   - name: json
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/json/main/OWNERS
+  - name: kube-api-linter
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kube-api-linter/refs/heads/main/OWNERS
   - name: kubernetes-clients
     owners:
     - https://raw.githubusercontent.com/kubernetes-client/c/master/OWNERS
@@ -407,6 +410,11 @@ sigs:
       slack: enhancements
     owners:
     - https://raw.githubusercontent.com/kubernetes/enhancements/master/OWNERS
+  - name: maintainer-tools
+    description: Tooling based on Deep Learning tools to help maintainers to maintain
+      the Kubernetes project.
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/maintainer-tools/refs/heads/main/OWNERS
   - name: production-readiness
     description: '[Described below](#production-readiness-1)'
     contact:
@@ -573,11 +581,6 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/storage/value/OWNERS
-  - name: hierarchical-namespace-controller
-    description: |
-      Controller to manage hierarchical namespaces
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/hierarchical-namespaces/master/OWNERS
   - name: node-identity-and-isolation
     description: |
       Node identity management (co-owned with sig-lifecycle), and authorization restrictions for isolating workloads on separate nodes (co-owned with sig-node).
@@ -590,7 +593,6 @@ sigs:
     description: |
       API validation and policies enforced during admission, such as PodSecurityPolicy. Excludes run-time policies like NetworkPolicy and Seccomp.
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/pspmigrator/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/wg-policy-prototypes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kms/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/imagepolicy/OWNERS
@@ -610,11 +612,29 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-secrets-store-csi-driver
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/OWNERS
+    leads:
+    - github: aramase
+      name: Anish Ramasekar
+      company: Microsoft
+      email: anish.ramasekar@gmail.com
+    - github: ritazh
+      name: Rita Zhang
+      company: Microsoft
+      email: ritazh@microsoft.com
   - name: secrets-store-sync-controller
     description: |
       This is a Kubernetes controller that watches for changes to a custom resource and syncs the secrets from external secrets-store as Kubernetes secret.
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-sync-controller/main/OWNERS
+    leads:
+    - github: aramase
+      name: Anish Ramasekar
+      company: Microsoft
+      email: anish.ramasekar@gmail.com
+    - github: enj
+      name: Mo Khan
+      company: Microsoft
+      email: i@monis.app
   - name: service-accounts
     description: |
       Infrastructure implementing Kubernetes service account based workload identity.
@@ -1748,6 +1768,10 @@ sigs:
   label: etcd
   leadership:
     chairs:
+    - github: ivanvc
+      name: Ivan Valdes
+      company: Inmar Intelligence
+      email: ivan@vald.es
     - github: jmhbnz
       name: James Blair
       company: Red Hat
@@ -2024,6 +2048,7 @@ sigs:
     - github: upodroid
       name: Mahamed Ali
       company: Cisco
+      email: cy@borg.dev
     - github: xmudrii
       name: Marko Mudrinić
       company: Kubermatic
@@ -2498,7 +2523,7 @@ sigs:
     archive_url: https://docs.google.com/document/d/1fb-ugvgdSVIkkuJ388_nhp2pBTy_4HEVg5848Xy7n5U/edit
   contact:
     slack: sig-node
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-node
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-node
     teams:
     - name: sig-node-api-reviews
       description: API Changes and Reviews
@@ -2518,7 +2543,7 @@ sigs:
   subprojects:
   - name: ci-testing
     contact:
-      mailing_list: https://groups.google.com/g/kubernetes-sig-node-test-failures
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-node-ci
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/common/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/common/node/OWNERS
@@ -2610,7 +2635,7 @@ sigs:
       email: ctadeu@gmail.com
     - github: puerco
       name: Adolfo García Veytia
-      company: Stacklok
+      company: Carabiner Systems, Inc
       email: adolfo.garcia@uservers.net
     emeritus_leads:
     - github: alejandrox1
@@ -2985,12 +3010,6 @@ sigs:
       github: justaugustus
       name: Stephen Augustus
   subprojects:
-  - name: security-assessments
-    description: Security self assessments for upstream projects
-    contact:
-      slack: sig-security-assessments
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/sig-security/main/sig-security-assessments/OWNERS
   - name: security-audit
     description: Third Party Security Audit
     owners:
@@ -3174,6 +3193,7 @@ sigs:
     - github: xmcqueen
       name: Brian McQueen
       company: LinkedIn
+      email: mcqueenorama@gmail.com
     tech_leads:
     - github: BenTheElder
       name: Benjamin Elder
@@ -3367,12 +3387,15 @@ sigs:
     - github: floreks
       name: Sebastian Florek
       company: Plural
+      email: sebastian@plural.sh
     - github: maciaszczykm
       name: Marcin Maciaszczyk
       company: Plural
+      email: marcin9yk@icloud.com
     - github: shu-mutou
       name: Shu Muto
       company: NEC
+      email: shu.mutow@gmail.com
     emeritus_leads:
     - github: danielromlein
       name: Dan Romlein
@@ -3404,6 +3427,7 @@ sigs:
     - github: aravindhp
       name: Aravindh Puthiyaparambil
       company: Softdrive Technologies Group Inc.
+      email: aravindh.foss@pm.me
     - github: marosset
       name: Mark Rossetti
       company: Microsoft
@@ -3412,12 +3436,15 @@ sigs:
     - github: claudiubelu
       name: Claudiu Belu
       company: Cloudbase Solutions
+      email: cbelu@cloudbasesolutions.com
     - github: jsturtevant
       name: James Sturtevant
       company: Microsoft
+      email: jsturtevant@gmail.com
     - github: knabben
       name: Amim Knabben
       company: VMware
+      email: amim.knabben@gmail.com
     - github: marosset
       name: Mark Rossetti
       company: Microsoft
@@ -3581,6 +3608,7 @@ workinggroups:
     - github: yuxiangqian
       name: Xiangqian Yu
       company: Google
+      email: xiangqian@google.com
   meetings:
   - description: Regular WG Meeting
     day: Wednesday
@@ -3774,12 +3802,15 @@ workinggroups:
     - github: JimBugwadia
       name: Jim Bugwadia
       company: Kyverno/Nirmata
+      email: jim@nirmata.com
     - github: poonam-lamba
       name: Poonam Lamba
       company: Google
+      email: poonamlamba83@gmail.com
     - github: sudermanjr
       name: Andy Suderman
       company: Fairwinds
+      email: andy@suderman.dev
     emeritus_leads:
     - github: rficcaglia
       name: Robert Ficcaglia
@@ -3898,6 +3929,7 @@ committees:
     - github: AnaMMedina21
       name: Ana Margarita Medina
       company: Upbound
+      email: AnaMMedina21@gmail.com
     - github: divya-mohan0209
       name: Divya Mohan
       company: SUSE
@@ -3905,6 +3937,7 @@ committees:
     - github: endocrimes
       name: Danielle Lancashire
       company: Fermyon
+      email: lancashiredanielle@gmail.com
     - github: jeremyrickard
       name: Jeremy Rickard
       company: Microsoft
@@ -3912,6 +3945,7 @@ committees:
     - github: stmcginnis
       name: Sean McGinnis
       company: Lambda, Inc
+      email: sean.mcginnis@gmail.com
     emeritus_leads:
     - github: AevaOnline
       name: Aeva Black
