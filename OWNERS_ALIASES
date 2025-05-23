@@ -33,6 +33,7 @@ aliases:
     - bridgetkromhout
     - cheftako
     - elmiko
+    - joelspeed
   sig-cluster-lifecycle-leads:
     - fabriziopandini
     - justinsb
@@ -53,6 +54,7 @@ aliases:
     - tengqm
   sig-etcd-leads:
     - ahrtr
+    - ivanvc
     - jmhbnz
     - serathius
     - wenjiaswe
@@ -95,9 +97,9 @@ aliases:
     - shyamjvs
     - wojtek-t
   sig-scheduling-leads:
-    - Huang-Wei
-    - ahg-g
-    - alculquicondor
+    - dom4ha
+    - macsko
+    - sanposhiho
   sig-security-leads:
     - IanColdwater
     - cailyn-codes
@@ -166,11 +168,14 @@ aliases:
     - stmcginnis
   committee-security-response:
     - SaranBalaji90
+    - Vyom-Yadav
     - cjcullen
     - cji
     - enj
     - joelsmith
     - micahhausler
+    - natherz97
+    - puerco
     - ritazh
     - tabbysable
   committee-steering:
