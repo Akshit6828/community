@@ -52,14 +52,17 @@ usergroups:
       - release-management
       - sig-release
     members:
+      - puerco
       - cjcullen
       - cji
       - enj
       - joelsmith
       - micahhausler
+      - natherz97
       - ritazh
       - SaranBalaji90
       - tabbysable
+      - Vyom-Yadav
 
   - name: velero-maintainers
     long_name: Velero Maintainers
@@ -328,3 +331,12 @@ usergroups:
       - kayrus
       - mandre
       - pierreprinetti
+
+  - name: kubetail-maintainers
+    long_name: kubetail Maintainers
+    description: kubetail Maintainers group of kubetail.com
+    channels:
+      - kubetail
+    members:
+      - amorey
+      - rxinui

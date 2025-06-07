@@ -124,10 +124,6 @@ API storage support for storing data encrypted at rest in etcd.
 - **Owners:**
   - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/storage/value](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/storage/value/OWNERS)
-### hierarchical-namespace-controller
-Controller to manage hierarchical namespaces
-- **Owners:**
-  - [kubernetes-sigs/hierarchical-namespaces](https://github.com/kubernetes-sigs/hierarchical-namespaces/blob/master/OWNERS)
 ### node-identity-and-isolation
 Node identity management (co-owned with sig-lifecycle), and authorization restrictions for isolating workloads on separate nodes (co-owned with sig-node).
 - **Owners:**
@@ -138,7 +134,6 @@ Node identity management (co-owned with sig-lifecycle), and authorization restri
 ### policy-management
 API validation and policies enforced during admission, such as PodSecurityPolicy. Excludes run-time policies like NetworkPolicy and Seccomp.
 - **Owners:**
-  - [kubernetes-sigs/pspmigrator](https://github.com/kubernetes-sigs/pspmigrator/blob/main/OWNERS)
   - [kubernetes-sigs/wg-policy-prototypes](https://github.com/kubernetes-sigs/wg-policy-prototypes/blob/master/OWNERS)
   - [kubernetes/kms](https://github.com/kubernetes/kms/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/imagepolicy](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/imagepolicy/OWNERS)
@@ -152,6 +147,9 @@ API validation and policies enforced during admission, such as PodSecurityPolicy
   - [kubernetes/pod-security-admission](https://github.com/kubernetes/pod-security-admission/blob/master/OWNERS)
 ### secrets-store-csi-driver
 Integrates secrets stores with Kubernetes via a CSI volume.
+- **Leads:**
+  - Anish Ramasekar (**[@aramase](https://github.com/aramase)**), Microsoft
+  - Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
 - **Owners:**
   - [kubernetes-sigs/secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/master/OWNERS)
 - **Contact:**
@@ -159,6 +157,9 @@ Integrates secrets stores with Kubernetes via a CSI volume.
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-secrets-store-csi-driver)
 ### secrets-store-sync-controller
 This is a Kubernetes controller that watches for changes to a custom resource and syncs the secrets from external secrets-store as Kubernetes secret.
+- **Leads:**
+  - Anish Ramasekar (**[@aramase](https://github.com/aramase)**), Microsoft
+  - Mo Khan (**[@enj](https://github.com/enj)**), Microsoft
 - **Owners:**
   - [kubernetes-sigs/secrets-store-sync-controller](https://github.com/kubernetes-sigs/secrets-store-sync-controller/blob/main/OWNERS)
 ### service-accounts
