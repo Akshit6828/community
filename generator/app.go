@@ -461,25 +461,30 @@ func (c *Context) Validate() []error {
 					if val, ok := people[person.GitHub]; ok {
 						// non-emeritus must have email and company set
 						if prefix != "emeritus_lead" {
-							// email must be set and consistent
-							if val.Email == "" {
-								errors = append(errors, fmt.Errorf("%s: %s: email is empty but should be set", group.Dir, val.GitHub))
-							} else if val.Email != person.Email {
+							// email and company must match across groups
+							if val.Email != person.Email {
 								errors = append(errors, fmt.Errorf("%s: %s email: %q does not match other entries %q", group.Dir, val.GitHub, val.Email, person.Email))
 							}
-							// company must be set and consistent
-							if val.Company == "" {
-								errors = append(errors, fmt.Errorf("%s: %s: company is empty but should be set", group.Dir, val.Company))
-							} else if val.Company != person.Company {
+							if val.Company != person.Company {
 								errors = append(errors, fmt.Errorf("%s: %s company: %q does not match other entries %q", group.Dir, val.GitHub, val.Company, person.Company))
 							}
 						}
-						// all entries should have github + name, emeritus or not
+						// all entries should have matching github + name, emeritus or not
 						if val.Name != person.Name {
 							errors = append(errors, fmt.Errorf("%s: %s: expected person: %v, got: %v", group.Dir, prefix, val, person))
 						}
 					} else if prefix != "emeritus_lead" {
 						people[person.GitHub] = person
+						// email and company must be set for leads
+						if person.Email == "" {
+							errors = append(errors, fmt.Errorf("%s: %s: email is empty but should be set", group.Dir, person.GitHub))
+						}
+						if person.Company == "" {
+							errors = append(errors, fmt.Errorf("%s: %s: company is empty but should be set", group.Dir, person.GitHub))
+						}
+					}
+					if person.Name == "" {
+						errors = append(errors, fmt.Errorf("%s: %s: name is empty but should be set", group.Dir, person.GitHub))
 					}
 
 					if prefix == "emeritus_lead" && person.Company != "" {
@@ -1095,6 +1100,58 @@ func prepForAnnualReportGeneration() error {
 	return nil
 }
 
+func generateCNCFMaintainersList(ctx *Context) error {
+	maintainers := map[string]Person{}
+	serviceDesk := map[string]bool{}
+	for _, group := range ctx.Committees {
+		if group.Name == "Steering" {
+			for _, member := range group.Leadership.Chairs {
+				maintainers[member.GitHub] = member
+				serviceDesk[member.GitHub] = true
+			}
+		}
+	}
+	for _, sig := range ctx.Sigs {
+		// these groups retain service desk access in addition to steering
+		// as outlined in https://github.com/kubernetes/steering/issues/281
+		isServiceDesk := sig.Name == "Contributor Experience" || sig.Name == "K8s Infra" || sig.Name == "Release"
+		for _, chair := range sig.Leadership.Chairs {
+			maintainers[chair.GitHub] = chair
+			// only set service desk true as needed, do not override to false
+			// in case of maintainers spanning groups
+			if isServiceDesk {
+				serviceDesk[chair.Name] = true
+			}
+		}
+		for _, tl := range sig.Leadership.TechnicalLeads {
+			maintainers[tl.GitHub] = tl
+			// only set service desk true as needed, do not override to false
+			// in case of maintainers spanning groups
+			if isServiceDesk {
+				serviceDesk[tl.Name] = true
+			}
+		}
+	}
+	outputPath := filepath.Join(baseGeneratorDir, "maintainers.txt")
+	f, err := os.Create(outputPath)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	fmt.Fprintln(f, "name | company | github | email | service-desk?")
+	fmt.Fprintln(f, "===============================================")
+	keys := []string{}
+	for gh := range maintainers {
+		keys = append(keys, gh)
+	}
+	sort.Strings(keys)
+	for _, gh := range keys {
+		m := maintainers[gh]
+		fmt.Fprintf(f, "%s | %s | %s | %s | %t\n", m.Name, m.Company, m.GitHub, m.Email, serviceDesk[m.GitHub])
+	}
+	return nil
+}
+
 func main() {
 	yamlPath := filepath.Join(baseGeneratorDir, sigsYamlFile)
 	var ctx Context
@@ -1146,6 +1203,11 @@ func main() {
 				log.Fatal(err)
 			}
 		}
+	}
+
+	if envVal, ok := os.LookupEnv("MAINTAINERS_LIST"); ok && envVal == "true" {
+		fmt.Println("Generating CNCF maintainers list")
+		generateCNCFMaintainersList(&ctx)
 	}
 
 	fmt.Println("Generating sig-list.md")
